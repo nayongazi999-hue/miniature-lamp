@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>icl User Panel</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--teal:#00c9a7;--teal-dark:#00a88c;--teal-light:#e6faf6;--purple:#6c5ce7;--bg:#f7f8fc;--surface:#ffffff;--text:#1e272e;--text-muted:#636e72;--border:#e8ecf0}
+body{font-family:'Hind Siliguri',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+#authScreen{min-height:100vh;background:linear-gradient(135deg,#00c9a7,#6c5ce7);display:flex;align-items:center;justify-content:center;padding:20px}
+.auth-card{background:#fff;border-radius:28px;padding:32px 24px;width:100%;max-width:380px;box-shadow:0 24px 60px rgba(0,0,0,0.18)}
+.auth-logo{font-family:'Nunito',sans-serif;font-size:36px;font-weight:900;color:var(--teal);text-align:center;margin-bottom:4px}
+.auth-tagline{font-size:13px;color:var(--text-muted);text-align:center;margin-bottom:28px}
+.auth-tabs{display:flex;background:var(--bg);border-radius:14px;padding:4px;margin-bottom:24px}
+.auth-tab{flex:1;padding:10px;border:none;background:transparent;border-radius:10px;font-family:'Hind Siliguri',sans-serif;font-size:14px;font-weight:700;cursor:pointer;color:var(--text-muted)}
+.auth-tab.active{background:#fff;color:var(--teal-dark);box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.auth-field{margin-bottom:14px}
+.auth-field label{display:block;font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:6px}
+.auth-input-wrap{position:relative}
+.input-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:16px}
+.auth-field input{width:100%;padding:12px 14px 12px 42px;border:1.5px solid var(--border);border-radius:14px;font-family:'Hind Siliguri',sans-serif;font-size:14px;color:var(--text);background:var(--bg);outline:none}
+.auth-field input:focus{border-color:var(--teal);background:var(--teal-light)}
+.toggle-eye{position:absolute;right:14px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:16px}
+.auth-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--teal),var(--purple));color:#fff;border:none;border-radius:14px;font-family:'Hind Siliguri',sans-serif;font-size:15px;font-weight:700;cursor:pointer;margin-top:6px}
+.auth-btn:disabled{opacity:0.6;cursor:not-allowed}
+.auth-divider{display:flex;align-items:center;gap:10px;margin:18px 0;color:var(--text-muted);font-size:12px}
+.auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--border)}
+.google-btn{width:100%;padding:12px;background:#fff;border:1.5px solid var(--border);border-radius:14px;font-family:'Hind Siliguri',sans-serif;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.auth-msg{padding:10px 14px;border-radius:12px;font-size:13px;font-weight:600;margin-bottom:14px;display:none}
+.auth-msg.error{background:#fee2e2;color:#c0392b}
+.auth-msg.success{background:#d1fae5;color:#065f46}
+.auth-msg.show{display:block}
+.forgot-link{text-align:right;margin-top:-8px;margin-bottom:14px}
+.forgot-link a{font-size:12px;color:var(--purple);cursor:pointer;font-weight:600}
+.btn-spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,0.4);border-top-color:#fff;border-radius:50%;animation:spin 0.6s linear infinite;vertical-align:middle;margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+#mainApp{display:none}
+.header{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 20px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Nunito',sans-serif;font-size:24px;font-weight:900;color:var(--teal)}
+.header-right{display:flex;align-items:center;gap:14px}
+.user-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--purple));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;cursor:pointer}
+.header-icon{font-size:20px;cursor:pointer;position:relative}
+.badge-dot{position:absolute;top:-2px;right:-3px;width:8px;height:8px;border-radius:50%;background:#f72585;border:1.5px solid #fff}
+.logout-btn{font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px;background:#fee2e2;color:#c0392b;border:none;cursor:pointer;font-family:'Hind Siliguri',sans-serif}
+.banner{background:linear-gradient(135deg,#00c9a7,#6c5ce7);padding:32px 20px;color:#fff;text-align:center}
+.banner-greeting{font-size:14px;opacity:0.85;margin-bottom:4px}
+.banner-name{font-family:'Nunito',sans-serif;font-size:26px;font-weight:900;margin-bottom:12px}
+.banner-status{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.2);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:500}
+.online-dot{width:8px;height:8px;border-radius:50%;background:#7fff00}
+.quick-actions{padding:20px;background:var(--surface);margin-bottom:12px}
+.section-label{font-size:13px;font-weight:700;letter-spacing:0.5px;color:var(--text-muted);text-transform:uppercase;margin-bottom:16px}
+.action-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.action-btn{display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;padding:14px 8px;border-radius:14px;background:var(--bg);border:1px solid var(--border);transition:all 0.2s}
+.action-icon-wrap{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px}
+.action-label{font-size:12px;font-weight:600;color:var(--text);text-align:center;line-height:1.3}
+.features-section{padding:20px;margin-bottom:12px;background:var(--surface)}
+.feature-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.feature-card{border-radius:16px;padding:18px;position:relative;overflow:hidden;cursor:pointer;transition:transform 0.2s}
+.fc-teal{background:linear-gradient(135deg,#e6faf6,#b2f0e0)}
+.fc-purple{background:linear-gradient(135deg,#f0edff,#d4c9ff)}
+.fc-blue{background:linear-gradient(135deg,#e8f4fd,#b3d9f8)}
+.fc-orange{background:linear-gradient(135deg,#fff3e0,#ffd194)}
+.fc-pink{background:linear-gradient(135deg,#fce4ec,#f8bbd9)}
+.fc-green{background:linear-gradient(135deg,#e8f5e9,#a5d6a7)}
+.fc-icon{font-size:32px;margin-bottom:10px}
+.fc-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}
+.fc-desc{font-size:12px;color:var(--text-muted);line-height:1.4}
+.fc-tag{position:absolute;top:14px;right:14px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;background:rgba(0,0,0,0.08);color:var(--text-muted)}
+.lite-tag{background:#00c9a7!important;color:#fff!important}
+.feature-card-full{border-radius:16px;padding:20px;cursor:pointer;transition:transform 0.2s;display:flex;align-items:center;gap:16px}
+.fcf-icon{font-size:36px;flex-shrink:0}
+.fcf-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px}
+.fcf-desc{font-size:12px;color:var(--text-muted);line-height:1.5}
+.fcf-arrow{margin-left:auto;font-size:18px;color:var(--text-muted);flex-shrink:0}
+.new-features-section{padding:20px;margin-bottom:12px;background:var(--surface)}
+.new-feature-list{display:flex;flex-direction:column;gap:12px}
+.new-feature-item{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--bg);border:1px solid var(--border);border-radius:14px;cursor:pointer;transition:all 0.2s}
+.nf-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.nf-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:2px}
+.nf-desc{font-size:12px;color:var(--text-muted)}
+.nf-badge{margin-left:auto;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;flex-shrink:0}
+.badge-new{background:#6c5ce7;color:#fff}
+.badge-updated{background:#00c9a7;color:#fff}
+.icl-popup-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.85);z-index:99999;align-items:center;justify-content:center;padding:20px}
+.icl-modal-body{background:#1e272e;color:#fff;width:100%;max-width:380px;border-radius:24px;padding:25px;position:relative}
+.icl-close-icon{position:absolute;top:15px;right:15px;background:rgba(255,255,255,0.1);border:none;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:16px}
+.icl-chat-container{background:#f1f2f6;color:#2f3542;border-radius:16px;padding:12px;height:220px;overflow-y:auto;margin:15px 0;display:flex;flex-direction:column;gap:8px}
+.icl-bubble{padding:8px 12px;border-radius:12px;font-size:13px;max-width:85%;line-height:1.4;word-wrap:break-word}
+.icl-bubble.incoming{background:#fff;align-self:flex-start}
+.icl-bubble.outgoing{background:var(--teal);color:#fff;align-self:flex-end}
+.icl-input-row{display:flex;gap:8px;margin-top:10px}
+.icl-input-field{flex:1;border:1px solid #c8d6e5;border-radius:20px;padding:10px 14px;outline:none;font-size:13px;color:#000}
+.icl-send-button{background:var(--teal);color:#fff;border:none;padding:0 15px;border-radius:20px;cursor:pointer;font-weight:bold}
+</style>
+</head>
+<body>
+
+<div id="authScreen">
+  <div class="auth-card">
+    <div class="auth-logo">icl</div>
+    <div class="auth-tagline">আপনার বিশ্বস্ত যোগাযোগ প্ল্যাটফর্ম</div>
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="loginTabBtn" onclick="switchAuthTab('login')">🔑 লগইন</button>
+      <button class="auth-tab" id="registerTabBtn" onclick="switchAuthTab('register')">✍️ রেজিস্টার</button>
+    </div>
+    <div class="auth-msg" id="authMsg"></div>
+    <div id="loginForm">
+      <div class="auth-field"><label>ইমেইল</label><div class="auth-input-wrap"><span class="input-icon">📧</span><input type="email" id="loginEmail" placeholder="ইমেইল লিখুন"></div></div>
+      <div class="auth-field"><label>পাসওয়ার্ড</label><div class="auth-input-wrap"><span class="input-icon">🔒</span><input type="password" id="loginPassword" placeholder="পাসওয়ার্ড লিখুন"><span class="toggle-eye" id="eyeLogin">👁️</span></div></div>
+      <div class="forgot-link"><a id="forgotLink">পাসওয়ার্ড ভুলে গেছেন?</a></div>
+      <button class="auth-btn" id="loginBtn">লগইন করুন</button>
+      <div class="auth-divider">অথবা</div>
+      <button class="google-btn" id="googleLoginBtn">🇬 Google দিয়ে লগইন</button>
+    </div>
+    <div id="registerForm" style="display:none">
+      <div class="auth-field"><label>নাম</label><div class="auth-input-wrap"><span class="input-icon">👤</span><input type="text" id="regName" placeholder="আপনার নাম"></div></div>
+      <div class="auth-field"><label>ইমেইল</label><div class="auth-input-wrap"><span class="input-icon">📧</span><input type="email" id="regEmail" placeholder="ইমেইল লিখুন"></div></div>
+      <div class="auth-field"><label>পাসওয়ার্ড</label><div class="auth-input-wrap"><span class="input-icon">🔒</span><input type="password" id="regPassword" placeholder="কমপক্ষে ৬ অক্ষর"><span class="toggle-eye" id="eyeReg">👁️</span></div></div>
+      <div class="auth-field"><label>পাসওয়ার্ড নিশ্চিত</label><div class="auth-input-wrap"><span class="input-icon">🔒</span><input type="password" id="regConfirm" placeholder="আবার লিখুন"><span class="toggle-eye" id="eyeConfirm">👁️</span></div></div>
+      <button class="auth-btn" id="registerBtn">অ্যাকাউন্ট তৈরি করুন</button>
+      <div class="auth-divider">অথবা</div>
+      <button class="google-btn" id="googleRegBtn">🇬 Google দিয়ে রেজিস্টার</button>
+    </div>
+  </div>
+</div>
+
+<div id="mainApp">
+  <div id="popupChat" class="icl-popup-overlay">
+    <div class="icl-modal-body">
+      <button class="icl-close-icon" id="closeChatBtn">×</button>
+      <div style="display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:8px;">
+        <div class="user-avatar" style="width:30px;height:30px" id="chatAvatarLabel">রা</div>
+        <div><div style="font-size:14px;font-weight:bold">icl লাইভ চ্যাটরুম</div><div style="font-size:11px;color:var(--teal)">Realtime Database</div></div>
+      </div>
+      <div class="icl-chat-container" id="chatMessageArea"><div class="icl-bubble incoming">স্বাগতম! মেসেজ পাঠান।</div></div>
+      <div class="icl-input-row">
+        <input type="text" id="chatTypedText" class="icl-input-field" placeholder="মেসেজ লিখুন...">
+        <button class="icl-send-button" id="sendChatBtn">পাঠান</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="logo">icl</div>
+    <div class="header-right">
+      <div class="header-icon">🔔<span class="badge-dot"></span></div>
+      <div class="header-icon">🔍</div>
+      <div class="user-avatar" id="mainAvatar">রা</div>
+      <button class="logout-btn" id="logoutBtn">🚪 লগআউট</button>
+    </div>
+  </header>
+
+  <div class="banner">
+    <div class="banner-greeting">স্বাগতম ফিরে আসায়! 👋</div>
+    <div class="banner-name" id="bannerName">ব্যবহারকারী</div>
+    <div class="banner-status"><span class="online-dot"></span> অনলাইন • সব ফিচার সক্রিয়</div>
+  </div>
+
+  <div class="quick-actions">
+    <div class="section-label">দ্রুত কার্যক্রম</div>
+    <div class="action-grid">
+      <div class="action-btn" onclick="triggerAppAction('অডিও কল')"><div class="action-icon-wrap" style="background:#e6faf6">📞</div><div class="action-label">অডিও কল</div></div>
+      <div class="action-btn" onclick="triggerAppAction('ভিডিও কল')"><div class="action-icon-wrap" style="background:#ede9ff">📹</div><div class="action-label">ভিডিও কল</div></div>
+      <div class="action-btn" id="openChatBtn"><div class="action-icon-wrap" style="background:#e8f4fd">💬</div><div class="action-label">চ্যাট</div></div>
+      <div class="action-btn" onclick="triggerAppAction('গ্রুপ কল')"><div class="action-icon-wrap" style="background:#fff3e0">👥</div><div class="action-label">গ্রুপ কল</div></div>
+      <div class="action-btn" onclick="triggerAppAction('শেয়ার')"><div class="action-icon-wrap" style="background:#fce4ec">📤</div><div class="action-label">শেয়ার</div></div>
+      <div class="action-btn" onclick="triggerAppAction('ভয়েস')"><div class="action-icon-wrap" style="background:#e8f5e9">🎤</div><div class="action-label">ভয়েস মেসেজ</div></div>
+      <div class="action-btn" onclick="triggerAppAction('স্টিকার')"><div class="action-icon-wrap" style="background:#fef9e0">😊</div><div class="action-label">স্টিকার</div></div>
+      <div class="action-btn" onclick="triggerAppAction('Story')"><div class="action-icon-wrap" style="background:#f3e5f5">📖</div><div class="action-label">Story</div></div>
+    </div>
+  </div>
+
+  <div class="features-section">
+    <div class="section-label">সকল ফিচার</div>
+    <div class="feature-cards" style="margin-bottom:12px">
+      <div class="feature-card fc-teal"><span class="fc-tag">বিনামূল্যে</span><div class="fc-icon">📞</div><div class="fc-title">ফ্রি অডিও কল</div><div class="fc-desc">যেকোনো জায়গা থেকে বিনামূল্যে কল করুন</div></div>
+      <div class="feature-card fc-purple"><span class="fc-tag">HD</span><div class="fc-icon">📹</div><div class="fc-title">HD ভিডিও কল</div><div class="fc-desc">উচ্চমানের ক্রিস্টাল ক্লিয়ার ভিডিও</div></div>
+      <div class="feature-card fc-blue"><div class="fc-icon">👥</div><div class="fc-title">গ্রুপ ভিডিও কল</div><div class="fc-desc">বন্ধু ও পরিবারের সাথে কথা বলুন</div></div>
+      <div class="feature-card fc-orange" id="openChatBtn2"><div class="fc-icon">💬</div><div class="fc-title">গ্রুপ চ্যাট</div><div class="fc-desc">দলগত চ্যাট ও আলোচনা করুন</div></div>
+      <div class="feature-card fc-pink"><div class="fc-icon">🖼️</div><div class="fc-title">মিডিয়া শেয়ার</div><div class="fc-desc">ছবি ভিডিও ফাইল পাঠান</div></div>
+      <div class="feature-card fc-green"><span class="fc-tag lite-tag">LITE</span><div class="fc-icon">⚡</div><div class="fc-title">icl Lite</div><div class="fc-desc">কম ডাটায় দ্রুত কাজ করে</div></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="feature-card-full" style="background:#f0edff"><div class="fcf-icon">🔒</div><div><div class="fcf-title">চ্যাট এনক্রিপশন</div><div class="fcf-desc">End-to-End এনক্রিপ্টেড ও নিরাপদ</div></div><div class="fcf-arrow">›</div></div>
+    </div>
+  </div>
+
+  <div class="new-features-section">
+    <div class="section-label">🆕 নতুন ফিচার</div>
+    <div class="new-feature-list">
+      <div class="new-feature-item"><div class="nf-icon" style="background:#fef9e0">🤖</div><div><div class="nf-title">AI Avatar Studio</div><div class="nf-desc">AI দিয়ে প্রোফাইল ছবি তৈরি করুন</div></div><span class="nf-badge badge-new">নতুন</span></div>
+      <div class="new-feature-item"><div class="nf-icon" style="background:#e6faf6">📹</div><div><div class="nf-title">উন্নত HD কল</div><div class="nf-desc">আরও স্পষ্ট HD ভিডিও কল</div></div><span class="nf-badge badge-updated">আপডেট</span></div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+const app = initializeApp({
+  apiKey:"AIzaSyB6Ff_tfdoy3SX7-KRMurDBDsC8AzcTRK4",
+  authDomain:"qoraner-varb-200-3367a.firebaseapp.com",
+  projectId:"qoraner-varb-200-3367a",
+  storageBucket:"qoraner-varb-200-3367a.firebasestorage.app",
+  messagingSenderId:"26016266391",
+  appId:"1:26016266391:web:39c2c833060a83047551d2",
+  databaseURL:"https://qoraner-varb-200-3367a-default-rtdb.firebaseio.com"
+});
+
+const auth = getAuth(app);
+const db = getDatabase(app);
+const provider = new GoogleAuthProvider();
+let currentUserName = '';
+
+function showMsg(text, type) {
+  const el = document.getElementById('authMsg');
+  el.textContent = text; el.className = 'auth-msg ' + type + ' show';
+}
+
+function setBtn(id, loading, txt) {
+  const b = document.getElementById(id);
+  b.disabled = loading;
+  b.innerHTML = loading ? '<span class="btn-spinner"></span>অপেক্ষা করুন...' : txt;
+}
+
+function showApp(user) {
+  const name = user.displayName || user.email.split('@')[0];
+  currentUserName = name;
+  document.getElementById('bannerName').textContent = name;
+  document.getElementById('mainAvatar').textContent = name.charAt(0).toUpperCase();
+  document.getElementById('chatAvatarLabel').textContent = name.charAt(0).toUpperCase();
+  document.getElementById('authScreen').style.display = 'none';
+  document.getElementById('mainApp').style.display = 'block';
+}
+
+onAuthStateChanged(auth, user => {
+  if (user) showApp(user);
+  else { document.getElementById('authScreen').style.display = 'flex'; document.getElementById('mainApp').style.display = 'none'; }
+});
+
+window.switchAuthTab = function(tab) {
+  document.getElementById('loginTabBtn').classList.toggle('active', tab==='login');
+  document.getElementById('registerTabBtn').classList.toggle('active', tab==='register');
+  document.getElementById('loginForm').style.display = tab==='login' ? 'block' : 'none';
+  document.getElementById('registerForm').style.display = tab==='register' ? 'block' : 'none';
+  document.getElementById('authMsg').className = 'auth-msg';
+};
+
+document.getElementById('loginBtn').addEventListener('click', async () => {
+  const email = document.getElementById('loginEmail').value.trim();
+  const pass = document.getElementById('loginPassword').value;
+  if (!email || !pass) { showMsg('⚠️ ইমেইল ও পাসওয়ার্ড দিন।','error'); return; }
+  setBtn('loginBtn', true, 'লগইন করুন');
+  try {
+    await signInWithEmailAndPassword(auth, email, pass);
+  } catch(e) {
+    const m = {'auth/user-not-found':'❌ অ্যাকাউন্ট নেই।','auth/wrong-password':'❌ পাসওয়ার্ড ভুল।','auth/invalid-credential':'const m = {
+      'auth/user-not-found':'❌ অ্যাকাউন্ট নেই।',
+      'auth/wrong-password':'❌ পাসওয়ার্ড ভুল।',
+      'auth/invalid-credential':'❌ ইমেইল বা পাসওয়ার্ড ভুল।',
+      'auth/too-many-requests':'⏳ পরে চেষ্টা করুন।',
+      'auth/invalid-email':'❌ সঠিক ইমেইল দিন।'
+    };
+    showMsg(m[e.code] || '❌ লগইন ব্যর্থ।', 'error');
+  } finally { setBtn('loginBtn', false, 'লগইন করুন'); }
+});
+
+document.getElementById('registerBtn').addEventListener('click', async () => {
+  const name = document.getElementById('regName').value.trim();
+  const email = document.getElementById('regEmail').value.trim();
+  const pass = document.getElementById('regPassword').value;
+  const confirm = document.getElementById('regConfirm').value;
+  if (!name||!email||!pass){showMsg('⚠️ সব তথ্য পূরণ করুন।','error');return;}
+  if (pass.length<6){showMsg('⚠️ পাসওয়ার্ড কমপক্ষে ৬ অক্ষর।','error');return;}
+  if (pass!==confirm){showMsg('⚠️ পাসওয়ার্ড মিলছে না।','error');return;}
+  setBtn('registerBtn',true,'অ্যাকাউন্ট তৈরি করুন');
+  try {
+    const cred = await createUserWithEmailAndPassword(auth,email,pass);
+    await updateProfile(cred.user,{displayName:name});
+    showMsg('✅ অ্যাকাউন্ট তৈরি সফল!','success');
+  } catch(e) {
+    const m={
+      'auth/email-already-in-use':'❌ এই ইমেইল আগে থেকেই আছে।',
+      'auth/weak-password':'❌ পাসওয়ার্ড দুর্বল।'
+    };
+    showMsg(m[e.code]||'❌ রেজিস্ট্রেশন ব্যর্থ।','error');
+  } finally{setBtn('registerBtn',false,'অ্যাকাউন্ট তৈরি করুন');}
+});
+
+document.getElementById('logoutBtn').addEventListener('click',()=>signOut(auth));
+
+document.getElementById('forgotLink').addEventListener('click',async()=>{
+  const email=document.getElementById('loginEmail').value.trim();
+  if(!email){showMsg('⚠️ আগে ইমেইল দিন।','error');return;}
+  try{await sendPasswordResetEmail(auth,email);showMsg('📧 রিসেট লিংক পাঠানো হয়েছে!','success');}
+  catch{showMsg('❌ পাঠানো ব্যর্থ।','error');}
+});
+
+async function googleSignIn(){
+  try{await signInWithPopup(auth,provider);}
+  catch{showMsg('❌ Google লগইন ব্যর্থ।','error');}
+}
+document.getElementById('googleLoginBtn').addEventListener('click',googleSignIn);
+document.getElementById('googleRegBtn').addEventListener('click',googleSignIn);
+
+function toggleEye(inputId,eyeId){
+  const input=document.getElementById(inputId);
+  const eye=document.getElementById(eyeId);
+  eye.addEventListener('click',()=>{
+    input.type=input.type==='password'?'text':'password';
+    eye.textContent=input.type==='password'?'👁️':'🙈';
+  });
+}
+toggleEye('loginPassword','eyeLogin');
+toggleEye('regPassword','eyeReg');
+toggleEye('regConfirm','eyeConfirm');
+
+const chatRef=ref(db,'icl-chat');
+document.getElementById('openChatBtn').addEventListener('click',()=>{
+  document.getElementById('popupChat').style.display='flex';
+});
+document.getElementById('openChatBtn2').addEventListener('click',()=>{
+  document.getElementById('popupChat').style.display='flex';
+});
+document.getElementById('closeChatBtn').addEventListener('click',()=>{
+  document.getElementById('popupChat').style.display='none';
+});
+
+onValue(chatRef,snap=>{
+  const area=document.getElementById('chatMessageArea');
+  area.innerHTML='';
+  if(snap.exists()){
+    snap.forEach(child=>{
+      const d=child.val();
+      const isMe=d.sender===currentUserName;
+      const bubble=document.createElement('div');
+      bubble.className='icl-bubble '+(isMe?'outgoing':'incoming');
+      bubble.textContent=(isMe?'':d.sender+': ')+d.text;
+      area.appendChild(bubble);
+    });
+    area.scrollTop=area.scrollHeight;
+  }
+});
+
+document.getElementById('sendChatBtn').addEventListener('click',sendMessage);
+document.getElementById('chatTypedText').addEventListener('keydown',e=>{
+  if(e.key==='Enter')sendMessage();
+});
+
+function sendMessage(){
+  const input=document.getElementById('chatTypedText');
+  const text=input.value.trim();
+  if(!text||!currentUserName)return;
+  push(chatRef,{sender:currentUserName,text,time:Date.now()});
+  input.value='';
+}
+
+window.triggerAppAction=function(name){
+  alert('🚀 '+name+' — শীঘ্রই আসছে!');
+};
+</script>
+</body>
+</html>

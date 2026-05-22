@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICL — Calling App</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#534AB7;--primary-light:#EEEDFE;--primary-mid:#AFA9EC;
+  --primary-dark:#3C3489;--primary-deeper:#26215C;
+  --online:#1D9E75;--online-light:#E1F5EE;
+  --danger:#E24B4A;--danger-light:#FCEBEB;--warning:#EF9F27;
+  --surface:#F8F7FF;--bg:#fff;--bg2:#F4F3FC;
+  --border:rgba(83,74,183,0.12);--text:#1A1530;--text2:#6B648F;--text3:#A09CC0;
+  --shadow:0 2px 16px rgba(83,74,183,0.10);--shadow-lg:0 8px 40px rgba(83,74,183,0.18);
+  --radius:16px;--radius-sm:10px;
+  --font:'DM Sans',sans-serif;--mono:'DM Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font);background:var(--surface);color:var(--text);min-height:100vh;display:flex;flex-direction:column;}
+.screen{display:none;width:100%;min-height:calc(100vh - 60px);}
+.screen.active{display:flex;}
+
+/* ── TOPBAR ── */
+.topbar{
+  background:var(--bg);border-bottom:1px solid var(--border);
+  padding:12px 20px;display:flex;align-items:center;gap:12px;
+  flex-shrink:0;height:60px;
+}
+.topbar-logo{
+  width:36px;height:36px;background:var(--primary);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(83,74,183,0.3);
+}
+.topbar-logo svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;}
+.topbar h1{font-size:16px;font-weight:600;color:var(--text);flex:1;}
+.lang-selector{
+  display:flex;align-items:center;gap:6px;
+  background:var(--bg2);border:1px solid var(--border);border-radius:8px;
+  padding:6px 10px;cursor:pointer;font-size:13px;color:var(--text2);
+}
+.lang-selector select{
+  background:none;border:none;outline:none;
+  font-family:var(--font);font-size:13px;color:var(--text2);cursor:pointer;
+}
+
+/* ── LOGIN SCREEN ── */
+#login-screen{
+  background:linear-gradient(145deg,#F0EFFD 0%,#E8E6FA 40%,#F4F3FC 100%);
+  align-items:center;justify-content:flex-start;
+  flex-direction:column;padding:20px;
+}
+.login-card{
+  background:var(--bg);border-radius:24px;border:1px solid var(--border);
+  padding:32px 28px;width:100%;max-width:400px;
+  box-shadow:var(--shadow-lg);margin-top:20px;
+  animation:slideUp 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+@keyframes slideUp{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.login-logo{
+  width:48px;height:48px;background:var(--primary);border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 0 16px;box-shadow:0 4px 16px rgba(83,74,183,0.35);
+}
+.login-logo svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;}
+.login-card h2{font-size:20px;font-weight:600;margin-bottom:4px;}
+.login-card .subtitle{font-size:13px;color:var(--text2);margin-bottom:24px;}
+.step{display:none;}.step.active{display:block;}
+.form-label{font-size:12px;font-weight:500;color:var(--text2);margin-bottom:6px;margin-top:14px;display:block;}
+.phone-row{display:flex;gap:8px;}
+
+/* Country code button */
+.country-code-btn{
+  height:44px;min-width:90px;background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius-sm);padding:0 10px;
+  display:flex;align-items:center;gap:4px;
+  font-family:var(--font);font-size:13px;color:var(--text);
+  cursor:pointer;white-space:nowrap;flex-shrink:0;
+  transition:border-color 0.2s;
+}
+.country-code-btn:hover{border-color:var(--primary);}
+.country-code-btn .flag{font-size:16px;}
+.country-code-btn .code{font-size:12px;color:var(--text2);}
+
+input[type=tel],input[type=text],input[type=password]{
+  width:100%;height:44px;border:1px solid var(--border);border-radius:var(--radius-sm);
+  background:var(--bg2);font-family:var(--font);font-size:14px;color:var(--text);
+  padding:0 14px;outline:none;transition:border-color 0.2s,box-shadow 0.2s;
+}
+input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(83,74,183,0.1);}
+input::placeholder{color:var(--text3);}
+
+.btn-primary{
+  width:100%;height:46px;background:var(--primary);color:#fff;border:none;
+  border-radius:var(--radius-sm);font-family:var(--font);font-size:14px;font-weight:500;
+  cursor:pointer;margin-top:16px;box-shadow:0 4px 16px rgba(83,74,183,0.3);
+  transition:background 0.2s,transform 0.1s;
+}
+.btn-primary:hover{background:var(--primary-dark);}
+.btn-primary:active{transform:scale(0.98);}
+
+.divider{display:flex;align-items:center;gap:10px;margin:14px 0;}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border);}
+.divider span{font-size:12px;color:var(--text3);}
+
+.social-row{display:flex;gap:8px;}
+.social-btn{
+  flex:1;height:42px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  font-family:var(--font);font-size:13px;color:var(--text);cursor:pointer;
+  transition:background 0.2s,border-color 0.2s;
+}
+.social-btn:hover{background:var(--primary-light);border-color:var(--primary-mid);}
+
+.terms{font-size:11px;color:var(--text3);text-align:center;margin-top:14px;line-height:1.6;}
+.terms a{color:var(--primary);text-decoration:none;}
+
+/* OTP */
+.otp-row{display:flex;gap:8px;justify-content:center;margin:16px 0;}
+.otp-input{
+  width:44px;height:52px;border:1.5px solid var(--border);border-radius:var(--radius-sm);
+  background:var(--bg2);text-align:center;
+  font-family:var(--mono);font-size:20px;font-weight:500;color:var(--primary-dark);
+  outline:none;transition:border-color 0.2s,box-shadow 0.2s;
+}
+.otp-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(83,74,183,0.1);}
+
+.back-link{
+  background:none;border:none;cursor:pointer;color:var(--text2);
+  font-family:var(--font);font-size:13px;margin-bottom:16px;
+  display:inline-flex;align-items:center;gap:4px;padding:0;
+}
+.back-link:hover{color:var(--primary);}
+
+.resend-row{text-align:center;font-size:13px;color:var(--text2);margin-top:12px;}
+.resend-row a{color:var(--primary);cursor:pointer;}
+
+.progress-dots{display:flex;gap:6px;justify-content:center;margin-bottom:18px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--primary-mid);transition:all 0.3s;}
+.dot.active{background:var(--primary);width:18px;border-radius:3px;}
+
+/* ── COUNTRY PICKER MODAL ── */
+.modal-overlay{
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:200;
+  align-items:flex-end;justify-content:center;
+}
+.modal-overlay.active{display:flex;}
+.country-modal{
+  background:var(--bg);border-radius:20px 20px 0 0;
+  width:100%;max-width:480px;max-height:72vh;
+  display:flex;flex-direction:column;padding-bottom:24px;
+  animation:slideUp 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.modal-header{
+  padding:16px 20px 10px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:10px;
+}
+.modal-header h3{flex:1;font-size:16px;font-weight:500;}
+.modal-close{
+  background:none;border:none;cursor:pointer;
+  color:var(--text3);font-size:20px;line-height:1;
+  width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+  border-radius:50%;transition:background 0.2s;
+}
+.modal-close:hover{background:var(--bg2);}
+.modal-search{padding:10px 16px;}
+.modal-search input{
+  width:100%;height:40px;border:1px solid var(--border);border-radius:8px;
+  background:var(--bg2);font-family:var(--font);font-size:14px;padding:0 12px;outline:none;
+}
+.modal-search input:focus{border-color:var(--primary);}
+.country-list{overflow-y:auto;flex:1;}
+.country-option{
+  display:flex;align-items:center;gap:12px;padding:11px 20px;
+  cursor:pointer;transition:background 0.15s;
+}
+.country-option:hover{background:var(--bg2);}
+.country-option .flag{font-size:22px;flex-shrink:0;width:30px;text-align:center;}
+.country-option .name{flex:1;font-size:14px;color:var(--text);}
+.country-option .dial{font-size:13px;color:var(--text2);font-family:var(--mono);}
+
+/* ── APP SCREEN ── */
+#app-screen{flex-direction:column;}
+.app-topbar{
+  background:var(--bg);border-bottom:1px solid var(--border);
+  padding:12px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0;
+}
+.app-topbar h2{flex:1;font-size:16px;font-weight:600;}
+.icon-btn{
+  width:34px;height:34px;border-radius:8px;background:var(--bg2);
+  border:1px solid var(--border);display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:background 0.2s;
+}
+.icon-btn:hover{background:var(--primary-light);}
+.icon-btn svg{width:18px;height:18px;fill:none;stroke:var(--text2);stroke-width:2;stroke-linecap:round;}
+
+.tab-row{
+  display:flex;gap:4px;padding:10px 16px 0;
+  background:var(--bg);border-bottom:1px solid var(--border);
+}
+.tab{
+  flex:1;height:32px;border-radius:8px;border:none;background:none;
+  font-family:var(--font);font-size:12px;font-weight:500;color:var(--text3);cursor:pointer;
+  transition:background 0.2s,color 0.2s;
+}
+.tab.active{background:var(--primary-light);color:var(--primary);}
+
+.chat-list{overflow-y:auto;flex:1;padding:8px 0;}
+.chat-item{
+  display:flex;align-items:center;gap:12px;padding:10px 16px;cursor:pointer;
+  transition:background 0.15s;
+}
+.chat-item:hover{background:var(--bg2);}
+.ci-avatar{
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:500;flex-shrink:0;position:relative;
+}
+.online-dot{
+  position:absolute;bottom:1px;right:1px;width:10px;height:10px;
+  border-radius:50%;background:var(--online);border:2px solid var(--bg);
+}
+.ci-info{flex:1;min-width:0;}
+.ci-name{font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ci-msg{font-size:12px;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px;}
+.ci-meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;}
+.ci-time{font-size:11px;color:var(--text3);}
+.ci-badge{
+  background:var(--primary);color:#fff;font-size:10px;font-weight:500;
+  width:18px;height:18px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* ── RTL SUPPORT ── */
+[dir=rtl] .phone-row{flex-direction:row-reverse;}
+[dir=rtl] .ci-meta{align-items:flex-start;}
+[dir=rtl] .back-link{flex-direction:row-reverse;}
+[dir=rtl] .social-row{flex-direction:row-reverse;}
+[dir=rtl] input{text-align:right;}
+[dir=rtl] .otp-row{flex-direction:row-reverse;}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════
+     TOP BAR — always visible
+════════════════════════════════ -->
+<div class="topbar">
+  <div class="topbar-logo">
+    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+  </div>
+  <h1 id="app-name">ICL — Calling App</h1>
+  <div class="lang-selector">
+    <span>🌐</span>
+    <select id="lang-select" onchange="changeLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="bn" selected>বাংলা</option>
+      <option value="ar">العربية</option>
+      <option value="zh">中文</option>
+      <option value="hi">हिंदी</option>
+      <option value="es">Español</option>
+      <option value="fr">Français</option>
+      <option value="pt">Português</option>
+      <option value="ru">Русский</option>
+      <option value="de">Deutsch</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+      <option value="tr">Türkçe</option>
+      <option value="id">Bahasa Indonesia</option>
+      <option value="ms">Bahasa Melayu</option>
+      <option value="fa">فارسی</option>
+      <option value="ur">اردو</option>
+      <option value="sw">Kiswahili</option>
+      <option value="ha">Hausa</option>
+    </select>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     LOGIN SCREEN
+════════════════════════════════ -->
+<div id="login-screen" class="screen active">
+  <div class="login-card">
+    <div class="login-logo">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+    </div>
+
+    <div class="progress-dots">
+      <div class="dot active" id="dot1"></div>
+      <div class="dot" id="dot2"></div>
+      <div class="dot" id="dot3"></div>
+    </div>
+
+    <!-- STEP 1: Phone Number -->
+    <div class="step active" id="step1">
+      <h2 id="t-welcome">Welcome back</h2>
+      <p class="subtitle" id="t-enter-phone">Enter your phone number to continue</p>
+
+      <label class="form-label" id="t-phone-label">Phone number</label>
+      <div class="phone-row">
+        <button class="country-code-btn" id="cc-btn" onclick="openCountryPicker()">
+          <span class="flag" id="selected-flag">🇧🇩</span>
+          <span class="code" id="selected-code">+880</span>
+          <svg width="10" height="6" viewBox="0 0 10 6" style="margin-left:2px">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <input type="tel" id="t-phone-input" placeholder="01XXXXXXXXX" style="flex:1;">
+      </div>
+
+      <button class="btn-primary" id="t-continue-btn" onclick="goStep(2)">Continue →</button>
+
+      <div class="divider"><span id="t-or">or</span></div>
+      <div class="social-row">
+        <button class="social-btn">
+          <svg viewBox="0 0 24 24" width="16" height="16">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          Google
+        </button>
+        <button class="social-btn">
+          <svg viewBox="0 0 24 24" width="16" height="16">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/>
+          </svg>
+          Facebook
+        </button>
+      </div>
+      <p class="terms" id="t-terms">By continuing, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+    </div>
+
+    <!-- STEP 2: OTP Verification -->
+    <div class="step" id="step2">
+      <button class="back-link" onclick="goStep(1)">← <span id="t-back">Back</span></button>
+      <h2 id="t-verify-title">Verify your number</h2>
+      <p class="subtitle" id="t-otp-sent">We sent a 6-digit code to your number</p>
+      <div class="otp-row">
+        <input class="otp-input" maxlength="1" type="text" inputmode="numeric">
+        <input class="otp-input" maxlength="1" type="text" inputmode="numeric">
+        <input class="otp-input" maxlength="1" type="text" inputmode="numeric">
+        <input class="otp-input" maxlength="1" type="text" inputmode="numeric">
+        <input class="otp-input" maxlength="1" type="text" inputmode="numeric">
+        <input class="otp-input" maxlength="1" type="text" inputmode="numeric">
+      </div>
+      <button class="btn-primary" id="t-verify-btn" onclick="goStep(3)">Verify &amp; Continue</button>
+      <div class="resend-row">
+        <span id="t-no-code">Didn't receive it?</span>
+        <a id="t-resend"> Resend</a>
+      </div>
+    </div>
+
+    <!-- STEP 3: Profile Setup -->
+    <div class="step" id="step3">
+      <button class="back-link" onclick="goStep(2)">← <span id="t-back2">Back</span></button>
+      <h2 id="t-profile-title">Set up your profile</h2>
+      <p class="subtitle" id="t-profile-sub">This is how others will see you</p>
+      <label class="form-label" id="t-name-label">Full name</label>
+      <input type="text" id="t-name-input" placeholder="Your name">
+      <label class="form-label" id="t-username-label">Username</label>
+      <input type="text" id="t-username-input" placeholder="@username">
+      <button class="btn-primary" id="t-finish-btn" onclick="showApp()">Get Started 🎉</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     MAIN APP SCREEN
+════════════════════════════════ -->
+<div id="app-screen" class="screen">
+  <div class="app-topbar">
+    <h2 id="t-messages">Messages</h2>
+    <div class="icon-btn">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </div>
+    <div class="icon-btn" title="Sign out" onclick="showLogin()">
+      <svg viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+    </div>
+  </div>
+  <div class="tab-row">
+    <button class="tab active" id="t-tab-all">All</button>
+    <button class="tab" id="t-tab-calls">Calls</button>
+    <button class="tab" id="t-tab-groups">Groups</button>
+  </div>
+  <div class="chat-list" id="chat-list"></div>
+</div>
+
+<!-- ══════════════════════════════
+     COUNTRY PICKER MODAL
+════════════════════════════════ -->
+<div class="modal-overlay" id="country-modal" onclick="closeCountryPicker(event)">
+  <div class="country-modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h3 id="t-select-country">Select Country</h3>
+      <button class="modal-close" onclick="closeCountryPicker()">✕</button>
+    </div>
+    <div class="modal-search">
+      <input type="text" id="country-search"
+             placeholder="Search country..."
+             oninput="filterCountries(this.value)">
+    </div>
+    <div class="country-list" id="country-list"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     JAVASCRIPT
+════════════════════════════════ -->
+<script>
+/* ─────────── i18n Translations ─────────── */
+const i18n = {
+  en:{dir:'ltr',welcome:'Welcome back',enterPhone:'Enter your phone number to continue',phoneLabel:'Phone number',phonePh:'01XXXXXXXXX',continueBtn:'Continue →',or:'or',terms:'By continuing, you agree to our Terms and Privacy Policy',back:'Back',verifyTitle:'Verify your number',otpSent:'We sent a 6-digit code to your number',verifyBtn:'Verify & Continue',noCode:"Didn't receive it?",resend:'Resend',profileTitle:'Set up your profile',profileSub:'This is how others will see you',nameLabel:'Full name',namePh:'Your name',usernameLabel:'Username',usernamePh:'@username',finishBtn:'Get Started 🎉',messages:'Messages',tabAll:'All',tabCalls:'Calls',tabGroups:'Groups',selectCountry:'Select Country',searchPh:'Search country...'},
+  bn:{dir:'ltr',welcome:'স্বাগতম',enterPhone:'চালিয়ে যেতে আপনার ফোন নম্বর দিন',phoneLabel:'ফোন নম্বর',phonePh:'০১XXXXXXXXX',continueBtn:'পরবর্তী →',or:'অথবা',terms:'চালিয়ে গেলে আপনি আমাদের শর্তাবলী এবং গোপনীয়তা নীতিতে সম্মত হচ্ছেন',back:'পেছনে',verifyTitle:'নম্বর যাচাই করুন',otpSent:'আমরা আপনার নম্বরে ৬ সংখ্যার কোড পাঠিয়েছি',verifyBtn:'যাচাই করুন ও চালিয়ে যান',noCode:'কোড পাননি?',resend:'পুনরায় পাঠান',profileTitle:'প্রোফাইল সেট করুন',profileSub:'অন্যরা আপনাকে এভাবে দেখবে',nameLabel:'পূর্ণ নাম',namePh:'আপনার নাম',usernameLabel:'ইউজারনেম',usernamePh:'@ইউজারনেম',finishBtn:'শুরু করুন 🎉',messages:'বার্তাসমূহ',tabAll:'সব',tabCalls:'কল',tabGroups:'গ্রুপ',selectCountry:'দেশ নির্বাচন করুন',searchPh:'দেশ খুঁজুন...'},
+  ar:{dir:'rtl',welcome:'مرحباً بك',enterPhone:'أدخل رقم هاتفك للمتابعة',phoneLabel:'رقم الهاتف',phonePh:'05XXXXXXXX',continueBtn:'متابعة →',or:'أو',terms:'بالمتابعة، أنت توافق على شروطنا وسياسة الخصوصية',back:'رجوع',verifyTitle:'تحقق من رقمك',otpSent:'أرسلنا رمزاً مكوناً من 6 أرقام إلى رقمك',verifyBtn:'تحقق ومتابعة',noCode:'لم تستلم الرمز؟',resend:'إعادة الإرسال',profileTitle:'إعداد ملفك الشخصي',profileSub:'هكذا سيراك الآخرون',nameLabel:'الاسم الكامل',namePh:'اسمك',usernameLabel:'اسم المستخدم',usernamePh:'@اسم_المستخدم',finishBtn:'ابدأ الآن 🎉',messages:'الرسائل',tabAll:'الكل',tabCalls:'المكالمات',tabGroups:'المجموعات',selectCountry:'اختر الدولة',searchPh:'ابحث عن دولة...'},
+  zh:{dir:'ltr',welcome:'欢迎回来',enterPhone:'输入您的手机号码以继续',phoneLabel:'手机号码',phonePh:'1XXXXXXXXXX',continueBtn:'继续 →',or:'或',terms:'继续即表示您同意我们的服务条款和隐私政策',back:'返回',verifyTitle:'验证您的号码',otpSent:'我们已向您的号码发送了6位验证码',verifyBtn:'验证并继续',noCode:'没有收到？',resend:'重新发送',profileTitle:'设置您的个人资料',profileSub:'这是其他人看到您的方式',nameLabel:'全名',namePh:'您的姓名',usernameLabel:'用户名',usernamePh:'@用户名',finishBtn:'开始使用 🎉',messages:'消息',tabAll:'全部',tabCalls:'通话',tabGroups:'群组',selectCountry:'选择国家',searchPh:'搜索国家...'},
+  hi:{dir:'ltr',welcome:'वापस स्वागत है',enterPhone:'जारी रखने के लिए अपना फ़ोन नंबर दर्ज करें',phoneLabel:'फ़ोन नंबर',phonePh:'98XXXXXXXX',continueBtn:'जारी रखें →',or:'या',terms:'जारी रखकर आप हमारी शर्तें और गोपनीयता नीति से सहमत हैं',back:'वापस',verifyTitle:'अपना नंबर सत्यापित करें',otpSent:'हमने आपके नंबर पर 6 अंकों का कोड भेजा है',verifyBtn:'सत्यापित करें और जारी रखें',noCode:'कोड नहीं मिला?',resend:'दोबारा भेजें',profileTitle:'अपनी प्रोफ़ाइल सेट करें',profileSub:'दूसरे आपको इसी तरह देखेंगे',nameLabel:'पूरा नाम',namePh:'आपका नाम',usernameLabel:'उपयोगकर्ता नाम',usernamePh:'@username',finishBtn:'शुरू करें 🎉',messages:'संदेश',tabAll:'सभी',tabCalls:'कॉल',tabGroups:'समूह',selectCountry:'देश चुनें',searchPh:'देश खोजें...'},
+  es:{dir:'ltr',welcome:'Bienvenido de nuevo',enterPhone:'Ingresa tu número de teléfono para continuar',phoneLabel:'Número de teléfono',phonePh:'+1 XXX XXX XXXX',continueBtn:'Continuar →',or:'o',terms:'Al continuar, aceptas nuestros Términos y Política de Privacidad',back:'Atrás',verifyTitle:'Verifica tu número',otpSent:'Te enviamos un código de 6 dígitos a tu número',verifyBtn:'Verificar y continuar',noCode:'¿No recibiste el código?',resend:'Reenviar',profileTitle:'Configura tu perfil',profileSub:'Así es como te verán los demás',nameLabel:'Nombre completo',namePh:'Tu nombre',usernameLabel:'Nombre de usuario',usernamePh:'@usuario',finishBtn:'Comenzar 🎉',messages:'Mensajes',tabAll:'Todos',tabCalls:'Llamadas',tabGroups:'Grupos',selectCountry:'Seleccionar país',searchPh:'Buscar país...'},
+  fr:{dir:'ltr',welcome:'Bon retour',enterPhone:'Entrez votre numéro de téléphone pour continuer',phoneLabel:'Numéro de téléphone',phonePh:'+33 X XX XX XX XX',continueBtn:'Continuer →',or:'ou',terms:"En continuant, vous acceptez nos Conditions et notre Politique de confidentialité",back:'Retour',verifyTitle:'Vérifiez votre numéro',otpSent:'Nous vous avons envoyé un code à 6 chiffres',verifyBtn:'Vérifier et continuer',noCode:'Pas reçu le code?',resend:'Renvoyer',profileTitle:'Configurez votre profil',profileSub:"C'est ainsi que les autres vous verront",nameLabel:'Nom complet',namePh:'Votre nom',usernameLabel:"Nom d'utilisateur",usernamePh:'@utilisateur',finishBtn:'Commencer 🎉',messages:'Messages',tabAll:'Tous',tabCalls:'Appels',tabGroups:'Groupes',selectCountry:'Sélectionner un pays',searchPh:'Rechercher un pays...'},
+  pt:{dir:'ltr',welcome:'Bem-vindo de volta',enterPhone:'Digite seu número de telefone para continuar',phoneLabel:'Número de telefone',phonePh:'+55 XX XXXXX-XXXX',continueBtn:'Continuar →',or:'ou',terms:'Ao continuar, você concorda com nossos Termos e Política de Privacidade',back:'Voltar',verifyTitle:'Verifique seu número',otpSent:'Enviamos um código de 6 dígitos para o seu número',verifyBtn:'Verificar e continuar',noCode:'Não recebeu o código?',resend:'Reenviar',profileTitle:'Configure seu perfil',profileSub:'É assim que os outros vão te ver',nameLabel:'Nome completo',namePh:'Seu nome',usernameLabel:'Nome de usuário',usernamePh:'@usuario',finishBtn:'Começar 🎉',messages:'Mensagens',tabAll:'Todos',tabCalls:'Chamadas',tabGroups:'Grupos',selectCountry:'Selecionar país',searchPh:'Pesquisar país...'},
+  ru:{dir:'ltr',welcome:'С возвращением',enterPhone:'Введите номер телефона для продолжения',phoneLabel:'Номер телефона',phonePh:'+7 XXX XXX-XX-XX',continueBtn:'Продолжить →',or:'или',terms:'Продолжая, вы соглашаетесь с нашими Условиями и Политикой конфиденциальности',back:'Назад',verifyTitle:'Подтвердите номер',otpSent:'Мы отправили 6-значный код на ваш номер',verifyBtn:'Подтвердить и продолжить',noCode:'Не получили код?',resend:'Отправить снова',profileTitle:'Настройте профиль',profileSub:'Так вас увидят другие',nameLabel:'Полное имя',namePh:'Ваше имя',usernameLabel:'Имя пользователя',usernamePh:'@username',finishBtn:'Начать 🎉',messages:'Сообщения',tabAll:'Все',tabCalls:'Звонки',tabGroups:'Группы',selectCountry:'Выбрать страну',searchPh:'Поиск страны...'},
+  de:{dir:'ltr',welcome:'Willkommen zurück',enterPhone:'Geben Sie Ihre Telefonnummer ein, um fortzufahren',phoneLabel:'Telefonnummer',phonePh:'+49 XXX XXXXXXXX',continueBtn:'Weiter →',or:'oder',terms:'Mit dem Fortfahren stimmen Sie unseren Nutzungsbedingungen und Datenschutzrichtlinien zu',back:'Zurück',verifyTitle:'Verifizieren Sie Ihre Nummer',otpSent:'Wir haben einen 6-stelligen Code an Ihre Nummer gesendet',verifyBtn:'Verifizieren & Fortfahren',noCode:'Keinen Code erhalten?',resend:'Erneut senden',profileTitle:'Profil einrichten',profileSub:'So sehen Sie andere',nameLabel:'Vollständiger Name',namePh:'Ihr Name',usernameLabel:'Benutzername',usernamePh:'@Benutzername',finishBtn:'Loslegen 🎉',messages:'Nachrichten',tabAll:'Alle',tabCalls:'Anrufe',tabGroups:'Gruppen',selectCountry:'Land auswählen',searchPh:'Land suchen...'},
+  ja:{dir:'ltr',welcome:'おかえりなさい',enterPhone:'続けるには電話番号を入力してください',phoneLabel:'電話番号',phonePh:'090-XXXX-XXXX',continueBtn:'続ける →',or:'または',terms:'続けることで、利用規約とプライバシーポリシーに同意します',back:'戻る',verifyTitle:'番号を確認',otpSent:'6桁のコードを送信しました',verifyBtn:'確認して続ける',noCode:'コードが届かない？',resend:'再送信',profileTitle:'プロフィールを設定',profileSub:'他のユーザーには以下のように表示されます',nameLabel:'氏名',namePh:'お名前',usernameLabel:'ユーザー名',usernamePh:'@username',finishBtn:'始める 🎉',messages:'メッセージ',tabAll:'すべて',tabCalls:'通話',tabGroups:'グループ',selectCountry:'国を選択',searchPh:'国を検索...'},
+  ko:{dir:'ltr',welcome:'다시 오셨군요',enterPhone:'계속하려면 전화번호를 입력하세요',phoneLabel:'전화번호',phonePh:'010-XXXX-XXXX',continueBtn:'계속 →',or:'또는',terms:'계속하면 이용약관 및 개인정보처리방침에 동의하게 됩니다',back:'뒤로',verifyTitle:'번호 인증',otpSent:'6자리 코드를 전송했습니다',verifyBtn:'인증 및 계속',noCode:'코드를 받지 못하셨나요?',resend:'재전송',profileTitle:'프로필 설정',profileSub:'다른 사람들에게 이렇게 보입니다',nameLabel:'이름',namePh:'이름을 입력하세요',usernameLabel:'사용자 이름',usernamePh:'@username',finishBtn:'시작하기 🎉',messages:'메시지',tabAll:'전체',tabCalls:'통화',tabGroups:'그룹',selectCountry:'국가 선택',searchPh:'국가 검색...'},
+  tr:{dir:'ltr',welcome:'Tekrar hoş geldiniz',enterPhone:'Devam etmek için telefon numaranızı girin',phoneLabel:'Telefon numarası',phonePh:'05XX XXX XX XX',continueBtn:'Devam Et →',or:'veya',terms:'Devam ederek Şartlar ve Gizlilik Politikamızı kabul etmiş olursunuz',back:'Geri',verifyTitle:'Numaranızı doğrulayın',otpSent:'Numaranıza 6 haneli kod gönderdik',verifyBtn:'Doğrula ve Devam Et',noCode:'Kodu almadınız mı?',resend:'Yeniden gönder',profileTitle:'Profilinizi ayarlayın',profileSub:'Diğerleri sizi böyle görecek',nameLabel:'Tam ad',namePh:'Adınız',usernameLabel:'Kullanıcı adı',usernamePh:'@kullanici',finishBtn:'Başla 🎉',messages:'Mesajlar',tabAll:'Hepsi',tabCalls:'Aramalar',tabGroups:'Gruplar',selectCountry:'Ülke Seç',searchPh:'Ülke ara...'},
+  id:{dir:'ltr',welcome:'Selamat datang kembali',enterPhone:'Masukkan nomor telepon Anda untuk melanjutkan',phoneLabel:'Nomor telepon',phonePh:'08XX-XXXX-XXXX',continueBtn:'Lanjutkan →',or:'atau',terms:'Dengan melanjutkan, Anda setuju dengan Syarat dan Kebijakan Privasi kami',back:'Kembali',verifyTitle:'Verifikasi nomor Anda',otpSent:'Kami mengirim kode 6 digit ke nomor Anda',verifyBtn:'Verifikasi & Lanjutkan',noCode:'Tidak menerima kode?',resend:'Kirim ulang',profileTitle:'Atur profil Anda',profileSub:'Begini orang lain akan melihat Anda',nameLabel:'Nama lengkap',namePh:'Nama Anda',usernameLabel:'Nama pengguna',usernamePh:'@username',finishBtn:'Mulai 🎉',messages:'Pesan',tabAll:'Semua',tabCalls:'Panggilan',tabGroups:'Grup',selectCountry:'Pilih Negara',searchPh:'Cari negara...'},
+  ms:{dir:'ltr',welcome:'Selamat kembali',enterPhone:'Masukkan nombor telefon anda untuk meneruskan',phoneLabel:'Nombor telefon',phonePh:'01X-XXXXXXXX',continueBtn:'Teruskan →',or:'atau',terms:'Dengan meneruskan, anda bersetuju dengan Terma dan Dasar Privasi kami',back:'Kembali',verifyTitle:'Sahkan nombor anda',otpSent:'Kami menghantar kod 6 digit ke nombor anda',verifyBtn:'Sahkan & Teruskan',noCode:'Tidak terima kod?',resend:'Hantar semula',profileTitle:'Sediakan profil anda',profileSub:'Begini orang lain akan melihat anda',nameLabel:'Nama penuh',namePh:'Nama anda',usernameLabel:'Nama pengguna',usernamePh:'@username',finishBtn:'Mulakan 🎉',messages:'Mesej',tabAll:'Semua',tabCalls:'Panggilan',tabGroups:'Kumpulan',selectCountry:'Pilih Negara',searchPh:'Cari negara...'},
+  fa:{dir:'rtl',welcome:'خوش آمدید',enterPhone:'برای ادامه شماره تلفن خود را وارد کنید',phoneLabel:'شماره تلفن',phonePh:'09XX-XXX-XXXX',continueBtn:'ادامه →',or:'یا',terms:'با ادامه، با شرایط و سیاست حریم خصوصی ما موافقت می‌کنید',back:'برگشت',verifyTitle:'شماره خود را تأیید کنید',otpSent:'یک کد ۶ رقمی به شماره شما ارسال کردیم',verifyBtn:'تأیید و ادامه',noCode:'کد را دریافت نکردید؟',resend:'ارسال مجدد',profileTitle:'پروفایل خود را تنظیم کنید',profileSub:'دیگران شما را اینگونه می‌بینند',nameLabel:'نام کامل',namePh:'نام شما',usernameLabel:'نام کاربری',usernamePh:'@username',finishBtn:'شروع کنید 🎉',messages:'پیام‌ها',tabAll:'همه',tabCalls:'تماس‌ها',tabGroups:'گروه‌ها',selectCountry:'انتخاب کشور',searchPh:'جستجوی کشور...'},
+  ur:{dir:'rtl',welcome:'واپس خوش آمدید',enterPhone:'جاری رکھنے کے لیے اپنا فون نمبر درج کریں',phoneLabel:'فون نمبر',phonePh:'03XX-XXXXXXX',continueBtn:'جاری رکھیں →',or:'یا',terms:'جاری رکھ کر آپ ہماری شرائط اور رازداری پالیسی سے متفق ہیں',back:'واپس',verifyTitle:'اپنا نمبر تصدیق کریں',otpSent:'ہم نے آپ کے نمبر پر 6 ہندسوں کا کوڈ بھیجا ہے',verifyBtn:'تصدیق کریں اور جاری رکھیں',noCode:'کوڈ نہیں ملا؟',resend:'دوبارہ بھیجیں',profileTitle:'اپنا پروفائل ترتیب دیں',profileSub:'دوسرے آپ کو اس طرح دیکھیں گے',nameLabel:'پورا نام',namePh:'آپ کا نام',usernameLabel:'صارف نام',usernamePh:'@username',finishBtn:'شروع کریں 🎉',messages:'پیغامات',tabAll:'سب',tabCalls:'کالز',tabGroups:'گروپس',selectCountry:'ملک منتخب کریں',searchPh:'ملک تلاش کریں...'},
+  sw:{dir:'ltr',welcome:'Karibu tena',enterPhone:'Ingiza nambari yako ya simu ili kuendelea',phoneLabel:'Nambari ya simu',phonePh:'+255 7XX XXX XXX',continueBtn:'Endelea →',or:'au',terms:'Kwa kuendelea, unakubali Masharti na Sera ya Faragha yetu',back:'Rudi',verifyTitle:'Thibitisha nambari yako',otpSent:'Tumekutumia nambari ya tarakimu 6',verifyBtn:'Thibitisha na Endelea',noCode:'Hukupokea nambari?',resend:'Tuma tena',profileTitle:'Weka wasifu wako',profileSub:'Wengine watakuona hivyo',nameLabel:'Jina kamili',namePh:'Jina lako',usernameLabel:'Jina la mtumiaji',usernamePh:'@jinalako',finishBtn:'Anza 🎉',messages:'Ujumbe',tabAll:'Zote',tabCalls:'Simu',tabGroups:'Vikundi',selectCountry:'Chagua Nchi',searchPh:'Tafuta nchi...'},
+  ha:{dir:'ltr',welcome:'Barka da dawowan ku',enterPhone:'Shigar da lambar tarhonan ku don ci gaba',phoneLabel:'Lambar tarho',phonePh:'+234 8XX XXX XXXX',continueBtn:'Ci gaba →',or:'ko',terms:"Ta hanyar ci gaba, kun amince da Sharuɗɗan mu da Manufar Keɓantawa",back:'Koma',verifyTitle:'Tabbatar da lambar ku',otpSent:'Mun aiko muku lambar lamba 6',verifyBtn:'Tabbatar da ci gaba',noCode:'Ba a samu lambar ba?',resend:'Sake aika',profileTitle:'Saita bayanan ku',profileSub:'Wasu za su ga ku haka',nameLabel:'Cikakken suna',namePh:'Sunan ku',usernameLabel:'Sunan mai amfani',usernamePh:'@suna',finishBtn:'Fara 🎉',messages:'Saƙonni',tabAll:'Duka',tabCalls:'Kira',tabGroups:'Ƙungiyoyi',selectCountry:'Zaɓi Ƙasa',searchPh:'Nemo ƙasa...'}
+};
+
+/* ─────────── Country Data (180+ countries) ─────────── */
+const countries = [
+  {name:'Afghanistan',flag:'🇦🇫',code:'+93'},{name:'Albania',flag:'🇦🇱',code:'+355'},
+  {name:'Algeria',flag:'🇩🇿',code:'+213'},{name:'Angola',flag:'🇦🇴',code:'+244'},
+  {name:'Argentina',flag:'🇦🇷',code:'+54'},{name:'Armenia',flag:'🇦🇲',code:'+374'},
+  {name:'Australia',flag:'🇦🇺',code:'+61'},{name:'Austria',flag:'🇦🇹',code:'+43'},
+  {name:'Azerbaijan',flag:'🇦🇿',code:'+994'},{name:'Bahrain',flag:'🇧🇭',code:'+973'},
+  {name:'Bangladesh',flag:'🇧🇩',code:'+880'},{name:'Belarus',flag:'🇧🇾',code:'+375'},
+  {name:'Belgium',flag:'🇧🇪',code:'+32'},{name:'Bolivia',flag:'🇧🇴',code:'+591'},
+  {name:'Bosnia',flag:'🇧🇦',code:'+387'},{name:'Brazil',flag:'🇧🇷',code:'+55'},
+  {name:'Bulgaria',flag:'🇧🇬',code:'+359'},{name:'Burkina Faso',flag:'🇧🇫',code:'+226'},
+  {name:'Cambodia',flag:'🇰🇭',code:'+855'},{name:'Cameroon',flag:'🇨🇲',code:'+237'},
+  {name:'Canada',flag:'🇨🇦',code:'+1'},{name:'Chad',flag:'🇹🇩',code:'+235'},
+  {name:'Chile',flag:'🇨🇱',code:'+56'},{name:'China',flag:'🇨🇳',code:'+86'},
+  {name:'Colombia',flag:'🇨🇴',code:'+57'},{name:'Congo',flag:'🇨🇬',code:'+242'},
+  {name:'Costa Rica',flag:'🇨🇷',code:'+506'},{name:'Croatia',flag:'🇭🇷',code:'+385'},
+  {name:'Cuba',flag:'🇨🇺',code:'+53'},{name:'Czech Republic',flag:'🇨🇿',code:'+420'},
+  {name:'Denmark',flag:'🇩🇰',code:'+45'},{name:'Dominican Republic',flag:'🇩🇴',code:'+1-809'},
+  {name:'Ecuador',flag:'🇪🇨',code:'+593'},{name:'Egypt',flag:'🇪🇬',code:'+20'},
+  {name:'El Salvador',flag:'🇸🇻',code:'+503'},{name:'Ethiopia',flag:'🇪🇹',code:'+251'},
+  {name:'Finland',flag:'🇫🇮',code:'+358'},{name:'France',flag:'🇫🇷',code:'+33'},
+  {name:'Georgia',flag:'🇬🇪',code:'+995'},{name:'Germany',flag:'🇩🇪',code:'+49'},
+  {name:'Ghana',flag:'🇬🇭',code:'+233'},{name:'Greece',flag:'🇬🇷',code:'+30'},
+  {name:'Guatemala',flag:'🇬🇹',code:'+502'},{name:'Guinea',flag:'🇬🇳',code:'+224'},
+  {name:'Haiti',flag:'🇭🇹',code:'+509'},{name:'Honduras',flag:'🇭🇳',code:'+504'},
+  {name:'Hungary',flag:'🇭🇺',code:'+36'},{name:'India',flag:'🇮🇳',code:'+91'},
+  {name:'Indonesia',flag:'🇮🇩',code:'+62'},{name:'Iran',flag:'🇮🇷',code:'+98'},
+  {name:'Iraq',flag:'🇮🇶',code:'+964'},{name:'Ireland',flag:'🇮🇪',code:'+353'},
+  {name:'Israel',flag:'🇮🇱',code:'+972'},{name:'Italy',flag:'🇮🇹',code:'+39'},
+  {name:'Ivory Coast',flag:'🇨🇮',code:'+225'},{name:'Jamaica',flag:'🇯🇲',code:'+1-876'},
+  {name:'Japan',flag:'🇯🇵',code:'+81'},{name:'Jordan',flag:'🇯🇴',code:'+962'},
+  {name:'Kazakhstan',flag:'🇰🇿',code:'+7'},{name:'Kenya',flag:'🇰🇪',code:'+254'},
+  {name:'Kuwait',flag:'🇰🇼',code:'+965'},{name:'Kyrgyzstan',flag:'🇰🇬',code:'+996'},
+  {name:'Laos',flag:'🇱🇦',code:'+856'},{name:'Latvia',flag:'🇱🇻',code:'+371'},
+  {name:'Lebanon',flag:'🇱🇧',code:'+961'},{name:'Libya',flag:'🇱🇾',code:'+218'},
+  {name:'Lithuania',flag:'🇱🇹',code:'+370'},{name:'Luxembourg',flag:'🇱🇺',code:'+352'},
+  {name:'Madagascar',flag:'🇲🇬',code:'+261'},{name:'Malawi',flag:'🇲🇼',code:'+265'},
+  {name:'Malaysia',flag:'🇲🇾',code:'+60'},{name:'Mali',flag:'🇲🇱',code:'+223'},
+  {name:'Mexico',flag:'🇲🇽',code:'+52'},{name:'Moldova',flag:'🇲🇩',code:'+373'},
+  {name:'Mongolia',flag:'🇲🇳',code:'+976'},{name:'Morocco',flag:'🇲🇦',code:'+212'},
+  {name:'Mozambique',flag:'🇲🇿',code:'+258'},{name:'Myanmar',flag:'🇲🇲',code:'+95'},
+  {name:'Nepal',flag:'🇳🇵',code:'+977'},{name:'Netherlands',flag:'🇳🇱',code:'+31'},
+  {name:'New Zealand',flag:'🇳🇿',code:'+64'},{name:'Nicaragua',flag:'🇳🇮',code:'+505'},
+  {name:'Niger',flag:'🇳🇪',code:'+227'},{name:'Nigeria',flag:'🇳🇬',code:'+234'},
+  {name:'North Korea',flag:'🇰🇵',code:'+850'},{name:'Norway',flag:'🇳🇴',code:'+47'},
+  {name:'Oman',flag:'🇴🇲',code:'+968'},{name:'Pakistan',flag:'🇵🇰',code:'+92'},
+  {name:'Palestine',flag:'🇵🇸',code:'+970'},{name:'Panama',flag:'🇵🇦',code:'+507'},
+  {name:'Papua New Guinea',flag:'🇵🇬',code:'+675'},{name:'Paraguay',flag:'🇵🇾',code:'+595'},
+  {name:'Peru',flag:'🇵🇪',code:'+51'},{name:'Philippines',flag:'🇵🇭',code:'+63'},
+  {name:'Poland',flag:'🇵🇱',code:'+48'},{name:'Portugal',flag:'🇵🇹',code:'+351'},
+  {name:'Qatar',flag:'🇶🇦',code:'+974'},{name:'Romania',flag:'🇷🇴',code:'+40'},
+  {name:'Russia',flag:'🇷🇺',code:'+7'},{name:'Rwanda',flag:'🇷🇼',code:'+250'},
+  {name:'Saudi Arabia',flag:'🇸🇦',code:'+966'},{name:'Senegal',flag:'🇸🇳',code:'+221'},
+  {name:'Serbia',flag:'🇷🇸',code:'+381'},{name:'Sierra Leone',flag:'🇸🇱',code:'+232'},
+  {name:'Singapore',flag:'🇸🇬',code:'+65'},{name:'Slovakia',flag:'🇸🇰',code:'+421'},
+  {name:'Somalia',flag:'🇸🇴',code:'+252'},{name:'South Africa',flag:'🇿🇦',code:'+27'},
+  {name:'South Korea',flag:'🇰🇷',code:'+82'},{name:'South Sudan',flag:'🇸🇸',code:'+211'},
+  {name:'Spain',flag:'🇪🇸',code:'+34'},{name:'Sri Lanka',flag:'🇱🇰',code:'+94'},
+  {name:'Sudan',flag:'🇸🇩',code:'+249'},{name:'Sweden',flag:'🇸🇪',code:'+46'},
+  {name:'Switzerland',flag:'🇨🇭',code:'+41'},{name:'Syria',flag:'🇸🇾',code:'+963'},
+  {name:'Taiwan',flag:'🇹🇼',code:'+886'},{name:'Tajikistan',flag:'🇹🇯',code:'+992'},
+  {name:'Tanzania',flag:'🇹🇿',code:'+255'},{name:'Thailand',flag:'🇹🇭',code:'+66'},
+  {name:'Togo',flag:'🇹🇬',code:'+228'},{name:'Tunisia',flag:'🇹🇳',code:'+216'},
+  {name:'Turkey',flag:'🇹🇷',code:'+90'},{name:'Turkmenistan',flag:'🇹🇲',code:'+993'},
+  {name:'UAE',flag:'🇦🇪',code:'+971'},{name:'Uganda',flag:'🇺🇬',code:'+256'},
+  {name:'UK',flag:'🇬🇧',code:'+44'},{name:'Ukraine',flag:'🇺🇦',code:'+380'},
+  {name:'USA',flag:'🇺🇸',code:'+1'},{name:'Uruguay',flag:'🇺🇾',code:'+598'},
+  {name:'Uzbekistan',flag:'🇺🇿',code:'+998'},{name:'Venezuela',flag:'🇻🇪',code:'+58'},
+  {name:'Vietnam',flag:'🇻🇳',code:'+84'},{name:'Yemen',flag:'🇾🇪',code:'+967'},
+  {name:'Zambia',flag:'🇿🇲',code:'+260'},{name:'Zimbabwe',flag:'🇿🇼',code:'+263'}
+].sort((a,b)=>a.name.localeCompare(b.name));
+
+/* ─────────── Sample contacts ─────────── */
+const contacts = [
+  {name:'Sarah Johnson',   initials:'SJ',color:'#EEEDFE',tc:'#3C3489',msg:"Thanks! I'll call you back.",time:'2m', badge:3,online:true, call:false},
+  {name:'Ahmed Al-Rashid', initials:'AR',color:'#E1F5EE',tc:'#0F6E56',msg:'Missed call from Ahmed',    time:'14m',badge:0,online:false,call:true},
+  {name:'Priya Sharma',    initials:'PS',color:'#FBEAF0',tc:'#993556',msg:'Can we meet tomorrow?',      time:'1h', badge:1,online:true, call:false},
+  {name:'张伟',             initials:'张',color:'#E6F1FB',tc:'#185FA5',msg:'好的，没问题！',              time:'2h', badge:0,online:false,call:false},
+  {name:'Fatima Hassan',   initials:'FH',color:'#FAEEDA',tc:'#854F0B',msg:'Voice call · 5 min',         time:'3h', badge:0,online:true, call:true},
+  {name:'Carlos Mendez',   initials:'CM',color:'#EAF3DE',tc:'#3B6D11',msg:'See you at the meeting!',   time:'5h', badge:0,online:false,call:false},
+  {name:'Yuki Tanaka',     initials:'YT',color:'#FCEBEB',tc:'#A32D2D',msg:'ありがとう！',                time:'1d', badge:0,online:false,call:false},
+];
+
+/* ─────────── State ─────────── */
+let currentLang = 'bn';
+let currentStep = 1;
+
+/* ─────────── Translation helpers ─────────── */
+function t(key){ return (i18n[currentLang]||i18n.en)[key] || i18n.en[key] || key; }
+
+function changeLanguage(lang) {
+  currentLang = lang;
+  const dir = (i18n[lang]||i18n.en).dir;
+  document.documentElement.setAttribute('dir', dir);
+  applyTranslations();
+}
+
+function applyTranslations() {
+  const map = {
+    't-welcome':'welcome','t-enter-phone':'enterPhone','t-phone-label':'phoneLabel',
+    't-continue-btn':'continueBtn','t-or':'or',
+    't-back':'back','t-back2':'back',
+    't-verify-title':'verifyTitle','t-otp-sent':'otpSent','t-verify-btn':'verifyBtn',
+    't-no-code':'noCode','t-resend':'resend',
+    't-profile-title':'profileTitle','t-profile-sub':'profileSub',
+    't-name-label':'nameLabel','t-username-label':'usernameLabel','t-finish-btn':'finishBtn',
+    't-messages':'messages','t-tab-all':'tabAll','t-tab-calls':'tabCalls','t-tab-groups':'tabGroups',
+    't-select-country':'selectCountry'
+  };
+  for (const [id, key] of Object.entries(map)) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = t(key);
+  }
+  // Placeholders
+  const ph = {
+    't-phone-input':'phonePh','t-name-input':'namePh','t-username-input':'usernamePh',
+    'country-search':'searchPh'
+  };
+  for (const [id, key] of Object.entries(ph)) {
+    const el = document.getElementById(id);
+    if (el) el.placeholder = t(key);
+  }
+  renderContacts();
+}
+
+/* ─────────── Step navigation ─────────── */
+function goStep(n) {
+  document.getElementById('step'+currentStep).classList.remove('active');
+  document.getElementById('dot'+currentStep).classList.remove('active');
+  currentStep = n;
+  document.getElementById('step'+n).classList.add('active');
+  document.getElementById('dot'+n).classList.add('active');
+}
+
+/* ─────────── Screen navigation ─────────── */
+function showApp() {
+  document.getElementById('login-screen').classList.remove('active');
+  document.getElementById('app-screen').classList.add('active');
+  renderContacts();
+}
+function showLogin() {
+  document.getElementById('app-screen').classList.remove('active');
+  document.getElementById('login-screen').classList.add('active');
+}
+
+/* ─────────── Country picker ─────────── */
+function openCountryPicker() {
+  renderCountryList(countries);
+  document.getElementById('country-modal').classList.add('active');
+}
+function closeCountryPicker(e) {
+  if (!e || e.target === document.getElementById('country-modal'))
+    document.getElementById('country-modal').classList.remove('active');
+}
+function renderCountryList(list) {
+  document.getElementById('country-list').innerHTML = list.map(c => `
+    <div class="country-option" onclick="selectCountry('${c.flag}','${c.code}')">
+      <span class="flag">${c.flag}</span>
+      <span class="name">${c.name}</span>
+      <span class="dial">${c.code}</span>
+    </div>`).join('');
+}
+function filterCountries(q) {
+  const f = countries.filter(c =>
+    c.name.toLowerCase().includes(q.toLowerCase()) || c.code.includes(q)
+  );
+  renderCountryList(f);
+}
+function selectCountry(flag, code) {
+  document.getElementById('selected-flag').textContent = flag;
+  document.getElementById('selected-code').textContent = code;
+  document.getElementById('country-modal').classList.remove('active');
+  document.getElementById('country-search').value = '';
+  renderCountryList(countries);
+}
+
+/* ─────────── Contacts list ─────────── */
+function renderContacts() {
+  const cl = document.getElementById('chat-list');
+  if (!cl) return;
+  cl.innerHTML = contacts.map(c => `
+    <div class="chat-item">
+      <div class="ci-avatar" style="background:${c.color};color:${c.tc}">
+        ${c.initials}
+        ${c.online ? '<div class="online-dot"></div>' : ''}
+      </div>
+      <div class="ci-info">
+        <div class="ci-name">${c.name}</div>
+        <div class="ci-msg">${c.call ? '📞 ' + c.msg : c.msg}</div>
+      </div>
+      <div class="ci-meta">
+        <div class="ci-time">${c.time}</div>
+        ${c.badge ? `<div class="ci-badge">${c.badge}</div>` : ''}
+      </div>
+    </div>`).join('');
+}
+
+/* ─────────── OTP auto-advance ─────────── */
+document.querySelectorAll('.otp-input').forEach((inp, i, all) => {
+  inp.addEventListener('input', () => { if (inp.value && i < all.length - 1) all[i+1].focus(); });
+  inp.addEventListener('keydown', e => { if (e.key === 'Backspace' && !inp.value && i > 0) all[i-1].focus(); });
+});
+
+/* ─────────── Init ─────────── */
+renderCountryList(countries);
+changeLanguage('bn');
+</script>
+</body>
+</html>

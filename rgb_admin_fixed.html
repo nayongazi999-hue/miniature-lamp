@@ -992,36 +992,3 @@ async function save(type) {
   }
 }
 
-document.getElementById('btnVerbSave').onclick = () => save('verb');
-document.getElementById('btnNounSave').onclick = () => save('noun');
-
-// ========================
-// অ্যানাউন্সমেন্ট
-// ========================
-document.getElementById('btnNoticeUpdate').onclick = async () => {
-  const msg = document.getElementById('noticeInput').value.trim();
-  if (!msg) { alert("নোটিশ লিখুন!"); return; }
-  try {
-    await setDoc(doc(db, "admin_settings", "announcement"), { message: msg, active: true });
-    alert("✅ অ্যানাউন্সমেন্ট লাইভ হয়েছে!");
-  } catch(e) { alert(e.message); }
-};
-
-document.getElementById('btnNoticeDisable').onclick = async () => {
-  try {
-    await setDoc(doc(db, "admin_settings", "announcement"), { active: false }, { merge: true });
-    alert("নোটিশ বন্ধ করা হয়েছে।");
-  } catch(e) { alert(e.message); }
-};
-
-// ========================
-// পেজ লোড হলে অটো-চেক
-// ========================
-window.addEventListener('load', async () => {
-  await checkProgress();
-  renderPreview();
-});
-
-</script>
-</body>
-</html>

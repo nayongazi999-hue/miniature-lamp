@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RGB শিক্ষার্থী প্যানেল</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a0a0a; color: white; padding: 15px; min-height: 100vh; }
+.container { max-width: 1100px; margin: auto; }
+.header { background: #1a1a1a; padding: 20px; border-radius: 15px; margin-bottom: 20px; border: 2px solid cyan; box-shadow: 0 0 15px rgba(0,255,255,0.2); display: flex; justify-content: space-between; align-items: center; transition: 0.5s; }
+@media (max-width: 700px) { .header { flex-direction: column; gap: 15px; } .grid-2 { grid-template-columns: 1fr !important; } .quiz-options { grid-template-columns: 1fr !important; } }
+.admin-clock { width: 100px; height: 100px; border-radius: 50%; background: #000; border: 3px solid cyan; display: flex; flex-direction: column; justify-content: center; align-items: center; box-shadow: 0 0 20px cyan; transition: 0.5s; flex-shrink: 0; }
+.admin-clock .time { font-size: 16px; font-weight: bold; }
+.admin-clock .day { font-size: 10px; opacity: 0.6; }
+.user-tracker-box { display: flex; gap: 20px; background: #000; padding: 10px 20px; border-radius: 30px; border: 1px solid #333; margin-top: 10px; width: fit-content; }
+.status-group { display: flex; align-items: center; gap: 8px; font-weight: bold; font-size: 14px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.dot-online { background: #00ff66; box-shadow: 0 0 12px #00ff66; animation: pulse 2s infinite; }
+.dot-offline { background: #ff3333; box-shadow: 0 0 12px #ff3333; }
+@keyframes pulse { 0% { transform: scale(0.95); } 70% { transform: scale(1.1); } 100% { transform: scale(0.95); } }
+.card { background: #1a1a1a; padding: 20px; border-radius: 15px; margin-bottom: 20px; border: 2px solid cyan; box-shadow: 0 0 15px rgba(0,255,255,0.2); transition: 0.5s; }
+.card h3 { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; font-size: 18px; }
+.announcement-banner { display: none; background: linear-gradient(135deg, #1e0a4e, #0d0d0d); border: 2px solid #8b5cf6; border-radius: 15px; padding: 18px 24px; margin-bottom: 20px; transition: 0.5s; animation: glowPulse 3s infinite; }
+@keyframes glowPulse { 0%,100% { box-shadow: 0 0 15px rgba(139,92,246,0.3); } 50% { box-shadow: 0 0 30px rgba(139,92,246,0.6); } }
+.stats-row { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
+.stat-box { flex: 1; min-width: 80px; background: #1a1a1a; border: 2px solid #333; border-radius: 12px; padding: 15px; text-align: center; transition: 0.5s; }
+.stat-num { font-size: 28px; font-weight: 700; }
+.stat-label { font-size: 12px; color: #888; margin-top: 4px; }
+.date-bar { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
+.date-bar input[type="date"] { background: #222; color: white; padding: 10px 14px; border: 2px solid #444; border-radius: 10px; font-size: 14px; outline: none; cursor: pointer; transition: 0.3s; font-family: inherit; }
+.btn-load { padding: 10px 22px; border: none; border-radius: 10px; background: #0e7490; color: white; font-weight: bold; cursor: pointer; font-size: 14px; transition: 0.3s; display: flex; align-items: center; gap: 8px; font-family: inherit; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+.word-list { display: flex; flex-direction: column; gap: 10px; }
+.word-item { background: #111; border: 1px solid #333; border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; transition: 0.3s; position: relative; overflow: hidden; }
+.word-item::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: cyan; border-radius: 4px 0 0 4px; transition: 0.3s; }
+.word-item:hover { background: #1a1a1a; border-color: #555; }
+.word-item.memorized { background: #0a1f0f; border-color: #166534; }
+.word-item.memorized::before { background: #22c55e; }
+.word-num { width: 28px; height: 28px; border-radius: 50%; background: #222; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; color: #888; flex-shrink: 0; border: 1px solid #444; transition: 0.3s; }
+.word-arabic { font-size: 22px; font-weight: 700; direction: rtl; color: #ffd700; flex: 1; text-align: right; font-family: 'Traditional Arabic', serif; }
+.word-details { flex: 1.5; }
+.word-pronunciation { font-size: 12px; color: #888; margin-bottom: 2px; }
+.word-meaning { font-size: 14px; font-weight: 600; color: #e2e8f0; }
+.btn-memorize { padding: 6px 14px; border: 1px solid #444; border-radius: 8px; background: #222; color: #888; font-size: 12px; cursor: pointer; font-weight: 600; transition: 0.3s; flex-shrink: 0; font-family: inherit; }
+.word-item.memorized .btn-memorize { background: #166534; color: #4ade80; border-color: #22c55e; }
+.progress-label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 8px; color: #aaa; }
+.progress-bar-bg { background: #222; border-radius: 10px; height: 10px; overflow: hidden; }
+.progress-bar-fill { height: 100%; background: linear-gradient(90deg, #00ff66, #0ea5e9); border-radius: 10px; transition: width 0.6s ease; box-shadow: 0 0 8px rgba(0,255,102,0.5); }
+.tab-row { margin-bottom: 12px; }
+.tab-row-wrap { display: flex; overflow-x: auto; gap: 8px; padding-bottom: 6px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.tab-row-wrap::-webkit-scrollbar { display: none; }
+.tab-row-title { font-size: 11px; color: #555; margin-bottom: 6px; letter-spacing: 1px; }
+.tab-btn { flex: 0 0 auto; min-width: 80px; padding: 10px 12px; border: 2px solid #333; border-radius: 12px; background: #111; color: #888; font-size: 12px; font-weight: 600; cursor: pointer; transition: 0.3s; font-family: inherit; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.tab-btn .t-ico { font-size: 22px; }
+.tab-btn.active { color: white; }
+#tab1.active { background:#061e28; border-color:#00e5ff; color:#00e5ff; box-shadow:0 0 12px rgba(0,229,255,0.4); }
+#tab2.active { background:#180a38; border-color:#a855f7; color:#a855f7; box-shadow:0 0 12px rgba(168,85,247,0.4); }
+#tab3.active { background:#221200; border-color:#f59e0b; color:#f59e0b; box-shadow:0 0 12px rgba(245,158,11,0.4); }
+#tab4.active { background:#042010; border-color:#22c55e; color:#22c55e; box-shadow:0 0 12px rgba(34,197,94,0.4); }
+#tab5.active { background:#280818; border-color:#ec4899; color:#ec4899; box-shadow:0 0 12px rgba(236,72,153,0.4); }
+#tab6.active { background:#031c18; border-color:#00c9a7; color:#00c9a7; box-shadow:0 0 12px rgba(0,201,167,0.4); }
+#tab7.active { background:#03122e; border-color:#60a5fa; color:#60a5fa; box-shadow:0 0 12px rgba(96,165,250,0.4); }
+
+/* কুইজ স্টাইল */
+.quiz-question { background: #111; border-radius: 15px; padding: 30px; text-align: center; margin-bottom: 20px; border: 1px solid #333; }
+.quiz-arabic { font-size: 42px; font-weight: 700; direction: rtl; margin-bottom: 10px; color: #ffd700; font-family: 'Traditional Arabic', serif; }
+.quiz-pronunciation { font-size: 14px; color: #888; margin-bottom: 5px; }
+.quiz-type-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-top: 8px; }
+.quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+.quiz-option { padding: 16px; border: 2px solid #333; border-radius: 12px; background: #111; color: white; font-size: 15px; font-weight: 600; cursor: pointer; transition: 0.2s; font-family: inherit; text-align: center; }
+.quiz-option:hover:not(:disabled) { border-color: cyan; background: #1a1a1a; transform: translateY(-2px); }
+.quiz-option.correct { border-color: #22c55e !important; background: #0a1f0f !important; color: #4ade80 !important; }
+.quiz-option.wrong { border-color: #ef4444 !important; background: #1f0a0a !important; color: #f87171 !important; }
+.btn-next { width: 100%; padding: 14px; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 16px; font-family: inherit; transition: 0.3s; margin-top: 15px; background: #1e3a5f; color: white; display: none; }
+.quiz-score-bar { display: flex; justify-content: space-between; align-items: center; background: #111; border-radius: 10px; padding: 12px 20px; margin-bottom: 15px; border: 1px solid #333; font-size: 14px; }
+.streak-badge { background: #7c3aed; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; }
+
+/* লিডারবোর্ড */
+.leaderboard-item { display: flex; align-items: center; gap: 12px; padding: 12px; background: #111; border-radius: 10px; margin-bottom: 8px; border: 1px solid #333; }
+.rank-badge { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; }
+.rank-1 { background: #fbbf24; color: #000; }
+.rank-2 { background: #9ca3af; color: #000; }
+.rank-3 { background: #b45309; color: #fff; }
+.rank-other { background: #333; color: #aaa; }
+
+/* স্ট্রিক ক্যালেন্ডার */
+.streak-grid { display: flex; gap: 4px; flex-wrap: wrap; }
+.streak-day { width: 28px; height: 28px; border-radius: 6px; background: #222; border: 1px solid #333; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #555; }
+.streak-day.active { background: #22c55e; border-color: #16a34a; color: #fff; }
+.streak-day.today { border: 2px solid cyan; }
+
+.loading-state { text-align: center; padding: 40px 20px; color: #666; }
+
+/* নোটিফিকেশন স্টাইল */
+.notif-popup {
+  position: fixed; top: 20px; right: 15px; left: 15px; z-index: 9999;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 2px solid cyan; border-radius: 15px; padding: 15px 18px;
+  box-shadow: 0 0 30px rgba(0,255,255,0.4);
+  display: none; animation: slideDown 0.4s ease;
+  max-width: 400px; margin: 0 auto;
+}
+@keyframes slideDown { from { transform: translateY(-100px); opacity:0; } to { transform: translateY(0); opacity:1; } }
+.notif-popup-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.notif-popup-title { font-weight: bold; font-size: 14px; color: cyan; display: flex; align-items: center; gap: 8px; }
+.notif-popup-close { background: none; border: none; color: #888; font-size: 18px; cursor: pointer; padding: 0; }
+.notif-popup-body { font-size: 14px; color: #e2e8f0; line-height: 1.6; }
+
+/* নোটিফিকেশন পারমিশন বাটন */
+.notif-allow-bar {
+  background: linear-gradient(135deg, #0a1628, #1a0a2e);
+  border: 1px solid #7c3aed; border-radius: 12px; padding: 12px 16px;
+  margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; flex-wrap: wrap;
+}
+.notif-allow-text { font-size: 13px; color: #a78bfa; display: flex; align-items: center; gap: 8px; }
+.notif-allow-btn { padding: 8px 16px; border: none; border-radius: 8px; background: #7c3aed; color: white; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; white-space: nowrap; }
+.feedback-tag { padding: 7px 14px; border: 1px solid #444; border-radius: 20px; background: #222; color: #888; font-size: 13px; cursor: pointer; font-family: inherit; transition: 0.2s; }
+.feedback-tag.active { background: #0e7490; color: white; border-color: cyan; }
+.feedback-item { background: #111; border: 1px solid #333; border-radius: 12px; padding: 14px; margin-bottom: 10px; }
+.feedback-item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom:8px; }
+.feedback-item-name { font-weight: bold; font-size: 14px; color: #22d3ee; }
+.feedback-item-tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; background: #1e3a5f; color: #60a5fa; }
+.feedback-item-text { font-size: 14px; color: #e2e8f0; line-height: 1.6; }
+.feedback-item-date { font-size: 11px; color: #555; margin-top: 6px; }
+.loading-spinner { width: 40px; height: 40px; border-radius: 50%; border: 3px solid #333; border-top-color: cyan; animation: spin 0.8s linear infinite; margin: 0 auto 15px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.empty-state { text-align: center; padding: 40px 20px; color: #555; }
+
+/* নাম ইনপুট মোডাল */
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); z-index: 999; align-items: center; justify-content: center; }
+.modal-overlay.show { display: flex; }
+.modal-box { background: #1a1a1a; border: 2px solid cyan; border-radius: 20px; padding: 35px; text-align: center; max-width: 340px; width: 90%; }
+.modal-box h2 { margin-bottom: 8px; font-size: 22px; }
+.modal-box p { color: #888; font-size: 14px; margin-bottom: 20px; }
+.modal-input { width: 100%; padding: 12px; background: #222; border: 2px solid #444; border-radius: 10px; color: white; font-size: 16px; outline: none; font-family: inherit; margin-bottom: 15px; }
+.modal-input:focus { border-color: cyan; }
+.modal-btn { width: 100%; padding: 14px; border: none; border-radius: 10px; background: #0e7490; color: white; font-size: 16px; font-weight: bold; cursor: pointer; font-family: inherit; }
+
+/* ===== NOTIFICATION BELL ===== */
+.npb-wrap { position: relative; display: inline-flex; align-items: center; }
+.npb-btn { position: relative; background: rgba(0,255,255,0.1); border: 2px solid rgba(0,255,255,0.4); border-radius: 50%; width: 46px; height: 46px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 20px; transition: 0.3s; flex-shrink: 0; }
+.npb-btn:hover { background: rgba(0,255,255,0.25); box-shadow: 0 0 15px rgba(0,255,255,0.5); }
+.npb-badge { position: absolute; top: 2px; right: 2px; background: #e24b4a; color: #fff; font-size: 9px; font-weight: 700; min-width: 16px; height: 16px; border-radius: 8px; display: flex; align-items: center; justify-content: center; border: 2px solid #0a0a0a; padding: 0 2px; animation: npbPulse 2s infinite; }
+.npb-badge.hide { display: none; }
+@keyframes npbPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.25); } }
+.npb-panel { position: fixed; top: 65px; left: 10px; right: 10px; width: auto; background: #1a1a1a; border: 2px solid cyan; border-radius: 14px; box-shadow: 0 0 30px rgba(0,255,255,0.25); overflow: hidden; display: none; z-index: 99999; animation: npbSlide .2s ease; }
+.npb-panel.open { display: block; }
+@keyframes npbSlide { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+.npb-hd { background: linear-gradient(135deg, #0a0a2e, #1a1a3e); padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(0,255,255,0.2); }
+.npb-hd-t { color: cyan; font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+.npb-mall { background: rgba(0,255,255,0.1); border: 1px solid rgba(0,255,255,0.3); color: cyan; font-size: 11px; padding: 3px 10px; border-radius: 20px; cursor: pointer; font-family: inherit; transition: 0.2s; }
+.npb-mall:hover { background: rgba(0,255,255,0.2); }
+.npb-list { max-height: 280px; overflow-y: auto; }
+.npb-list::-webkit-scrollbar { width: 4px; }
+.npb-list::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+.npb-itm { padding: 11px 13px; display: flex; gap: 9px; border-bottom: 1px solid #222; cursor: pointer; transition: 0.15s; }
+.npb-itm:hover { background: #222; }
+.npb-itm.unread { background: #0a0a1f; border-left: 3px solid cyan; }
+.npb-ico { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.npb-bd { flex: 1; min-width: 0; }
+.npb-ttl { font-size: 12px; font-weight: 700; color: #e2e8f0; margin-bottom: 2px; }
+.npb-dsc { font-size: 11px; color: #888; line-height: 1.4; }
+.npb-tm { font-size: 10px; color: #555; flex-shrink: 0; padding-top: 2px; }
+.npb-empty { padding: 24px; text-align: center; color: #555; font-size: 12px; }
+.npb-push { padding: 10px 13px; background: #111; border-top: 1px solid #222; display: flex; align-items: center; justify-content: space-between; }
+.npb-push-lbl { font-size: 12px; color: #888; }
+.npb-tog { position: relative; width: 40px; height: 21px; flex-shrink: 0; }
+.npb-tog input { opacity: 0; width: 0; height: 0; }
+.npb-sld { position: absolute; cursor: pointer; inset: 0; background: #333; border-radius: 21px; transition: .25s; }
+.npb-sld:before { content: ''; position: absolute; width: 15px; height: 15px; left: 3px; bottom: 3px; background: #888; border-radius: 50%; transition: .25s; }
+.npb-tog input:checked + .npb-sld { background: #0e7490; }
+.npb-tog input:checked + .npb-sld:before { transform: translateX(19px); background: #fff; }
+.npb-ov { position: fixed; inset: 0; z-index: 99998; display: none; }
+.npb-ov.on { display: block; }
+.npb-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(50px); background: #1a1a1a; color: cyan; border: 1px solid cyan; padding: 9px 18px; border-radius: 28px; font-size: 13px; z-index: 999999; transition: all .28s; opacity: 0; pointer-events: none; white-space: nowrap; box-shadow: 0 0 15px rgba(0,255,255,0.3); }
+.npb-toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+</style>
+</head>
+<body>
+
+<!-- আতশবাজি ক্যানভাস -->
+<canvas id="fireworksCanvas" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999;pointer-events:none;"></canvas>
+
+<!-- নাম ইনপুট মোডাল -->
+<div class="modal-overlay show" id="nameModal">
+  <div class="modal-box">
+    <div style="font-size:50px; margin-bottom:10px;">🎓</div>
+    <h2>স্বাগতম!</h2>
+    <p>শুরু করতে আপনার নাম লিখুন</p>
+    <input class="modal-input" id="userName" type="text" placeholder="আপনার নাম লিখুন...">
+    <button class="modal-btn" onclick="startApp()">শুরু করি <i class="fas fa-arrow-right"></i></button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- হেডার -->
+  <div class="header dynamic-border">
+    <div style="flex:1;">
+      <div style="margin-bottom:6px; font-size:13px; color:#888;">স্বাগতম, <span id="displayName" style="color:#00ff66; font-weight:bold;">শিক্ষার্থী</span>!</div>
+      <div style="margin-bottom:8px; font-weight:bold; font-size:15px; color:#00ff66;">
+        <i class="fas fa-users"></i> মোট শিক্ষার্থী: <span id="totalUsersCount">0</span> জন
+      </div>
+      <div style="font-size:20px; font-weight:700; display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+        <i class="fas fa-graduation-cap"></i> RGB শিক্ষার্থী প্যানেল
+      </div>
+      <div class="user-tracker-box">
+        <div class="status-group"><span class="dot dot-online"></span> অনলাইন: <span id="onlineCount" style="color:#00ff66;">0</span> জন</div>
+        <div class="status-group"><span class="dot dot-offline"></span> অফলাইন: <span id="offlineCount" style="color:#ff3333;">0</span> জন</div>
+      </div>
+    </div>
+
+    <!-- NOTIFICATION BELL -->
+    <div class="npb-wrap" style="margin-right: 12px;">
+      <button class="npb-btn" onclick="npbToggle()" title="নোটিফিকেশন">
+        <i class="fas fa-bell"></i>
+        <span class="npb-badge" id="npbBadge">3</span>
+      </button>
+      <div class="npb-panel" id="npbPanel">
+        <div class="npb-hd">
+          <span class="npb-hd-t"><i class="fas fa-bell"></i> নোটিফিকেশন</span>
+          <button class="npb-mall" onclick="npbMarkAll()">সব পড়া হয়েছে</button>
+        </div>
+        <div class="npb-list" id="npbListEl"></div>
+        <div class="npb-push">
+          <span class="npb-push-lbl"><i class="fas fa-mobile-alt"></i> Push Notification</span>
+          <label class="npb-tog"><input type="checkbox" id="npbPushChk" onchange="npbPushHandle(this)"><span class="npb-sld"></span></label>
+        </div>
+      </div>
+    </div>
+    <div class="npb-ov" id="npbOv" onclick="npbClose()"></div>
+    <div class="npb-toast" id="npbToastEl"></div>
+    <div class="admin-clock dynamic-border">
+      <div class="time" id="clockTime">00:00:00</div>
+      <div class="day" id="clockDay">---</div>
+    </div>
+  </div>
+
+  <!-- নোটিফিকেশন পপআপ -->
+  <div class="notif-popup" id="notifPopup">
+    <div class="notif-popup-header">
+      <div class="notif-popup-title"><i class="fas fa-bell"></i> RGB শিক্ষা</div>
+      <button class="notif-popup-close" onclick="closeNotifPopup()">✕</button>
+    </div>
+    <div class="notif-popup-body" id="notifPopupBody"></div>
+  </div>
+
+  <!-- নোটিফিকেশন পারমিশন বার -->
+  <div class="notif-allow-bar" id="notifAllowBar" style="display:none;">
+    <div class="notif-allow-text"><i class="fas fa-bell"></i> নতুন শব্দের নোটিফিকেশন পেতে চান?</div>
+    <button class="notif-allow-btn" onclick="requestNotifPermission()">🔔 চালু করুন</button>
+  </div>
+
+  <!-- অ্যানাউন্সমেন্ট -->
+  <div class="announcement-banner dynamic-border" id="announcementBanner">
+    <div style="display:flex; align-items:flex-start; gap:10px;">
+      <span style="font-size:22px; animation: bounce 1s infinite;">📢</span>
+      <div>
+        <div style="font-weight:700; font-size:14px; color:#a78bfa; margin-bottom:6px;">অ্যাডমিন নোটিশ</div>
+        <div id="announcementText" style="font-size:15px; line-height:1.7; color:#e2d9f3;"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- স্ট্যাটস -->
+  <div class="stats-row">
+    <div class="stat-box dynamic-border"><div class="stat-num" id="statTotal" style="color:cyan;">0</div><div class="stat-label"><i class="fas fa-book"></i> আজকের শব্দ</div></div>
+    <div class="stat-box dynamic-border"><div class="stat-num" id="statVerbs" style="color:#f59e0b;">0</div><div class="stat-label"><i class="fas fa-layer-group"></i> ক্রিয়া</div></div>
+    <div class="stat-box dynamic-border"><div class="stat-num" id="statNouns" style="color:#ec4899;">0</div><div class="stat-label"><i class="fas fa-shapes"></i> নাউন</div></div>
+    <div class="stat-box dynamic-border"><div class="stat-num" id="statMemorized" style="color:#22c55e;">0</div><div class="stat-label"><i class="fas fa-check-circle"></i> মুখস্থ</div></div>
+    <div class="stat-box dynamic-border"><div class="stat-num" id="statStreak" style="color:#f59e0b;">0</div><div class="stat-label"><i class="fas fa-fire"></i> দিনের ধারা</div></div>
+  </div>
+
+  <!-- তারিখ বার -->
+  <div class="date-bar">
+    <input type="date" id="taskDate">
+    <button class="btn-load" onclick="loadByDate()"><i class="fas fa-search"></i> লোড করুন</button>
+    <button class="btn-load" onclick="loadToday()" style="background:#7c3aed;"><i class="fas fa-calendar-day"></i> আজকের শব্দ</button>
+  </div>
+
+  <!-- ট্যাব -->
+  <div class="tab-row">
+    <div class="tab-row-title">📚 শেখার প্যানেল</div>
+    <div class="tab-row-wrap">
+      <button class="tab-btn active" id="tab1" onclick="switchTab('words')"><span class="t-ico">📖</span>শব্দ তালিকা</button>
+      <button class="tab-btn" id="tab2" onclick="switchTab('quiz')"><span class="t-ico">🧠</span>কুইজ</button>
+      <button class="tab-btn" id="tab3" onclick="switchTab('streak')"><span class="t-ico">🔥</span>স্ট্রিক</button>
+      <button class="tab-btn" id="tab4" onclick="switchTab('board')"><span class="t-ico">🏆</span>র‍্যাংকিং</button>
+    </div>
+    <div class="tab-row-title">🌙 আরও প্যানেল</div>
+    <div class="tab-row-wrap">
+      <button class="tab-btn" id="tab5" onclick="switchTab('feedback')"><span class="t-ico">💬</span>মতামত</button>
+      <button class="tab-btn" id="tab6" onclick="switchTab('archive')"><span class="t-ico">🕐</span>পুরনো কুইজ</button>
+      <button class="tab-btn" id="tab7" onclick="switchTab('hadith')"><span class="t-ico">📖</span>হাদিস ও কোরআন</button>
+    </div>
+  </div>
+
+  <!-- শব্দ তালিকা -->
+  <div id="viewWords">
+    <div class="card dynamic-border" id="progressCard" style="display:none; padding:15px 20px;">
+      <div class="progress-label"><span>মুখস্থের অগ্রগতি</span><span id="progressText">0 / 0</span></div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+    </div>
+    <div class="grid-2">
+      <div class="card dynamic-border">
+        <h3><i class="fas fa-layer-group" style="color:#f59e0b;"></i> ক্রিয়া (Verbs)</h3>
+        <div id="verbList" class="word-list"><div class="loading-state"><div class="loading-spinner"></div><div>লোড হচ্ছে...</div></div></div>
+      </div>
+      <div class="card dynamic-border">
+        <h3><i class="fas fa-shapes" style="color:#ec4899;"></i> নাউন (Nouns)</h3>
+        <div id="nounList" class="word-list"><div class="loading-state"><div class="loading-spinner"></div><div>লোড হচ্ছে...</div></div></div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-bottom:20px;">
+      <button class="btn-load" onclick="switchTab('quiz')" style="background:#7c3aed; padding:14px 30px; font-size:15px;">
+        <i class="fas fa-play"></i> কুইজ শুরু করুন
+      </button>
+    </div>
+  </div>
+
+  <!-- কুইজ -->
+  <div id="viewQuiz" style="display:none;">
+    <div class="card dynamic-border" id="quizCard">
+      <h3><i class="fas fa-brain" style="color:#f59e0b;"></i> দৈনিক কুইজ</h3>
+      <div class="quiz-score-bar">
+        <div>প্রশ্ন: <strong id="qIndex">0</strong> / <strong id="qTotal">0</strong></div>
+        <div class="streak-badge">🔥 স্কোর: <span id="qScore">0</span></div>
+        <div style="color:#888; font-size:13px;">সেরা: <span id="qBest" style="color:#fbbf24;">0</span></div>
+      </div>
+      <div class="quiz-question">
+        <div class="quiz-arabic" id="qArabic">–</div>
+        <div class="quiz-pronunciation" id="qPron"></div>
+        <span class="quiz-type-badge" id="qTypeBadge"></span>
+      </div>
+      <div class="quiz-options" id="quizOptions"></div>
+      <button class="btn-next" id="btnNextQ" onclick="nextQuestion()">পরের প্রশ্ন <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="empty-state" id="quizEmpty" style="display:none;">
+      <i class="fas fa-exclamation-circle" style="font-size:48px; color:#444; display:block; margin-bottom:15px;"></i>
+      <div style="font-size:16px; margin-bottom:8px;">শব্দ পাওয়া যায়নি</div>
+      <div style="font-size:13px;">প্রথমে শব্দ তালিকা থেকে শব্দ লোড করুন</div>
+    </div>
+  </div>
+
+  <!-- স্ট্রিক ক্যালেন্ডার -->
+  <div id="viewStreak" style="display:none;">
+    <div class="card dynamic-border">
+      <h3><i class="fas fa-fire" style="color:#f59e0b;"></i> আমার পড়ার ধারা</h3>
+      <div style="text-align:center; margin-bottom:20px;">
+        <div style="font-size:60px; font-weight:700; color:#f59e0b;" id="streakNum">0</div>
+        <div style="color:#888; font-size:14px;">দিন ধরে পড়ছেন</div>
+      </div>
+      <div style="margin-bottom:15px; color:#aaa; font-size:13px;">গত ৩০ দিন:</div>
+      <div class="streak-grid" id="streakGrid"></div>
+      <div style="margin-top:20px; display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:#888;"><div style="width:16px;height:16px;background:#22c55e;border-radius:4px;"></div> পড়েছেন</div>
+        <div style="display:flex; align-items:center; gap:6px; font-size:13px; color:#888;"><div style="width:16px;height:16px;background:#222;border-radius:4px;border:1px solid #333;"></div> পড়েননি</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- পুরনো কুইজ আর্কাইভ -->
+  <div id="viewArchive" style="display:none;">
+    <div class="card dynamic-border">
+      <h3><i class="fas fa-history" style="color:#00c9a7;"></i> পুরনো কুইজ আর্কাইভ</h3>
+      <div style="font-size:13px; color:#888; margin-bottom:15px;">যেকোনো দিনের কুইজ বেছে নিয়ে আবার পড়ুন ও অনুশীলন করুন।</div>
+      <div id="archiveList"><div class="loading-state"><div class="loading-spinner"></div><div>লোড হচ্ছে...</div></div></div>
+    </div>
+
+    <!-- আর্কাইভ কুইজ প্লেয়ার -->
+    <div id="archiveQuizSection" style="display:none;">
+      <div class="card dynamic-border">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:15px;">
+          <h3 style="margin-bottom:0;"><i class="fas fa-brain" style="color:#f59e0b;"></i> <span id="archiveQuizTitle">কুইজ</span></h3>
+          <button onclick="closeArchiveQuiz()" style="background:#333; border:1px solid #555; color:#aaa; padding:6px 14px; border-radius:8px; cursor:pointer; font-family:inherit; font-size:13px;"><i class="fas fa-arrow-left"></i> ফিরে যান</button>
+        </div>
+        <div class="quiz-score-bar">
+          <div>প্রশ্ন: <strong id="aqIndex">0</strong> / <strong id="aqTotal">0</strong></div>
+          <div class="streak-badge">🔥 স্কোর: <span id="aqScore">0</span></div>
+        </div>
+        <div class="quiz-question">
+          <div class="quiz-arabic" id="aqArabic">–</div>
+          <div class="quiz-pronunciation" id="aqPron"></div>
+          <span class="quiz-type-badge" id="aqTypeBadge"></span>
+        </div>
+        <div class="quiz-options" id="archiveQuizOptions"></div>
+        <button class="btn-next" id="btnNextAQ" onclick="nextArchiveQuestion()">পরের প্রশ্ন <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- হাদিস ও কোরআন ভিউ -->
+  <div id="viewHadith" style="display:none;">
+    <div style="background:linear-gradient(135deg,#0a1a0a,#0a0a2e); border:2px solid #22d3ee; border-radius:15px; padding:20px; margin-bottom:20px; text-align:center;">
+      <div style="font-size:60px; margin-bottom:8px; line-height:1;">📖</div>
+      <div style="font-size:20px; font-weight:700; color:#22d3ee; margin-bottom:4px;">হাদিস ও কোরআন</div>
+      <div style="font-size:13px; color:#888;">প্রতিদিনের আপলোড করা হাদিস পড়ুন</div>
+    </div>
+    <div id="hadithViewList">
+      <div class="loading-state"><div class="loading-spinner"></div><div>লোড হচ্ছে...</div></div>
+    </div>
+  </div>
+
+  <!-- মতামত -->
+  <div id="viewFeedback" style="display:none;">
+    <div class="card dynamic-border">
+      <h3><i class="fas fa-comment-alt" style="color:#22d3ee;"></i> আপনার মতামত দিন</h3>
+      <div style="margin-bottom:15px;">
+        <label style="font-size:13px; color:#aaa; display:block; margin-bottom:8px;">বিষয় বেছে নিন:</label>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="feedback-tag active" onclick="selectTag(this,'সাধারণ মতামত')">💬 সাধারণ</button>
+          <button class="feedback-tag" onclick="selectTag(this,'প্রশংসা')">👍 প্রশংসা</button>
+          <button class="feedback-tag" onclick="selectTag(this,'সমস্যা')">⚠️ সমস্যা</button>
+          <button class="feedback-tag" onclick="selectTag(this,'পরামর্শ')">💡 পরামর্শ</button>
+          <button class="feedback-tag" onclick="selectTag(this,'প্রশ্ন')">❓ প্রশ্ন</button>
+        </div>
+      </div>
+      <div style="margin-bottom:15px;">
+        <label style="font-size:13px; color:#aaa; display:block; margin-bottom:8px;">রেটিং দিন:</label>
+        <div style="display:flex; gap:8px; font-size:28px;">
+          <span onclick="setRating(1)" class="star" id="star1" style="cursor:pointer; opacity:0.3;">⭐</span>
+          <span onclick="setRating(2)" class="star" id="star2" style="cursor:pointer; opacity:0.3;">⭐</span>
+          <span onclick="setRating(3)" class="star" id="star3" style="cursor:pointer; opacity:0.3;">⭐</span>
+          <span onclick="setRating(4)" class="star" id="star4" style="cursor:pointer; opacity:0.3;">⭐</span>
+          <span onclick="setRating(5)" class="star" id="star5" style="cursor:pointer; opacity:0.3;">⭐</span>
+        </div>
+        <div id="ratingText" style="font-size:13px; color:#888; margin-top:5px;">রেটিং দিন</div>
+      </div>
+      <div style="margin-bottom:15px;">
+        <label style="font-size:13px; color:#aaa; display:block; margin-bottom:8px;">আপনার মতামত লিখুন:</label>
+        <textarea id="feedbackText" placeholder="এখানে লিখুন..." style="width:100%; height:120px; background:#222; color:white; border:1px solid #444; border-radius:10px; padding:12px; font-size:14px; outline:none; resize:none; font-family:inherit; line-height:1.6;"></textarea>
+      </div>
+      <button onclick="submitFeedback()" style="width:100%; padding:14px; border:none; border-radius:12px; background:linear-gradient(135deg,#0e7490,#7c3aed); color:white; font-size:16px; font-weight:bold; cursor:pointer; font-family:inherit;">
+        <i class="fas fa-paper-plane"></i> মতামত পাঠান
+      </button>
+      <div id="feedbackMsg" style="display:none; margin-top:12px; padding:12px; border-radius:10px; text-align:center; font-weight:bold;"></div>
+    </div>
+
+    <!-- সব মতামত -->
+    <div class="card dynamic-border">
+      <h3><i class="fas fa-comments" style="color:#a78bfa;"></i> সবার মতামত</h3>
+      <div id="feedbackList"><div class="loading-state"><div class="loading-spinner"></div><div>লোড হচ্ছে...</div></div></div>
+    </div>
+  </div>
+
+  <!-- লিডারবোর্ড -->
+  <div id="viewBoard" style="display:none;">
+    <div class="card dynamic-border">
+      <h3><i class="fas fa-trophy" style="color:#fbbf24;"></i> সেরা শিক্ষার্থী র‍্যাংকিং</h3>
+      <div id="leaderboardList"><div class="loading-state"><div class="loading-spinner"></div><div>লোড হচ্ছে...</div></div></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script>
+firebase.initializeApp({
+  apiKey: "AIzaSyB6Ff_tfdoy3SX7-KRMurDBDsC8AzcTRK4",
+  authDomain: "qoraner-varb-200-3367a.firebaseapp.com",
+  projectId: "qoraner-varb-200-3367a",
+  storageBucket: "qoraner-varb-200-3367a.firebasestorage.app",
+  messagingSenderId: "26016266391",
+  appId: "1:26016266391:web:39c2c833060a83047551d2"
+});
+var db = firebase.firestore();
+
+// ---- STATE ----
+var allWords = [], memorized = new Set(JSON.parse(localStorage.getItem('rgb_mem')||'[]'));
+var quizWords = [], qIdx = 0, qScore = 0, qBest = parseInt(localStorage.getItem('rgb_best')||'0');
+var userName = localStorage.getItem('rgb_name') || '';
+var sessionId = 'sess_'+Math.random().toString(36).substr(2,9);
+var studyDates = JSON.parse(localStorage.getItem('rgb_dates')||'[]');
+
+// তারিখ
+var localNow = new Date();
+var todayStr = localNow.getFullYear()+'-'+String(localNow.getMonth()+1).padStart(2,'0')+'-'+String(localNow.getDate()).padStart(2,'0');
+document.getElementById('taskDate').value = todayStr;
+document.getElementById('qBest').innerText = qBest;
+
+// নাম মোডাল
+if(userName) {
+  document.getElementById('nameModal').classList.remove('show');
+  document.getElementById('displayName').innerText = userName;
+  init();
+}
+function startApp() {
+  var n = document.getElementById('userName').value.trim();
+  if(!n){alert('নাম লিখুন!');return;}
+  userName = n;
+  localStorage.setItem('rgb_name', n);
+  document.getElementById('nameModal').classList.remove('show');
+  document.getElementById('displayName').innerText = n;
+  init();
+}
+
+function init() {
+  markOnline();
+  trackUsers();
+  listenAnnouncement();
+  loadWords(todayStr);
+  markStudyToday();
+  buildStreakGrid();
+}
+
+// ---- ঘড়ি ----
+function updateClock() {
+  var now = new Date();
+  var hue = now.getSeconds()*6;
+  var color = 'hsl('+hue+',100%,50%)';
+  var glow = '0 0 20px hsl('+hue+',100%,30%)';
+  document.querySelectorAll('.dynamic-border').forEach(function(el){ el.style.borderColor=color; el.style.boxShadow=glow; });
+  document.getElementById('clockTime').innerText = now.toLocaleTimeString();
+  document.getElementById('clockTime').style.color = color;
+  document.getElementById('clockDay').innerText = now.toLocaleDateString('en-US',{weekday:'long'}).toUpperCase();
+  document.getElementById('clockDay').style.color = color;
+}
+setInterval(updateClock,1000); updateClock();
+
+// ---- অনলাইন ----
+function markOnline() {
+  db.collection('user_status').doc(sessionId).set({status:'online',name:userName,ts:firebase.firestore.FieldValue.serverTimestamp()});
+}
+function markOffline() {
+  db.collection('user_status').doc(sessionId).set({status:'offline',ts:firebase.firestore.FieldValue.serverTimestamp()});
+}
+window.addEventListener('beforeunload', markOffline);
+document.addEventListener('visibilitychange', function(){ document.hidden?markOffline():markOnline(); });
+
+function trackUsers() {
+  db.collection('user_status').onSnapshot(function(snap){
+    var on=0,off=0; snap.forEach(function(d){ d.data().status==='online'?on++:off++; });
+    document.getElementById('onlineCount').innerText=on;
+    document.getElementById('offlineCount').innerText=off;
+  });
+  db.collection('users').onSnapshot(function(snap){ document.getElementById('totalUsersCount').innerText=snap.size; });
+}
+
+// ---- অ্যানাউন্সমেন্ট ----
+function listenAnnouncement() {
+  db.collection('admin_settings').doc('announcement').onSnapshot(function(docSnap){
+    var banner=document.getElementById('announcementBanner');
+    if(docSnap.exists){ var d=docSnap.data(); if(d.active&&d.message){ document.getElementById('announcementText').innerText=d.message; banner.style.display='block'; } else banner.style.display='none'; }
+  });
+}
+
+// ---- দৈনিক হাদিস ----
+function loadTodayHadith() {
+  db.collection('daily_hadith').doc(todayStr).get().then(function(doc) {
+    if(!doc.exists) return;
+    var h = doc.data();
+    document.getElementById('hadithTitleEl').innerText = h.title || '';
+    document.getElementById('hadithDateEl').innerText = formatHadithDate(h.date || todayStr);
+    document.getElementById('hadithArabicEl').innerText = h.arabic || '';
+    document.getElementById('hadithBanglaEl').innerText = h.bangla || '';
+    var srcEl = document.getElementById('hadithSourceEl');
+    if(h.source) {
+      srcEl.innerHTML = '<i class="fas fa-book" style="color:#22d3ee;"></i> ' + h.source;
+    } else {
+      srcEl.style.display = 'none';
+    }
+    document.getElementById('hadithCard').style.display = 'block';
+  }).catch(function(){});
+}
+
+function formatHadithDate(dt) {
+  var p = dt.split('-');
+  if(p.length !== 3) return dt;
+  var d = new Date(parseInt(p[0]), parseInt(p[1])-1, parseInt(p[2]));
+  var months = ['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
+  return d.getDate() + ' ' + months[d.getMonth()] + ', ' + d.getFullYear();
+}
+
+var hadithViewLoaded = false;
+function loadHadithView() {
+  if(hadithViewLoaded) return;
+  hadithViewLoaded = true;
+  var el = document.getElementById('hadithViewList');
+  el.innerHTML = '<div class="loading-state"><div class="loading-spinner"></div><div>লোড হচ্ছে...</div></div>';
+  db.collection('daily_hadith').orderBy('ts','desc').get().then(function(snap) {
+    if(snap.empty) {
+      el.innerHTML = '<div class="empty-state"><div style="font-size:50px;margin-bottom:12px;">📖</div><div style="font-size:15px;color:#888;">এখনো কোনো হাদিস আপলোড হয়নি</div></div>';
+      return;
+    }
+    el.innerHTML = snap.docs.map(function(doc) {
+      var h = doc.data();
+      var isToday = h.date === todayStr;
+      var todayBadge = isToday
+        ? '<span style="background:#0e7490;color:#fff;font-size:11px;padding:3px 10px;border-radius:20px;margin-left:8px;font-weight:bold;">আজকের</span>'
+        : '';
+      return '<div style="background:#0d0d0d;border:1px solid #2a2a2a;border-left:4px solid '+(isToday?'#22d3ee':'#7c3aed')+';border-radius:15px;margin-bottom:20px;overflow:hidden;">' +
+
+        // হেডার
+        '<div style="background:'+(isToday?'linear-gradient(135deg,#0a1a2e,#051a10)':'#111')+';padding:14px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #222;">' +
+          '<span style="font-size:24px;">📖</span>' +
+          '<div style="flex:1;">' +
+            '<div style="font-size:11px;color:'+(isToday?'#22d3ee':'#a78bfa')+';font-weight:bold;margin-bottom:3px;">'+formatHadithDate(h.date||'')+'</div>' +
+            '<div style="font-size:15px;font-weight:700;color:#e2e8f0;">'+(h.title||'')+todayBadge+'</div>' +
+          '</div>' +
+        '</div>' +
+
+        // আরবি
+        '<div style="padding:18px 18px 10px;">' +
+          '<div style="font-family:\'Traditional Arabic\',serif;font-size:28px;direction:rtl;color:#ffd700;line-height:2.2;text-align:right;background:#0a0f0a;border-radius:12px;padding:16px 18px;border:1px solid #1a2a1a;margin-bottom:14px;">' +
+            (h.arabic||'') +
+          '</div>' +
+
+          // বাংলা
+          '<div style="font-size:15px;color:#e2e8f0;line-height:2;padding:14px 16px;background:#111;border-radius:12px;border-left:3px solid '+(isToday?'#22d3ee':'#7c3aed')+';margin-bottom:12px;">' +
+            (h.bangla||'').replace(/\n/g,'<br>') +
+          '</div>' +
+
+          // সোর্স
+          (h.source ? '<div style="font-size:12px;color:#888;display:flex;align-items:center;gap:6px;padding:8px 4px;"><i class="fas fa-book" style="color:#22d3ee;"></i> '+h.source+'</div>' : '') +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }).catch(function() {
+    el.innerHTML = '<div class="empty-state"><div>লোড করতে সমস্যা হয়েছে</div></div>';
+  });
+}
+
+// ---- শব্দ লোড ----
+function loadByDate() { var d=document.getElementById('taskDate').value; if(!d){alert('তারিখ দিন!');return;} loadWords(d); }
+function loadToday() { document.getElementById('taskDate').value=todayStr; loadWords(todayStr); }
+
+function loadWords(date) {
+  allWords=[];
+  var html='<div class="loading-state"><div class="loading-spinner"></div><div>লোড হচ্ছে...</div></div>';
+  document.getElementById('verbList').innerHTML=html; document.getElementById('nounList').innerHTML=html;
+  db.collection('daily_tasks').where('taskDate','==',date).get().then(function(snap){
+    snap.forEach(function(d){ allWords.push(Object.assign({id:d.id},d.data())); });
+    renderWords();
+  }).catch(function(){ var e='<div class="empty-state"><i class="fas fa-exclamation-triangle" style="color:#444;font-size:32px;display:block;margin-bottom:10px;"></i><div>লোড করতে সমস্যা হয়েছে</div></div>'; document.getElementById('verbList').innerHTML=e; document.getElementById('nounList').innerHTML=e; });
+}
+
+function renderWords() {
+  var verbs=allWords.filter(function(w){return w.type==='verb';}), nouns=allWords.filter(function(w){return w.type==='noun';});
+  document.getElementById('statTotal').innerText=allWords.length;
+  document.getElementById('statVerbs').innerText=verbs.length;
+  document.getElementById('statNouns').innerText=nouns.length;
+  updateMemStat(); renderList('verbList',verbs); renderList('nounList',nouns);
+  document.getElementById('progressCard').style.display=allWords.length>0?'block':'none';
+  updateProgress();
+}
+
+function renderList(id,words) {
+  var el=document.getElementById(id);
+  if(!words.length){ el.innerHTML='<div class="empty-state"><i class="fas fa-inbox" style="color:#333;font-size:32px;display:block;margin-bottom:10px;"></i><div style="font-size:14px;">এই তারিখে কোনো শব্দ নেই</div></div>'; return; }
+  el.innerHTML=words.map(function(w,i){
+    var mem=memorized.has(w.id);
+    var ns=mem?'background:#166534;color:#4ade80;border-color:#22c55e;':'';
+    var pr=w.pronunciation?'<div class="word-pronunciation"><i class="fas fa-volume-up" style="font-size:10px;"></i> '+w.pronunciation+'</div>':'';
+    var bh=mem?'<i class="fas fa-check"></i> মুখস্থ':'<i class="far fa-circle"></i> মুখস্থ';
+    var arEsc=w.arabic.replace(/'/g,"\\'");
+    var prEsc=(w.pronunciation||'').replace(/'/g,"\\'");
+    var bnEsc=w.meaning.replace(/'/g,"\\'");
+    return '<div class="word-item '+(mem?'memorized':'')+'" id="item-'+w.id+'">' +
+      '<div class="word-num" id="num-'+w.id+'" style="'+ns+'">'+(i+1)+'</div>' +
+      '<div style="flex:1;">' +
+        '<div class="word-arabic">'+w.arabic+'</div>' +
+        '<div class="word-details">'+pr+'<div class="word-meaning">'+w.meaning+'</div></div>' +
+        '<div id="tip-'+w.id+'" style="display:none; margin-top:8px; background:#1a1a2e; border-left:3px solid #f59e0b; padding:8px 12px; border-radius:0 8px 8px 0; font-size:13px; color:#fcd34d; line-height:1.6;"></div>' +
+      '</div>' +
+      '<div style="display:flex; flex-direction:column; gap:6px; flex-shrink:0;">' +
+        '<button class="btn-memorize" id="mbtn-'+w.id+'" onclick="toggleMem(\''+w.id+'\')">'+bh+'</button>' +
+        '<button class="btn-voice" onclick="speakArabic(\''+arEsc+'\',\''+prEsc+'\')" title="উচ্চারণ শুনুন" style="padding:6px 10px; border:1px solid #0e7490; border-radius:8px; background:#0c1a2e; color:#22d3ee; font-size:13px; cursor:pointer; display:flex; align-items:center; gap:4px; justify-content:center;"><i class="fas fa-volume-up"></i> শুনুন</button>' +
+        '<button class="btn-tip" onclick="getTip(\''+w.id+'\',\''+arEsc+'\',\''+bnEsc+'\')" title="মনে রাখার টিপস" style="padding:6px 10px; border:1px solid #7c3aed; border-radius:8px; background:#1a0a2e; color:#a78bfa; font-size:13px; cursor:pointer; display:flex; align-items:center; gap:4px; justify-content:center;"><i class="fas fa-lightbulb"></i> টিপস</button>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+// ---- ভয়েস ফাংশন ----
+// পেজ লোডে voices প্রি-লোড করুন
+var voicesLoaded = false;
+var arabicVoice = null;
+
+function preloadVoices() {
+  if(voicesLoaded) return;
+  var voices = window.speechSynthesis.getVoices();
+  if(voices.length > 0) {
+    voicesLoaded = true;
+    for(var i=0; i<voices.length; i++) {
+      if(voices[i].lang && voices[i].lang.toLowerCase().indexOf('ar') >= 0) {
+        arabicVoice = voices[i];
+        if(voices[i].lang === 'ar-SA') break;
+      }
+    }
+  }
+}
+
+// পেজ লোডেই voices লোড করুন
+if('speechSynthesis' in window) {
+  window.speechSynthesis.getVoices();
+  window.speechSynthesis.onvoiceschanged = preloadVoices;
+  setTimeout(preloadVoices, 200);
+  setTimeout(preloadVoices, 800);
+  setTimeout(preloadVoices, 2000);
+}
+
+// ===== আরবি ভয়েস — Google TTS + speechSynthesis fallback =====
+var ttsAudio = null;
+
+function speakArabic(arabic, pronunciation) {
+  // আগের audio বন্ধ করো
+  if(ttsAudio) { try { ttsAudio.pause(); ttsAudio.src=''; } catch(e){} ttsAudio = null; }
+  try { if(window.speechSynthesis) window.speechSynthesis.cancel(); } catch(e) {}
+
+  // Google Translate TTS দিয়ে আরবি পড়ো — সব ব্রাউজার ও WebView-এ কাজ করে
+  var encoded = encodeURIComponent(arabic);
+  var url = 'https://translate.google.com/translate_tts?ie=UTF-8&q=' + encoded + '&tl=ar&client=tw-ob';
+
+  ttsAudio = new Audio(url);
+  ttsAudio.volume = 1.0;
+
+  ttsAudio.oncanplaythrough = function() {
+    ttsAudio.play().catch(function() {
+      // Google TTS ব্লক হলে speechSynthesis দিয়ে চেষ্টা
+      tryBrowserTTS(arabic, pronunciation);
+    });
+  };
+
+  ttsAudio.onerror = function() {
+    // Google TTS কাজ না করলে browser TTS চেষ্টা
+    tryBrowserTTS(arabic, pronunciation);
+  };
+
+  // ৩ সেকেন্ডে লোড না হলে browser TTS চেষ্টা
+  var timeout = setTimeout(function() {
+    if(ttsAudio) { ttsAudio.src=''; ttsAudio=null; }
+    tryBrowserTTS(arabic, pronunciation);
+  }, 3000);
+
+  ttsAudio.oncanplaythrough = function() {
+    clearTimeout(timeout);
+    ttsAudio.play().catch(function() {
+      clearTimeout(timeout);
+      tryBrowserTTS(arabic, pronunciation);
+    });
+  };
+
+  ttsAudio.load();
+}
+
+function tryBrowserTTS(arabic, pronunciation) {
+  if(!('speechSynthesis' in window)) {
+    if(pronunciation) npbToast('উচ্চারণ: ' + pronunciation);
+    return;
+  }
+  try {
+    window.speechSynthesis.cancel();
+    var voices = window.speechSynthesis.getVoices();
+    var utter = new SpeechSynthesisUtterance(arabic);
+    utter.lang = 'ar-SA';
+    utter.rate = 0.7;
+    utter.pitch = 1;
+    utter.volume = 1;
+    var bestVoice = null;
+    for(var i = 0; i < voices.length; i++) {
+      var vl = voices[i].lang.toLowerCase();
+      if(vl === 'ar-sa') { bestVoice = voices[i]; break; }
+      if(vl.indexOf('ar') === 0 && !bestVoice) bestVoice = voices[i];
+    }
+    if(bestVoice) utter.voice = bestVoice;
+    utter.onerror = function() {
+      if(pronunciation) npbToast('উচ্চারণ: ' + pronunciation);
+    };
+    window.speechSynthesis.speak(utter);
+    var t = setInterval(function() {
+      if(window.speechSynthesis.paused) window.speechSynthesis.resume();
+      if(!window.speechSynthesis.speaking) clearInterval(t);
+    }, 100);
+  } catch(e) {
+    if(pronunciation) npbToast('উচ্চারণ: ' + pronunciation);
+  }
+}
+
+// ---- AI টিপস ফাংশন ----
+var tipsCache = {};
+function getTip(id, arabic, meaning) {
+  var tipDiv = document.getElementById('tip-'+id);
+  // আগে দেখানো থাকলে টগল করুন
+  if(tipDiv.style.display === 'block') { tipDiv.style.display='none'; return; }
+  // ক্যাশে থাকলে সরাসরি দেখান
+  if(tipsCache[id]) { tipDiv.innerHTML=tipsCache[id]; tipDiv.style.display='block'; return; }
+  // লোডিং দেখান
+  tipDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> AI টিপস তৈরি হচ্ছে...';
+  tipDiv.style.display = 'block';
+  // Claude API দিয়ে টিপস নিন
+  fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 200,
+      messages: [{
+        role: 'user',
+        content: 'আরবি শব্দ "'+arabic+'" এর অর্থ "'+meaning+'"। এই শব্দটি মনে রাখার জন্য একটি মজার বাংলা টিপস দাও। ২-৩ লাইনে, সহজ ভাষায়। শুধু টিপসটা দাও, অন্য কিছু না।'
+      }]
+    })
+  }).then(function(r){ return r.json(); }).then(function(data){
+    var tip = data.content && data.content[0] ? data.content[0].text : '';
+    if(tip) {
+      var html = '💡 <strong>মনে রাখার টিপস:</strong><br>' + tip;
+      tipsCache[id] = html;
+      tipDiv.innerHTML = html;
+    } else {
+      // API না হলে নিজে তৈরি টিপস
+      tipDiv.innerHTML = getLocalTip(arabic, meaning);
+      tipsCache[id] = tipDiv.innerHTML;
+    }
+  }).catch(function(){
+    // API কাজ না করলে নিজে তৈরি টিপস
+    tipDiv.innerHTML = getLocalTip(arabic, meaning);
+    tipsCache[id] = tipDiv.innerHTML;
+  });
+}
+
+function getLocalTip(arabic, meaning) {
+  var tips = [
+    '💡 <strong>মনে রাখার টিপস:</strong><br>শব্দটি বারবার লিখুন এবং অর্থ মনে মনে বলুন। ৫ বার লিখলেই মনে থাকবে!',
+    '💡 <strong>মনে রাখার টিপস:</strong><br>শব্দটি দিয়ে একটি ছোট বাক্য তৈরি করুন। নিজের জীবনের সাথে মিলিয়ে ভাবুন।',
+    '💡 <strong>মনে রাখার টিপস:</strong><br>ঘুমানোর আগে শব্দটি ৩ বার পড়ুন। সকালে উঠে আবার পড়ুন - মনে থাকবে।',
+    '💡 <strong>মনে রাখার টিপস:</strong><br>শব্দের উচ্চারণ মনে রাখুন। উচ্চারণ জানলে অর্থও মনে থাকে।',
+    '💡 <strong>মনে রাখার টিপস:</strong><br>শব্দটির সাথে একটি ছবি কল্পনা করুন। চোখ বন্ধ করে ছবিটা মনে করুন।'
+  ];
+  return tips[Math.floor(Math.random()*tips.length)];
+}
+
+function toggleMem(id) {
+  var item=document.getElementById('item-'+id), btn=document.getElementById('mbtn-'+id), num=document.getElementById('num-'+id);
+  if(memorized.has(id)){ memorized.delete(id); item.classList.remove('memorized'); btn.innerHTML='<i class="far fa-circle"></i> মুখস্থ'; num.style.cssText=''; }
+  else { memorized.add(id); item.classList.add('memorized'); btn.innerHTML='<i class="fas fa-check"></i> মুখস্থ'; num.style.cssText='background:#166534;color:#4ade80;border-color:#22c55e;'; }
+  localStorage.setItem('rgb_mem',JSON.stringify(Array.from(memorized)));
+  updateMemStat(); updateProgress();
+  saveScoreToFirebase();
+}
+
+function updateMemStat() { document.getElementById('statMemorized').innerText=allWords.filter(function(w){return memorized.has(w.id);}).length; }
+function updateProgress() {
+  var total=allWords.length, mem=allWords.filter(function(w){return memorized.has(w.id);}).length;
+  var pct=total>0?Math.round(mem/total*100):0;
+  document.getElementById('progressText').innerText=mem+' / '+total;
+  document.getElementById('progressFill').style.width=pct+'%';
+}
+
+// ---- ট্যাব ----
+function switchTab(tab) {
+  ['words','quiz','streak','board','feedback','archive','hadith'].forEach(function(t,i){
+    document.getElementById('tab'+(i+1)).classList.toggle('active',t===tab);
+    document.getElementById('view'+t.charAt(0).toUpperCase()+t.slice(1)).style.display=t===tab?'block':'none';
+  });
+  if(tab==='quiz') startQuiz();
+  if(tab==='streak') buildStreakGrid();
+  if(tab==='board') loadLeaderboard();
+  if(tab==='feedback') loadFeedbacks();
+  if(tab==='archive') loadArchive();
+  if(tab==='hadith') loadHadithView();
+}
+
+// ---- পুরনো কুইজ আর্কাইভ ----
+var archiveWords = [], aqIdx = 0, aqScore = 0;
+var archiveLoaded = false;
+
+function loadArchive() {
+  if(archiveLoaded) return;
+  archiveLoaded = true;
+  var el = document.getElementById('archiveList');
+  el.innerHTML = '<div class="loading-state"><div class="loading-spinner"></div><div>লোড হচ্ছে...</div></div>';
+  db.collection('daily_tasks').get().then(function(snap) {
+    var dateMap = {};
+    snap.forEach(function(d) {
+      var w = Object.assign({id: d.id}, d.data());
+      var dt = w.taskDate || '';
+      if(!dt) return;
+      if(!dateMap[dt]) dateMap[dt] = [];
+      dateMap[dt].push(w);
+    });
+    var dates = Object.keys(dateMap).sort(function(a,b){ return b > a ? 1 : -1; });
+    if(!dates.length) {
+      el.innerHTML = '<div class="empty-state"><i class="fas fa-inbox" style="color:#333;font-size:32px;display:block;margin-bottom:10px;"></i><div>কোনো পুরনো কুইজ পাওয়া যায়নি</div></div>';
+      return;
+    }
+    el.innerHTML = dates.map(function(dt) {
+      var words = dateMap[dt];
+      var verbs = words.filter(function(w){ return w.type==='verb'; }).length;
+      var nouns = words.filter(function(w){ return w.type==='noun'; }).length;
+      var dLabel = formatArchiveDate(dt);
+      var isToday = dt === todayStr;
+      var todayBadge = isToday ? '<span style="background:#0e7490;color:#fff;font-size:10px;padding:2px 8px;border-radius:20px;margin-left:8px;">আজকের</span>' : '';
+      return '<div style="background:#111;border:1px solid #333;border-left:3px solid #00c9a7;border-radius:12px;padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">' +
+        '<div>' +
+          '<div style="font-size:14px;font-weight:600;color:#e2e8f0;margin-bottom:4px;">' + dLabel + todayBadge + '</div>' +
+          '<div style="font-size:12px;color:#777;">' +
+            '<span style="margin-right:10px;"><i class="fas fa-layer-group" style="color:#f59e0b;"></i> ক্রিয়া: ' + verbs + 'টি</span>' +
+            '<span><i class="fas fa-shapes" style="color:#ec4899;"></i> নাউন: ' + nouns + 'টি</span>' +
+          '</div>' +
+        '</div>' +
+        '<button onclick="startArchiveQuiz(' + JSON.stringify(words).replace(/"/g,'&quot;') + ',\'' + dLabel + '\')" ' +
+          'style="background:#0e7490;border:none;color:white;padding:8px 18px;border-radius:10px;font-size:13px;font-weight:bold;cursor:pointer;font-family:inherit;white-space:nowrap;">' +
+          '<i class="fas fa-play"></i> কুইজ দিন</button>' +
+      '</div>';
+    }).join('');
+  }).catch(function() {
+    el.innerHTML = '<div class="empty-state"><i class="fas fa-exclamation-triangle" style="color:#444;font-size:32px;display:block;margin-bottom:10px;"></i><div>লোড করতে সমস্যা হয়েছে</div></div>';
+  });
+}
+
+function formatArchiveDate(dt) {
+  var parts = dt.split('-');
+  if(parts.length !== 3) return dt;
+  var d = new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
+  var days = ['রবিবার','সোমবার','মঙ্গলবার','বুধবার','বৃহস্পতিবার','শুক্রবার','শনিবার'];
+  var months = ['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
+  return days[d.getDay()] + ', ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+}
+
+function startArchiveQuiz(words, dateLabel) {
+  archiveWords = words.slice().sort(function(){ return Math.random()-0.5; });
+  aqIdx = 0; aqScore = 0;
+  document.getElementById('archiveList').style.display = 'none';
+  document.getElementById('archiveQuizSection').style.display = 'block';
+  document.getElementById('archiveQuizTitle').innerText = dateLabel;
+  document.getElementById('aqTotal').innerText = archiveWords.length;
+  showArchiveQuestion();
+}
+
+function showArchiveQuestion() {
+  if(aqIdx >= archiveWords.length) { endArchiveQuiz(); return; }
+  var w = archiveWords[aqIdx];
+  document.getElementById('aqArabic').innerText = w.arabic;
+  document.getElementById('aqPron').innerText = w.pronunciation ? 'উচ্চারণ: '+w.pronunciation : '';
+  var badge = document.getElementById('aqTypeBadge');
+  badge.innerText = w.type==='verb' ? '🔵 ক্রিয়া' : '🔴 নাউন';
+  badge.style.background = w.type==='verb' ? '#1e3a5f' : '#3b0764';
+  badge.style.color = w.type==='verb' ? '#60a5fa' : '#c084fc';
+  document.getElementById('aqIndex').innerText = aqIdx+1;
+  document.getElementById('aqScore').innerText = aqScore;
+  document.getElementById('btnNextAQ').style.display = 'none';
+  var correct = w.meaning;
+  var pool = archiveWords.filter(function(x){ return x.id!==w.id && x.meaning!==correct; }).sort(function(){ return Math.random()-0.5; }).slice(0,3).map(function(x){ return x.meaning; });
+  var opts = [correct].concat(pool).sort(function(){ return Math.random()-0.5; });
+  document.getElementById('archiveQuizOptions').innerHTML = opts.map(function(opt){
+    var e = opt.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+    var ce = correct.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+    return '<button class="quiz-option" onclick="checkArchiveAns(this,\''+e+'\',\''+ce+'\')">'+opt+'</button>';
+  }).join('');
+}
+
+function checkArchiveAns(btn, chosen, correct) {
+  document.querySelectorAll('#archiveQuizOptions .quiz-option').forEach(function(b){ b.disabled=true; });
+  if(chosen===correct){ btn.classList.add('correct'); aqScore++; document.getElementById('aqScore').innerText=aqScore; }
+  else { btn.classList.add('wrong'); document.querySelectorAll('#archiveQuizOptions .quiz-option').forEach(function(b){ if(b.innerText.trim()===correct) b.classList.add('correct'); }); }
+  document.getElementById('btnNextAQ').style.display = 'block';
+}
+
+function nextArchiveQuestion() { aqIdx++; showArchiveQuestion(); }
+
+function endArchiveQuiz() {
+  var pct = Math.round(aqScore/archiveWords.length*100);
+  var emoji = pct>=80?'🏆':pct>=60?'🎉':pct>=40?'👍':'📚';
+  var col = pct>=80?'#fbbf24':pct>=60?'#22c55e':pct>=40?'#f59e0b':'#ef4444';
+  document.querySelector('#archiveQuizSection .card').innerHTML =
+    '<div style="text-align:center;padding:30px;">' +
+    '<div style="font-size:70px;margin-bottom:15px;">'+emoji+'</div>' +
+    '<h3 style="font-size:24px;margin-bottom:10px;">কুইজ সম্পন্ন!</h3>' +
+    '<div style="font-size:50px;font-weight:700;color:'+col+';margin:15px 0;">'+aqScore+' / '+archiveWords.length+'</div>' +
+    '<div style="color:#888;margin-bottom:25px;">সঠিক উত্তর: '+pct+'%</div>' +
+    '<button onclick="closeArchiveQuiz()" style="padding:14px 35px;border:none;border-radius:12px;background:#0e7490;color:white;font-size:16px;font-weight:bold;cursor:pointer;font-family:inherit;margin-right:10px;"><i class="fas fa-list"></i> তালিকায় ফিরুন</button>' +
+    '</div>';
+}
+
+function closeArchiveQuiz() {
+  document.getElementById('archiveQuizSection').style.display = 'none';
+  document.getElementById('archiveList').style.display = 'block';
+  // কার্ড রিসেট
+  document.getElementById('archiveQuizSection').innerHTML =
+    '<div class="card dynamic-border">' +
+    '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:15px;">' +
+    '<h3 style="margin-bottom:0;"><i class="fas fa-brain" style="color:#f59e0b;"></i> <span id="archiveQuizTitle">কুইজ</span></h3>' +
+    '<button onclick="closeArchiveQuiz()" style="background:#333;border:1px solid #555;color:#aaa;padding:6px 14px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:13px;"><i class="fas fa-arrow-left"></i> ফিরে যান</button>' +
+    '</div>' +
+    '<div class="quiz-score-bar"><div>প্রশ্ন: <strong id="aqIndex">0</strong> / <strong id="aqTotal">0</strong></div><div class="streak-badge">🔥 স্কোর: <span id="aqScore">0</span></div></div>' +
+    '<div class="quiz-question"><div class="quiz-arabic" id="aqArabic">–</div><div class="quiz-pronunciation" id="aqPron"></div><span class="quiz-type-badge" id="aqTypeBadge"></span></div>' +
+    '<div class="quiz-options" id="archiveQuizOptions"></div>' +
+    '<button class="btn-next" id="btnNextAQ" onclick="nextArchiveQuestion()">পরের প্রশ্ন <i class="fas fa-arrow-right"></i></button>' +
+    '</div>';
+}
+
+// ---- আতশবাজি ইফেক্ট ----
+function launchFireworks() {
+  var canvas = document.getElementById('fireworksCanvas');
+  if(!canvas) return;
+  canvas.style.display = 'block';
+  var ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var particles = [];
+  var colors = ['#ff4444','#ff8800','#ffff00','#00ff88','#00ccff','#aa44ff','#ff44aa','#ffffff'];
+  var cx = canvas.width/2 + (Math.random()-0.5)*200;
+  var cy = canvas.height/3 + (Math.random()-0.5)*100;
+  for(var i=0;i<120;i++){
+    var angle = (Math.PI*2/120)*i;
+    var speed = 3+Math.random()*5;
+    particles.push({
+      x:cx, y:cy,
+      vx: Math.cos(angle)*speed,
+      vy: Math.sin(angle)*speed,
+      alpha:1,
+      color: colors[Math.floor(Math.random()*colors.length)],
+      size: 3+Math.random()*4
+    });
+  }
+  var frame = 0;
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p){
+      p.x+=p.vx; p.y+=p.vy; p.vy+=0.12; p.alpha-=0.018;
+      if(p.alpha<=0) return;
+      ctx.globalAlpha=p.alpha;
+      ctx.fillStyle=p.color;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+      ctx.fill();
+    });
+    ctx.globalAlpha=1;
+    frame++;
+    if(frame<80) requestAnimationFrame(draw);
+    else { ctx.clearRect(0,0,canvas.width,canvas.height); canvas.style.display='none'; }
+  }
+  draw();
+}
+
+// ---- কুইজ ----
+function startQuiz() {
+  // প্রতিদিন একবার চেক
+  var lastQuizDate = localStorage.getItem('rgb_quiz_date');
+  if(lastQuizDate === todayStr) {
+    var lastScore = localStorage.getItem('rgb_quiz_score_today') || '0';
+    var lastTotal = localStorage.getItem('rgb_quiz_total_today') || '0';
+    document.getElementById('quizCard').style.display='block';
+    document.getElementById('quizEmpty').style.display='none';
+    document.getElementById('quizCard').innerHTML=
+      '<div style="text-align:center;padding:40px 20px;">'+
+      '<div style="font-size:70px;margin-bottom:15px;">⏰</div>'+
+      '<h3 style="font-size:22px;margin-bottom:12px;color:#fbbf24;">আজকের কুইজ দেওয়া হয়েছে!</h3>'+
+      '<div style="font-size:15px;color:#888;margin-bottom:8px;">আপনি আজ ইতিমধ্যে কুইজ দিয়েছেন।</div>'+
+      '<div style="font-size:16px;color:#22c55e;margin-bottom:6px;">✅ আজকের স্কোর: <strong>'+lastScore+' / '+lastTotal+'</strong></div>'+
+      '<div style="font-size:13px;color:#555;margin-bottom:25px;">আগামীকাল আবার আসুন 🌙</div>'+
+      '<button onclick="switchTab(\'words\')" style="padding:13px 28px;border:none;border-radius:12px;background:#333;color:white;font-size:15px;cursor:pointer;font-family:inherit;">শব্দ দেখুন</button>'+
+      '</div>';
+    return;
+  }
+  quizWords=allWords.slice().sort(function(){return Math.random()-0.5;}); qIdx=0; qScore=0;
+  if(!quizWords.length){ document.getElementById('quizCard').style.display='none'; document.getElementById('quizEmpty').style.display='block'; return; }
+  document.getElementById('quizCard').style.display='block'; document.getElementById('quizEmpty').style.display='none';
+  document.getElementById('qTotal').innerText=quizWords.length; showQuestion();
+}
+
+function showQuestion() {
+  if(qIdx>=quizWords.length){ endQuiz(); return; }
+  var w=quizWords[qIdx];
+  document.getElementById('qArabic').innerText=w.arabic;
+  document.getElementById('qPron').innerText=w.pronunciation?'উচ্চারণ: '+w.pronunciation:'';
+  var badge=document.getElementById('qTypeBadge');
+  badge.innerText=w.type==='verb'?'🔵 ক্রিয়া':'🔴 নাউন';
+  badge.style.background=w.type==='verb'?'#1e3a5f':'#3b0764';
+  badge.style.color=w.type==='verb'?'#60a5fa':'#c084fc';
+  document.getElementById('qIndex').innerText=qIdx+1;
+  document.getElementById('qScore').innerText=qScore;
+  document.getElementById('btnNextQ').style.display='none';
+  var correct=w.meaning;
+  var pool=allWords.filter(function(x){return x.id!==w.id&&x.meaning!==correct;}).sort(function(){return Math.random()-0.5;}).slice(0,3).map(function(x){return x.meaning;});
+  var opts=[correct].concat(pool).sort(function(){return Math.random()-0.5;});
+  document.getElementById('quizOptions').innerHTML=opts.map(function(opt){
+    var e=opt.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+    var ce=correct.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+    return '<button class="quiz-option" onclick="checkAns(this,\''+e+'\',\''+ce+'\')">'+opt+'</button>';
+  }).join('');
+}
+
+function checkAns(btn,chosen,correct) {
+  document.querySelectorAll('.quiz-option').forEach(function(b){b.disabled=true;});
+  if(chosen===correct){ btn.classList.add('correct'); qScore++; document.getElementById('qScore').innerText=qScore; launchFireworks(); }
+  else { btn.classList.add('wrong'); document.querySelectorAll('.quiz-option').forEach(function(b){if(b.innerText.trim()===correct)b.classList.add('correct');}); }
+  document.getElementById('btnNextQ').style.display='block';
+}
+
+function nextQuestion() { qIdx++; showQuestion(); }
+
+function endQuiz() {
+  // আজকের কুইজ সম্পন্ন — তারিখ ও স্কোর সেভ করো
+  localStorage.setItem('rgb_quiz_date', todayStr);
+  localStorage.setItem('rgb_quiz_score_today', qScore);
+  localStorage.setItem('rgb_quiz_total_today', quizWords.length);
+  if(qScore>qBest){ qBest=qScore; localStorage.setItem('rgb_best',qBest); document.getElementById('qBest').innerText=qBest; }
+  var pct=Math.round(qScore/quizWords.length*100);
+  var emoji=pct>=80?'🏆':pct>=60?'🎉':pct>=40?'👍':'📚';
+  var col=pct>=80?'#fbbf24':pct>=60?'#22c55e':pct>=40?'#f59e0b':'#ef4444';
+  document.getElementById('quizCard').innerHTML='<div style="text-align:center;padding:30px;">' +
+    '<div style="font-size:70px;margin-bottom:15px;">'+emoji+'</div>' +
+    '<h3 style="font-size:24px;margin-bottom:10px;">কুইজ সম্পন্ন!</h3>' +
+    '<div style="font-size:50px;font-weight:700;color:'+col+';margin:15px 0;">'+qScore+' / '+quizWords.length+'</div>' +
+    '<div style="color:#888;margin-bottom:10px;">সঠিক উত্তর: '+pct+'%</div>' +
+    '<div style="color:#fbbf24;font-size:14px;margin-bottom:25px;">🏆 সর্বোচ্চ স্কোর: '+qBest+'</div>' +
+    '<button onclick="startQuiz()" style="padding:14px 35px;border:none;border-radius:12px;background:#0e7490;color:white;font-size:16px;font-weight:bold;cursor:pointer;font-family:inherit;margin-right:10px;"><i class="fas fa-redo"></i> আবার খেলুন</button>' +
+    '<button onclick="switchTab(\'words\')" style="padding:14px 25px;border:none;border-radius:12px;background:#333;color:white;font-size:15px;cursor:pointer;font-family:inherit;">শব্দ দেখুন</button>' +
+    '</div>';
+  saveScoreToFirebase();
+}
+
+// ---- Firebase স্কোর সেভ ----
+function saveScoreToFirebase() {
+  if(!userName) return;
+  var memCount=allWords.filter(function(w){return memorized.has(w.id);}).length;
+  db.collection('scores').doc(userName).set({name:userName,memorized:memCount,quizBest:qBest,date:todayStr,ts:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});
+}
+
+// ---- লিডারবোর্ড ----
+function loadLeaderboard() {
+  db.collection('scores').orderBy('quizBest','desc').limit(20).get().then(function(snap){
+    var el=document.getElementById('leaderboardList');
+    if(snap.empty){ el.innerHTML='<div class="empty-state">এখনো কোনো স্কোর নেই</div>'; return; }
+    var i=0;
+    el.innerHTML=snap.docs.map(function(d){
+      i++; var s=d.data();
+      var cls=i===1?'rank-1':i===2?'rank-2':i===3?'rank-3':'rank-other';
+      var medal=i===1?'🥇':i===2?'🥈':i===3?'🥉':i;
+      var isMe=s.name===userName;
+      return '<div class="leaderboard-item" style="'+(isMe?'border-color:cyan;background:#0a1f2e;':'')+'">' +
+        '<div class="rank-badge '+cls+'">'+medal+'</div>' +
+        '<div style="flex:1;">' +
+          '<div style="font-weight:bold;font-size:15px;">'+(isMe?'⭐ ':'')+s.name+'</div>' +
+          '<div style="font-size:12px;color:#888;">মুখস্থ: '+( s.memorized||0)+' শব্দ</div>' +
+        '</div>' +
+        '<div style="text-align:right;"><div style="font-size:20px;font-weight:bold;color:#fbbf24;">'+( s.quizBest||0)+'</div><div style="font-size:11px;color:#888;">সর্বোচ্চ স্কোর</div></div>' +
+      '</div>';
+    }).join('');
+  });
+}
+
+// ---- স্ট্রিক ----
+function markStudyToday() {
+  if(!studyDates.includes(todayStr)){ studyDates.push(todayStr); localStorage.setItem('rgb_dates',JSON.stringify(studyDates)); }
+  var streak=0, d=new Date();
+  while(true){ var ds=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); if(!studyDates.includes(ds)) break; streak++; d.setDate(d.getDate()-1); }
+  document.getElementById('statStreak').innerText=streak;
+}
+
+function buildStreakGrid() {
+  var streak=0, d=new Date();
+  while(true){ var ds=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); if(!studyDates.includes(ds)) break; streak++; d.setDate(d.getDate()-1); }
+  document.getElementById('streakNum').innerText=streak;
+  var grid=document.getElementById('streakGrid'); grid.innerHTML='';
+  for(var i=29;i>=0;i--){
+    var day=new Date(); day.setDate(day.getDate()-i);
+    var ds2=day.getFullYear()+'-'+String(day.getMonth()+1).padStart(2,'0')+'-'+String(day.getDate()).padStart(2,'0');
+    var isActive=studyDates.includes(ds2), isToday=(i===0);
+    var el=document.createElement('div');
+    el.className='streak-day'+(isActive?' active':'')+(isToday?' today':'');
+    el.title=ds2; el.innerText=day.getDate();
+    grid.appendChild(el);
+  }
+}
+
+// এন্টার চাপলে নাম সেভ
+document.getElementById('userName').addEventListener('keypress',function(e){ if(e.key==='Enter') startApp(); });
+
+// ---- নোটিফিকেশন ----
+function initNotifications() {
+  // Service Worker রেজিস্টার
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').then(function(reg){
+      console.log('SW registered');
+    }).catch(function(e){ console.log('SW error:', e); });
+  }
+
+  // পারমিশন চেক
+  if('Notification' in window) {
+    if(Notification.permission === 'default') {
+      document.getElementById('notifAllowBar').style.display = 'flex';
+    } else if(Notification.permission === 'granted') {
+      subscribeToNotifications();
+    }
+  }
+}
+
+function requestNotifPermission() {
+  if(!('Notification' in window)) { alert('আপনার ব্রাউজারে নোটিফিকেশন সাপোর্ট নেই।'); return; }
+  Notification.requestPermission().then(function(permission) {
+    document.getElementById('notifAllowBar').style.display = 'none';
+    if(permission === 'granted') {
+      subscribeToNotifications();
+      showInAppNotif('🎉 নোটিফিকেশন চালু হয়েছে! এখন থেকে নতুন শব্দ ও বার্তা পাবেন।');
+      // Firebase এ সেভ
+      if(userName) {
+        db.collection('notif_subscribers').doc(userName).set({
+          name: userName, subscribed: true, ts: firebase.firestore.FieldValue.serverTimestamp()
+        });
+      }
+    }
+  });
+}
+
+function subscribeToNotifications() {
+  // Firebase এ নতুন অ্যানাউন্সমেন্ট লিসেন করুন
+  db.collection('admin_settings').doc('announcement').onSnapshot(function(docSnap) {
+    if(docSnap.exists) {
+      var d = docSnap.data();
+      if(d.active && d.message) {
+        // In-App নোটিফিকেশন
+        showInAppNotif('📢 ' + d.message);
+        // Browser নোটিফিকেশন
+        if(Notification.permission === 'granted' && document.hidden) {
+          new Notification('RGB শিক্ষা - অ্যাডমিন বার্তা', {
+            body: d.message,
+            icon: 'https://via.placeholder.com/192x192/00ffff/000000?text=RGB',
+            badge: 'https://via.placeholder.com/72x72/00ffff/000000?text=R'
+          });
+        }
+      }
+    }
+  });
+
+  // নতুন শব্দ আপলোড হলে নোটিফিকেশন
+  var d = new Date();
+  var today = d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  db.collection('daily_tasks').where('taskDate','==',today).onSnapshot(function(snap) {
+    if(snap.docChanges().length > 0) {
+      var added = snap.docChanges().filter(function(c){ return c.type === 'added'; });
+      if(added.length > 0 && document.hidden) {
+        new Notification('RGB শিক্ষা - নতুন শব্দ! 📚', {
+          body: 'আজকের নতুন ' + snap.size + 'টি শব্দ যোগ হয়েছে। এখনই শিখুন!',
+          icon: 'https://via.placeholder.com/192x192/00ffff/000000?text=RGB'
+        });
+      }
+    }
+  });
+}
+
+function showInAppNotif(msg) {
+  var popup = document.getElementById('notifPopup');
+  document.getElementById('notifPopupBody').innerText = msg;
+  popup.style.display = 'block';
+  setTimeout(function() { popup.style.display = 'none'; }, 5000);
+}
+
+function closeNotifPopup() {
+  document.getElementById('notifPopup').style.display = 'none';
+}
+
+// init এ নোটিফিকেশন যোগ করুন
+var _origInit = init;
+init = function() {
+  _origInit();
+  initNotifications();
+};
+
+// ---- মতামত ফাংশন ----
+var selectedTag = 'সাধারণ মতামত';
+var selectedRating = 0;
+var ratingTexts = ['', 'খুব খারাপ 😞', 'খারাপ 😕', 'মোটামুটি 😐', 'ভালো 😊', 'চমৎকার 🌟'];
+
+function selectTag(btn, tag) {
+  selectedTag = tag;
+  document.querySelectorAll('.feedback-tag').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+
+function setRating(r) {
+  selectedRating = r;
+  for(var i=1; i<=5; i++) {
+    document.getElementById('star'+i).style.opacity = i<=r ? '1' : '0.3';
+  }
+  document.getElementById('ratingText').innerText = ratingTexts[r];
+}
+
+function submitFeedback() {
+  var text = document.getElementById('feedbackText').value.trim();
+  if(!text) { alert('মতামত লিখুন!'); return; }
+  if(!selectedRating) { alert('রেটিং দিন!'); return; }
+  if(!userName) { alert('আগে নাম দিন!'); return; }
+
+  var msgEl = document.getElementById('feedbackMsg');
+  msgEl.style.display = 'block';
+  msgEl.style.background = '#1e3a5f';
+  msgEl.style.color = '#60a5fa';
+  msgEl.innerText = '⏳ পাঠানো হচ্ছে...';
+
+  db.collection('feedbacks').add({
+    name: userName,
+    tag: selectedTag,
+    rating: selectedRating,
+    text: text,
+    date: todayStr,
+    ts: firebase.firestore.FieldValue.serverTimestamp()
+  }).then(function(){
+    msgEl.style.background = '#052e16';
+    msgEl.style.color = '#22c55e';
+    msgEl.innerText = '✅ আপনার মতামত সফলভাবে পাঠানো হয়েছে! জাযাকাল্লাহু খাইরান।';
+    document.getElementById('feedbackText').value = '';
+    selectedRating = 0;
+    for(var i=1; i<=5; i++) document.getElementById('star'+i).style.opacity = '0.3';
+    document.getElementById('ratingText').innerText = 'রেটিং দিন';
+    loadFeedbacks();
+    setTimeout(function(){ msgEl.style.display='none'; }, 4000);
+  }).catch(function(e){
+    msgEl.style.background = '#1f0a0a';
+    msgEl.style.color = '#f87171';
+    msgEl.innerText = '❌ সমস্যা হয়েছে। আবার চেষ্টা করুন।';
+  });
+}
+
+function loadFeedbacks() {
+  db.collection('feedbacks').orderBy('ts','desc').limit(20).get().then(function(snap){
+    var el = document.getElementById('feedbackList');
+    if(snap.empty){ el.innerHTML='<div class="empty-state" style="padding:30px; color:#555;">এখনো কোনো মতামত নেই</div>'; return; }
+    var stars = ['','⭐','⭐⭐','⭐⭐⭐','⭐⭐⭐⭐','⭐⭐⭐⭐⭐'];
+    el.innerHTML = snap.docs.map(function(d){
+      var f = d.data();
+      var isMe = f.name === userName;
+      return '<div class="feedback-item" style="'+(isMe?'border-color:cyan;':'')+'">' +
+        '<div class="feedback-item-header">' +
+          '<span class="feedback-item-name">'+(isMe?'⭐ ':'')+f.name+'</span>' +
+          '<span class="feedback-item-tag">'+f.tag+'</span>' +
+        '</div>' +
+        '<div style="font-size:16px; margin-bottom:6px;">'+(stars[f.rating]||'')+'</div>' +
+        '<div class="feedback-item-text">'+f.text+'</div>' +
+        '<div class="feedback-item-date">'+f.date+'</div>' +
+      '</div>';
+    }).join('');
+  });
+}
+
+// ===== NOTIFICATION BELL SYSTEM =====
+var npbData = [];
+var npbFirebaseListener = null;
+
+// Firebase থেকে নোটিফিকেশন লোড — orderBy ছাড়া, JS-এ sort
+function loadNotificationsFromFirebase() {
+  if(npbFirebaseListener) return;
+  try {
+    npbFirebaseListener = db.collection('notifications').limit(30)
+      .onSnapshot(function(snap) {
+        var readIds = JSON.parse(localStorage.getItem('rgb_read_notifs') || '[]');
+        npbData = [];
+        snap.forEach(function(doc) {
+          var n = doc.data();
+          if(n.active === false) return;
+          npbData.push({
+            id: doc.id,
+            ico: n.ico || '📢',
+            bg: n.bg || '#0a0a2e',
+            title: n.title || '',
+            desc: n.desc || '',
+            time: n.time || 'এইমাত্র',
+            u: !readIds.includes(doc.id),
+            _ts: n.ts ? (n.ts.seconds || 0) : 0
+          });
+        });
+        npbData.sort(function(a,b){ return b._ts - a._ts; });
+        npbRender();
+      }, function(err) {
+        console.log('Notif error:', err.message);
+        npbFirebaseListener = null;
+      });
+  } catch(e) {
+    console.log('Notif catch:', e);
+  }
+}
+function npbRender() {
+  var l = document.getElementById('npbListEl');
+  var b = document.getElementById('npbBadge');
+  if(!l || !b) return;
+  var u = npbData.filter(function(n){ return n.u; }).length;
+  b.textContent = u;
+  b.className = 'npb-badge' + (u === 0 ? ' hide' : '');
+  if(!npbData.length) { l.innerHTML = '<div class="npb-empty">কোনো নোটিফিকেশন নেই</div>'; return; }
+  l.innerHTML = npbData.map(function(n) {
+    return '<div class="npb-itm' + (n.u ? ' unread' : '') + '" onclick="npbRead(' + n.id + ')">' +
+      '<div class="npb-ico" style="background:' + n.bg + '">' + n.ico + '</div>' +
+      '<div class="npb-bd"><div class="npb-ttl">' + n.title + '</div><div class="npb-dsc">' + n.desc + '</div></div>' +
+      '<div class="npb-tm">' + n.time + '</div></div>';
+  }).join('');
+}
+function npbToggle() {
+  var p = document.getElementById('npbPanel');
+  var o = document.getElementById('npbOv');
+  if(!p) return;
+  if(p.classList.contains('open')) { npbClose(); }
+  else { p.classList.add('open'); if(o) o.classList.add('on'); npbRender(); }
+}
+function npbClose() {
+  var p = document.getElementById('npbPanel');
+  var o = document.getElementById('npbOv');
+  if(p) p.classList.remove('open');
+  if(o) o.classList.remove('on');
+}
+function npbRead(id) {
+  var readIds = JSON.parse(localStorage.getItem('rgb_read_notifs') || '[]');
+  if(!readIds.includes(id)) { readIds.push(id); localStorage.setItem('rgb_read_notifs', JSON.stringify(readIds)); }
+  npbData = npbData.map(function(n){ return n.id === id ? Object.assign({}, n, {u: false}) : n; });
+  npbRender();
+}
+function npbMarkAll() {
+  var readIds = npbData.map(function(n){ return n.id; });
+  localStorage.setItem('rgb_read_notifs', JSON.stringify(readIds));
+  npbData = npbData.map(function(n){ return Object.assign({}, n, {u: false}); });
+  npbRender();
+  npbToast('সব নোটিফিকেশন পড়া হয়েছে ✓');
+}
+var npbTT;
+function npbToast(m) {
+  var t = document.getElementById('npbToastEl');
+  if(!t) return;
+  t.textContent = m;
+  t.classList.add('show');
+  clearTimeout(npbTT);
+  npbTT = setTimeout(function(){ t.classList.remove('show'); }, 3000);
+}
+function npbPushHandle(cb) {
+  if(cb.checked) {
+    if(!('Notification' in window) || !window.isSecureContext) {
+      npbToast('HTTPS সাইটে Push কাজ করে ✓');
+      cb.checked = false;
+      return;
+    }
+    if(Notification.permission === 'granted') {
+      npbToast('Push Notification চালু হয়েছে! 🔔');
+      return;
+    }
+    if(Notification.permission === 'denied') {
+      npbToast('ব্রাউজার সেটিংস থেকে অনুমতি দিন');
+      cb.checked = false;
+      return;
+    }
+    Notification.requestPermission().then(function(p) {
+      if(p === 'granted') { npbToast('Push Notification চালু হয়েছে! 🔔'); }
+      else { cb.checked = false; npbToast('অনুমতি না দিলে কাজ করবে না'); }
+    }).catch(function() {
+      Notification.requestPermission(function(p) {
+        if(p === 'granted') { npbToast('Push Notification চালু হয়েছে! 🔔'); }
+        else { cb.checked = false; npbToast('অনুমতি না দিলে কাজ করবে না'); }
+      });
+    });
+  } else { npbToast('Push Notification বন্ধ করা হয়েছে'); }
+}
+// Admin থেকে notification পাঠাতে: npbAdd('📢','শিরোনাম','বিবরণ')
+function npbAdd(ico, title, desc) {
+  npbData.unshift({ id: Date.now(), ico: ico, bg: '#0a0a2e', title: title, desc: desc, time: 'এইমাত্র', u: true });
+  npbRender();
+  npbToast('নতুন নোটিফিকেশন! 🔔');
+}
+// Firebase রেডি হওয়ার পরে নোটিফিকেশন লোড করুন
+// Script এর একদম শেষে চালু হবে — db সবসময় রেডি থাকবে
+// পেজ লোড হওয়ার পরে Firebase থেকে নোটিফিকেশন আনো
+function tryLoadNotifications(attempt) {
+  if(typeof db !== 'undefined' && db) {
+    loadNotificationsFromFirebase();
+  } else if(attempt < 10) {
+    setTimeout(function(){ tryLoadNotifications(attempt + 1); }, 300);
+  }
+}
+tryLoadNotifications(0);
+
+</script>
+</body>
+</html>

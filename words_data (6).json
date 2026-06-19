@@ -1,0 +1,7701 @@
+{
+  "meta": {
+    "totalClasses": 60,
+    "level1": {
+      "classes": 30,
+      "verbsPerClass": 7,
+      "nounsPerClass": 13,
+      "classRange": "1-30"
+    },
+    "level2": {
+      "classes": 30,
+      "verbsPerClass": 7,
+      "nounsPerClass": 13,
+      "classRange": "31-60"
+    },
+    "wordsPerClass": 20,
+    "daysPerLevel": 30
+  },
+  "classes": [
+    {
+      "classNo": 1,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "قَالَ",
+          "pronunciation": "ক্বলা",
+          "meaning": "সে বলেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "كَانَ",
+          "pronunciation": "কানা",
+          "meaning": "সে ছিল",
+          "type": "verb"
+        },
+        {
+          "arabic": "جَاءَ",
+          "pronunciation": "জা-আ",
+          "meaning": "সে এসেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَمَرَ",
+          "pronunciation": "আমারা",
+          "meaning": "সে আদেশ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "آمَنَ",
+          "pronunciation": "আমানা",
+          "meaning": "সে ঈমান এনেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "خَلَقَ",
+          "pronunciation": "খলাক্বা",
+          "meaning": "সে সৃষ্টি করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "عَلِمَ",
+          "pronunciation": "আলিমা",
+          "meaning": "সে জেনেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "اللَّه",
+          "pronunciation": "আল্লাহ",
+          "meaning": "আল্লাহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَبّ",
+          "pronunciation": "রব্ব",
+          "meaning": "প্রতিপালক",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَحْمَن",
+          "pronunciation": "রাহমান",
+          "meaning": "পরম দয়ালু",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَحِيم",
+          "pronunciation": "রাহীম",
+          "meaning": "অতি মেহেরবান",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَلِك",
+          "pronunciation": "মালিক",
+          "meaning": "বাদশাহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "قُدُّوس",
+          "pronunciation": "ক্বুদ্দুস",
+          "meaning": "পবিত্র",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَلَام",
+          "pronunciation": "সালাম",
+          "meaning": "শান্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُؤْمِن",
+          "pronunciation": "মু'মিন",
+          "meaning": "বিশ্বাসদানকারী",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَزِيز",
+          "pronunciation": "আযীয",
+          "meaning": "পরাক্রমশালী",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَكِيم",
+          "pronunciation": "হাকীম",
+          "meaning": "প্রজ্ঞাময়",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَلِيم",
+          "pronunciation": "আলীম",
+          "meaning": "সর্বজ্ঞ",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَمِيع",
+          "pronunciation": "সামী'",
+          "meaning": "সর্বশ্রোতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَصِير",
+          "pronunciation": "বাসীর",
+          "meaning": "সর্বদ্রষ্টা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 2,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "أَنْزَلَ",
+          "pronunciation": "আনযালা",
+          "meaning": "সে নাযিল করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "جَعَلَ",
+          "pronunciation": "জা'আলা",
+          "meaning": "সে বানিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَأَى",
+          "pronunciation": "রাআ",
+          "meaning": "সে দেখেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "سَمِعَ",
+          "pronunciation": "সামি'আ",
+          "meaning": "সে শুনেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَرْسَلَ",
+          "pronunciation": "আরসালা",
+          "meaning": "সে পাঠিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "شَاءَ",
+          "pronunciation": "শা-আ",
+          "meaning": "সে ইচ্ছা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "فَعَلَ",
+          "pronunciation": "ফা'আলা",
+          "meaning": "সে করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "خَبِير",
+          "pronunciation": "খবীর",
+          "meaning": "সম্যক অবগত",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَدِير",
+          "pronunciation": "ক্বদীর",
+          "meaning": "সর্বশক্তিমান",
+          "type": "noun"
+        },
+        {
+          "arabic": "غَفُور",
+          "pronunciation": "গাফুর",
+          "meaning": "ক্ষমাশীল",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَدُود",
+          "pronunciation": "ওয়াদূদ",
+          "meaning": "ভালোবাসাময়",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَمِيد",
+          "pronunciation": "হামীদ",
+          "meaning": "প্রশংসিত",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَجِيد",
+          "pronunciation": "মাজীদ",
+          "meaning": "মহিমান্বিত",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَكِيل",
+          "pronunciation": "ওয়াকীল",
+          "meaning": "কর্মবিধায়ক",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِنْسَان",
+          "pronunciation": "ইনসান",
+          "meaning": "মানুষ",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَاس",
+          "pronunciation": "নাস",
+          "meaning": "মানুষজন",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَشَر",
+          "pronunciation": "বাশার",
+          "meaning": "মানবজাতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَوْم",
+          "pronunciation": "ক্বওম",
+          "meaning": "জাতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "أُمَّة",
+          "pronunciation": "উম্মাত",
+          "meaning": "সম্প্রদায়",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَبِيلَة",
+          "pronunciation": "ক্ববীলাত",
+          "meaning": "গোত্র",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 3,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "عَمِلَ",
+          "pronunciation": "আমিলা",
+          "meaning": "সে আমল করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "هَدَى",
+          "pronunciation": "হাদা",
+          "meaning": "সে হেদায়েত দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "كَفَرَ",
+          "pronunciation": "কাফারা",
+          "meaning": "সে কুফরি করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "غَفَرَ",
+          "pronunciation": "গাফারা",
+          "meaning": "সে ক্ষমা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَابَ",
+          "pronunciation": "তাবা",
+          "meaning": "সে তওবা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَزَقَ",
+          "pronunciation": "রাযাক্বা",
+          "meaning": "সে রিযিক দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "دَخَلَ",
+          "pronunciation": "দাখালা",
+          "meaning": "সে প্রবেশ করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "أَهْل",
+          "pronunciation": "আহল",
+          "meaning": "পরিবার/অধিবাসী",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَوْلَاد",
+          "pronunciation": "আওলাদ",
+          "meaning": "সন্তানরা",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَالِد",
+          "pronunciation": "ওয়ালিদ",
+          "meaning": "পিতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَالِدَة",
+          "pronunciation": "ওয়ালিদাত",
+          "meaning": "মাতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَخ",
+          "pronunciation": "আখ",
+          "meaning": "ভাই",
+          "type": "noun"
+        },
+        {
+          "arabic": "أُخْت",
+          "pronunciation": "উখত",
+          "meaning": "বোন",
+          "type": "noun"
+        },
+        {
+          "arabic": "زَوْج",
+          "pronunciation": "যাওজ",
+          "meaning": "স্বামী/সঙ্গী",
+          "type": "noun"
+        },
+        {
+          "arabic": "زَوْجَة",
+          "pronunciation": "যাওজাত",
+          "meaning": "স্ত্রী",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَلَد",
+          "pronunciation": "ওয়ালাদ",
+          "meaning": "সন্তান",
+          "type": "noun"
+        },
+        {
+          "arabic": "ابْن",
+          "pronunciation": "ইবন",
+          "meaning": "ছেলে",
+          "type": "noun"
+        },
+        {
+          "arabic": "بِنْت",
+          "pronunciation": "বিনত",
+          "meaning": "মেয়ে",
+          "type": "noun"
+        },
+        {
+          "arabic": "يَتِيم",
+          "pronunciation": "ইয়াতীম",
+          "meaning": "এতিম",
+          "type": "noun"
+        },
+        {
+          "arabic": "مِسْكِين",
+          "pronunciation": "মিসকীন",
+          "meaning": "দরিদ্র",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 4,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "خَرَجَ",
+          "pronunciation": "খারাজা",
+          "meaning": "সে বের হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "ظَلَمَ",
+          "pronunciation": "যলামা",
+          "meaning": "সে জুলুম করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَصَرَ",
+          "pronunciation": "নাসারা",
+          "meaning": "সে সাহায্য করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "دَعَا",
+          "pronunciation": "দা'আ",
+          "meaning": "সে দু'আ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "عَبَدَ",
+          "pronunciation": "আবাদা",
+          "meaning": "সে ইবাদত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "صَلَّى",
+          "pronunciation": "সল্লা",
+          "meaning": "সে সালাত পড়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "صَبَرَ",
+          "pronunciation": "সাবারা",
+          "meaning": "সে সবর করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "فَقِير",
+          "pronunciation": "ফাক্বীর",
+          "meaning": "অভাবী",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِيمَان",
+          "pronunciation": "ঈমান",
+          "meaning": "বিশ্বাস",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِسْلَام",
+          "pronunciation": "ইসলাম",
+          "meaning": "আত্মসমর্পণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "دِين",
+          "pronunciation": "দীন",
+          "meaning": "জীবনব্যবস্থা",
+          "type": "noun"
+        },
+        {
+          "arabic": "مِلَّة",
+          "pronunciation": "মিল্লাত",
+          "meaning": "ধর্মীয় পথ",
+          "type": "noun"
+        },
+        {
+          "arabic": "شَرِيعَة",
+          "pronunciation": "শারী'আত",
+          "meaning": "আল্লাহর আইন",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَنِيف",
+          "pronunciation": "হানীফ",
+          "meaning": "একনিষ্ঠ মুসলিম",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُسْلِم",
+          "pronunciation": "মুসলিম",
+          "meaning": "মুসলিম",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُؤْمِن",
+          "pronunciation": "মু'মিন",
+          "meaning": "বিশ্বাসী",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَافِر",
+          "pronunciation": "কাফির",
+          "meaning": "অবিশ্বাসী",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُنَافِق",
+          "pronunciation": "মুনাফিক",
+          "meaning": "মুনাফিক",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُشْرِك",
+          "pronunciation": "মুশরিক",
+          "meaning": "মুশরিক",
+          "type": "noun"
+        },
+        {
+          "arabic": "فَاسِق",
+          "pronunciation": "ফাসিক্ব",
+          "meaning": "পাপী",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 5,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "أَنْفَقَ",
+          "pronunciation": "আনফাক্বা",
+          "meaning": "সে খরচ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَطَاعَ",
+          "pronunciation": "আতা'আ",
+          "meaning": "সে আনুগত্য করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "سَجَدَ",
+          "pronunciation": "সাজাদা",
+          "meaning": "সে সিজদা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "قَرَأَ",
+          "pronunciation": "ক্বারাআ",
+          "meaning": "সে তিলাওয়াত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "بَعَثَ",
+          "pronunciation": "বা'আসা",
+          "meaning": "সে পুনরুত্থিত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "مَاتَ",
+          "pronunciation": "মাতা",
+          "meaning": "সে মৃত্যুবরণ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَزَلَ",
+          "pronunciation": "নাযালা",
+          "meaning": "সে অবতরণ করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "ظَالِم",
+          "pronunciation": "যালিম",
+          "meaning": "অত্যাচারী",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَالِح",
+          "pronunciation": "সালিহ",
+          "meaning": "পুণ্যবান",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَقْوَى",
+          "pronunciation": "তাক্বওয়া",
+          "meaning": "আল্লাহভীতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِخْلَاص",
+          "pronunciation": "ইখলাস",
+          "meaning": "একনিষ্ঠতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "نِيَّة",
+          "pronunciation": "নিয়্যাত",
+          "meaning": "নিয়ত",
+          "type": "noun"
+        },
+        {
+          "arabic": "يَقِين",
+          "pronunciation": "ইয়াক্বীন",
+          "meaning": "দৃঢ়বিশ্বাস",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَوْحِيد",
+          "pronunciation": "তাওহীদ",
+          "meaning": "একত্ববাদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "شِرْك",
+          "pronunciation": "শিরক",
+          "meaning": "অংশীদারিত্ব",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَلَاة",
+          "pronunciation": "সলাত",
+          "meaning": "নামাজ",
+          "type": "noun"
+        },
+        {
+          "arabic": "زَكَاة",
+          "pronunciation": "যাকাত",
+          "meaning": "যাকাত",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَوْم",
+          "pronunciation": "সওম",
+          "meaning": "রোজা",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَجّ",
+          "pronunciation": "হাজ্জ",
+          "meaning": "হজ্জ",
+          "type": "noun"
+        },
+        {
+          "arabic": "عِبَادَة",
+          "pronunciation": "ইবাদাত",
+          "meaning": "উপাসনা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 6,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "نَهَى",
+          "pronunciation": "নাহা",
+          "meaning": "সে নিষেধ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَخَذَ",
+          "pronunciation": "আখাযা",
+          "meaning": "সে নিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَرَكَ",
+          "pronunciation": "তারাকা",
+          "meaning": "সে ছেড়ে দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "سَأَلَ",
+          "pronunciation": "সা-আলা",
+          "meaning": "সে প্রশ্ন করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "ذَهَبَ",
+          "pronunciation": "যাহাবা",
+          "meaning": "সে গেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "كَتَبَ",
+          "pronunciation": "কাতাবা",
+          "meaning": "সে লিখেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "شَكَرَ",
+          "pronunciation": "শাকারা",
+          "meaning": "সে শুকরিয়া করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "دُعَاء",
+          "pronunciation": "দু'আ",
+          "meaning": "প্রার্থনা",
+          "type": "noun"
+        },
+        {
+          "arabic": "ذِكْر",
+          "pronunciation": "যিকর",
+          "meaning": "আল্লাহর স্মরণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَسْبِيح",
+          "pronunciation": "তাসবীহ",
+          "meaning": "পবিত্রতা জ্ঞাপন",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَكْبِير",
+          "pronunciation": "তাকবীর",
+          "meaning": "মহত্ত্ব ঘোষণা",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَمْد",
+          "pronunciation": "হামদ",
+          "meaning": "প্রশংসা",
+          "type": "noun"
+        },
+        {
+          "arabic": "سُجُود",
+          "pronunciation": "সুজূদ",
+          "meaning": "সিজদা",
+          "type": "noun"
+        },
+        {
+          "arabic": "رُكُوع",
+          "pronunciation": "রুকূ'",
+          "meaning": "রুকু",
+          "type": "noun"
+        },
+        {
+          "arabic": "قِيَام",
+          "pronunciation": "ক্বিয়াম",
+          "meaning": "দাঁড়ানো",
+          "type": "noun"
+        },
+        {
+          "arabic": "قِرَاءَة",
+          "pronunciation": "ক্বিরাআত",
+          "meaning": "তিলাওয়াত",
+          "type": "noun"
+        },
+        {
+          "arabic": "وُضُوء",
+          "pronunciation": "উযূ",
+          "meaning": "অযু",
+          "type": "noun"
+        },
+        {
+          "arabic": "غُسْل",
+          "pronunciation": "গুসল",
+          "meaning": "গোসল",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَيَمُّم",
+          "pronunciation": "তায়াম্মুম",
+          "meaning": "মাটি দিয়ে পবিত্রতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "طَهَارَة",
+          "pronunciation": "তাহারাত",
+          "meaning": "পবিত্রতা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 7,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "فَازَ",
+          "pronunciation": "ফাযা",
+          "meaning": "সে সফল হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "ضَلَّ",
+          "pronunciation": "দল্লা",
+          "meaning": "সে পথভ্রষ্ট হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَجَا",
+          "pronunciation": "নাজা",
+          "meaning": "সে মুক্তি পেয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "هَلَكَ",
+          "pronunciation": "হালাকা",
+          "meaning": "সে ধ্বংস হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "خَسِرَ",
+          "pronunciation": "খাসিরা",
+          "meaning": "সে ক্ষতিগ্রস্ত হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اسْتَغْفَرَ",
+          "pronunciation": "ইস্তাগফারা",
+          "meaning": "সে ক্ষমা চেয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "سَبَّحَ",
+          "pronunciation": "সাব্বাহা",
+          "meaning": "সে তাসবিহ পড়েছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "صَدَقَة",
+          "pronunciation": "সদাকাত",
+          "meaning": "দান",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِنْفَاق",
+          "pronunciation": "ইনফাক্ব",
+          "meaning": "ব্যয় করা",
+          "type": "noun"
+        },
+        {
+          "arabic": "قُرْآن",
+          "pronunciation": "কুরআন",
+          "meaning": "কুরআন",
+          "type": "noun"
+        },
+        {
+          "arabic": "كِتَاب",
+          "pronunciation": "কিতাব",
+          "meaning": "গ্রন্থ",
+          "type": "noun"
+        },
+        {
+          "arabic": "آيَة",
+          "pronunciation": "আয়াত",
+          "meaning": "নিদর্শন/আয়াত",
+          "type": "noun"
+        },
+        {
+          "arabic": "سُورَة",
+          "pronunciation": "সূরাত",
+          "meaning": "সূরা",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَحْي",
+          "pronunciation": "ওয়াহী",
+          "meaning": "অহী",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَنْزِيل",
+          "pronunciation": "তানযীল",
+          "meaning": "নাযিল করা",
+          "type": "noun"
+        },
+        {
+          "arabic": "فُرْقَان",
+          "pronunciation": "ফুরকান",
+          "meaning": "সত্য-মিথ্যার পার্থক্যকারী",
+          "type": "noun"
+        },
+        {
+          "arabic": "ذِكْر",
+          "pronunciation": "যিকর",
+          "meaning": "স্মরণিকা",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَيَان",
+          "pronunciation": "বায়ান",
+          "meaning": "বিবৃতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "حِكْمَة",
+          "pronunciation": "হিকমাত",
+          "meaning": "প্রজ্ঞা",
+          "type": "noun"
+        },
+        {
+          "arabic": "عِلْم",
+          "pronunciation": "ইলম",
+          "meaning": "জ্ঞান",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 8,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "حَمِدَ",
+          "pronunciation": "হামিদা",
+          "meaning": "সে প্রশংসা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "عَلَّمَ",
+          "pronunciation": "আল্লামা",
+          "meaning": "সে শিক্ষা দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَوَكَّلَ",
+          "pronunciation": "তাওয়াক্কালা",
+          "meaning": "সে ভরসা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَفْلَحَ",
+          "pronunciation": "আফলাহা",
+          "meaning": "সে সফলকাম হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "حَرَّمَ",
+          "pronunciation": "হার্রামা",
+          "meaning": "সে হারাম করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَحَلَّ",
+          "pronunciation": "আহাল্লা",
+          "meaning": "সে হালাল করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "بَشَّرَ",
+          "pronunciation": "বাশ্শারা",
+          "meaning": "সে সুসংবাদ দিয়েছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "فِقْه",
+          "pronunciation": "ফিক্বহ",
+          "meaning": "বোঝাপড়া",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَفْسِير",
+          "pronunciation": "তাফসীর",
+          "meaning": "ব্যাখ্যা",
+          "type": "noun"
+        },
+        {
+          "arabic": "سُنَّة",
+          "pronunciation": "সুন্নাহ",
+          "meaning": "নবীজির আদর্শ",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَدِيث",
+          "pronunciation": "হাদীস",
+          "meaning": "নবীজির বাণী",
+          "type": "noun"
+        },
+        {
+          "arabic": "حُجَّة",
+          "pronunciation": "হুজ্জাত",
+          "meaning": "প্রমাণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "بُرْهَان",
+          "pronunciation": "বুরহান",
+          "meaning": "দলিল",
+          "type": "noun"
+        },
+        {
+          "arabic": "دَلِيل",
+          "pronunciation": "দালীল",
+          "meaning": "প্রমাণ/নির্দেশক",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَيِّنَة",
+          "pronunciation": "বায়্যিনাত",
+          "meaning": "সুস্পষ্ট প্রমাণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَقّ",
+          "pronunciation": "হক্ব",
+          "meaning": "সত্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَبِيّ",
+          "pronunciation": "নাবী",
+          "meaning": "নবী",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَسُول",
+          "pronunciation": "রাসূল",
+          "meaning": "বার্তাবাহক",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُرْسَل",
+          "pronunciation": "মুরসাল",
+          "meaning": "প্রেরিত",
+          "type": "noun"
+        },
+        {
+          "arabic": "خَاتَم",
+          "pronunciation": "খাতাম",
+          "meaning": "সর্বশেষ",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 9,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "أَنْذَرَ",
+          "pronunciation": "আনযারা",
+          "meaning": "সে সতর্ক করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "حَفِظَ",
+          "pronunciation": "হাফিযা",
+          "meaning": "সে হেফাজত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "شَهِدَ",
+          "pronunciation": "শাহিদা",
+          "meaning": "সে সাক্ষ্য দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَفَعَ",
+          "pronunciation": "রাফা'আ",
+          "meaning": "সে উঁচু করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "ثَبَتَ",
+          "pronunciation": "ছাবাতা",
+          "meaning": "সে অবিচল থেকেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "زَادَ",
+          "pronunciation": "যাদা",
+          "meaning": "সে বৃদ্ধি করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "جَمَعَ",
+          "pronunciation": "জামা'আ",
+          "meaning": "সে একত্রিত করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "إِمَام",
+          "pronunciation": "ইমাম",
+          "meaning": "নেতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "خَلِيفَة",
+          "pronunciation": "খালীফাত",
+          "meaning": "প্রতিনিধি",
+          "type": "noun"
+        },
+        {
+          "arabic": "صِدِّيق",
+          "pronunciation": "সিদ্দীক্ব",
+          "meaning": "সত্যবাদী",
+          "type": "noun"
+        },
+        {
+          "arabic": "شَهِيد",
+          "pronunciation": "শহীদ",
+          "meaning": "শহীদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَلِيّ",
+          "pronunciation": "ওয়ালী",
+          "meaning": "অলী/বন্ধু",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَالِح",
+          "pronunciation": "সালিহ",
+          "meaning": "সৎ ব্যক্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُتَّقِي",
+          "pronunciation": "মুত্তাক্বী",
+          "meaning": "মুত্তাকী",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُخْلِص",
+          "pronunciation": "মুখলিস",
+          "meaning": "একনিষ্ঠ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُهَاجِر",
+          "pronunciation": "মুহাজির",
+          "meaning": "হিজরতকারী",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَنْصَار",
+          "pronunciation": "আনসার",
+          "meaning": "সাহায্যকারী",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَالِم",
+          "pronunciation": "আলিম",
+          "meaning": "আলেম",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَكِيم",
+          "pronunciation": "হাকীম",
+          "meaning": "জ্ঞানী",
+          "type": "noun"
+        },
+        {
+          "arabic": "زَاهِد",
+          "pronunciation": "যাহিদ",
+          "meaning": "দুনিয়াবিরাগী",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 10,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "ضَرَبَ",
+          "pronunciation": "দারাবা",
+          "meaning": "সে উদাহরণ দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَسْلَمَ",
+          "pronunciation": "আসলামা",
+          "meaning": "সে ইসলাম গ্রহণ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَضِيَ",
+          "pronunciation": "রাদিয়া",
+          "meaning": "সে সন্তুষ্ট হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "مَلَكَ",
+          "pronunciation": "মালাকা",
+          "meaning": "সে মালিক হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "عَذَّبَ",
+          "pronunciation": "আযয়াবা",
+          "meaning": "সে শাস্তি দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "بَارَكَ",
+          "pronunciation": "বারাকা",
+          "meaning": "সে বরকত দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اتَّبَعَ",
+          "pronunciation": "ইত্তাবা'আ",
+          "meaning": "সে অনুসরণ করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "عَابِد",
+          "pronunciation": "আবিদ",
+          "meaning": "ইবাদতকারী",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُجَاهِد",
+          "pronunciation": "মুজাহিদ",
+          "meaning": "মুজাহিদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَابِر",
+          "pronunciation": "সাবির",
+          "meaning": "ধৈর্যশীল",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَلَك",
+          "pronunciation": "মালাক",
+          "meaning": "ফেরেশতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "جِبْرِيل",
+          "pronunciation": "জিবরীল",
+          "meaning": "জিবরীল",
+          "type": "noun"
+        },
+        {
+          "arabic": "مِيكَائِيل",
+          "pronunciation": "মীকাঈল",
+          "meaning": "মীকাঈল",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِسْرَافِيل",
+          "pronunciation": "ইসরাফীল",
+          "meaning": "ইসরাফীল",
+          "type": "noun"
+        },
+        {
+          "arabic": "شَيْطَان",
+          "pronunciation": "শাইতান",
+          "meaning": "শয়তান",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِبْلِيس",
+          "pronunciation": "ইবলীস",
+          "meaning": "ইবলীস",
+          "type": "noun"
+        },
+        {
+          "arabic": "جِنّ",
+          "pronunciation": "জিন্ন",
+          "meaning": "জিন",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِنْس",
+          "pronunciation": "ইনস",
+          "meaning": "মানবজাতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "رُوح",
+          "pronunciation": "রূহ",
+          "meaning": "আত্মা",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَفْس",
+          "pronunciation": "নাফস",
+          "meaning": "জীবন/আত্মা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 11,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "اسْتَقَامَ",
+          "pronunciation": "ইস্তাক্বামা",
+          "meaning": "সে অটল থেকেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "حَشَرَ",
+          "pronunciation": "হাশারা",
+          "meaning": "সে একত্র করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَقَامَ",
+          "pronunciation": "আক্বামা",
+          "meaning": "সে প্রতিষ্ঠিত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "وَزَنَ",
+          "pronunciation": "ওয়াযানা",
+          "meaning": "সে ওজন করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "آتَى",
+          "pronunciation": "আতা",
+          "meaning": "সে দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "وَعَدَ",
+          "pronunciation": "ওয়া'আদা",
+          "meaning": "সে ওয়াদা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "وَهَبَ",
+          "pronunciation": "ওয়াহাবা",
+          "meaning": "সে দান করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "قَلْب",
+          "pronunciation": "ক্বলব",
+          "meaning": "অন্তর",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَقْل",
+          "pronunciation": "আক্বল",
+          "meaning": "বুদ্ধি",
+          "type": "noun"
+        },
+        {
+          "arabic": "فِطْرَة",
+          "pronunciation": "ফিতরাত",
+          "meaning": "স্বভাব-প্রকৃতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "ضَمِير",
+          "pronunciation": "দমীর",
+          "meaning": "বিবেক",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَدْر",
+          "pronunciation": "সদর",
+          "meaning": "বুক/মন",
+          "type": "noun"
+        },
+        {
+          "arabic": "لُبّ",
+          "pronunciation": "লুব্ব",
+          "meaning": "বিবেক-বুদ্ধি",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَصِيرَة",
+          "pronunciation": "বাসীরাত",
+          "meaning": "অন্তর্দৃষ্টি",
+          "type": "noun"
+        },
+        {
+          "arabic": "حِلْم",
+          "pronunciation": "হিলম",
+          "meaning": "সহনশীলতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَسْوَاس",
+          "pronunciation": "ওয়াসওয়াস",
+          "meaning": "কুমন্ত্রণা",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِلْهَام",
+          "pronunciation": "ইলহাম",
+          "meaning": "অনুপ্রেরণা",
+          "type": "noun"
+        },
+        {
+          "arabic": "آخِرَة",
+          "pronunciation": "আখিরাত",
+          "meaning": "পরকাল",
+          "type": "noun"
+        },
+        {
+          "arabic": "يَوْم",
+          "pronunciation": "ইয়াওম",
+          "meaning": "দিন",
+          "type": "noun"
+        },
+        {
+          "arabic": "قِيَامَة",
+          "pronunciation": "ক্বিয়ামাত",
+          "meaning": "কিয়ামত",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 12,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "هَاجَرَ",
+          "pronunciation": "হাজারা",
+          "meaning": "সে হিজরত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَحَبَّ",
+          "pronunciation": "আহাব্বা",
+          "meaning": "সে ভালোবেসেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "لَعَنَ",
+          "pronunciation": "লা'আনা",
+          "meaning": "সে অভিশাপ দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "زَكَّى",
+          "pronunciation": "যাক্কা",
+          "meaning": "সে পবিত্র করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "صَامَ",
+          "pronunciation": "সামা",
+          "meaning": "সে রোজা রেখেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "حَجَّ",
+          "pronunciation": "হাজ্জা",
+          "meaning": "সে হজ্জ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "قَتَلَ",
+          "pronunciation": "ক্বতালা",
+          "meaning": "সে হত্যা করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "بَعْث",
+          "pronunciation": "বা'ছ",
+          "meaning": "পুনরুত্থান",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَشْر",
+          "pronunciation": "হাশর",
+          "meaning": "সমাবেশ",
+          "type": "noun"
+        },
+        {
+          "arabic": "حِسَاب",
+          "pronunciation": "হিসাব",
+          "meaning": "হিসাব-নিকাশ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مِيزَان",
+          "pronunciation": "মিযান",
+          "meaning": "দাঁড়িপাল্লা",
+          "type": "noun"
+        },
+        {
+          "arabic": "صِرَاط",
+          "pronunciation": "সিরাত",
+          "meaning": "পথ",
+          "type": "noun"
+        },
+        {
+          "arabic": "جَنَّة",
+          "pronunciation": "জান্নাত",
+          "meaning": "বেহেশত",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَار",
+          "pronunciation": "নার",
+          "meaning": "আগুন/জাহান্নাম",
+          "type": "noun"
+        },
+        {
+          "arabic": "جَهَنَّم",
+          "pronunciation": "জাহান্নাম",
+          "meaning": "জাহান্নাম",
+          "type": "noun"
+        },
+        {
+          "arabic": "فِرْدَوْس",
+          "pronunciation": "ফিরদাউস",
+          "meaning": "সর্বোচ্চ জান্নাত",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَذَاب",
+          "pronunciation": "আযাব",
+          "meaning": "শাস্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "ثَوَاب",
+          "pronunciation": "ছাওয়াব",
+          "meaning": "পুরস্কার",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَجْر",
+          "pronunciation": "আজর",
+          "meaning": "পারিশ্রমিক",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَعِيم",
+          "pronunciation": "না'ঈম",
+          "meaning": "সুখ",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 13,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "غَلَبَ",
+          "pronunciation": "গলাবা",
+          "meaning": "সে জয়ী হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "فَهِمَ",
+          "pronunciation": "ফাহিমা",
+          "meaning": "সে বুঝেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اسْتَكْبَرَ",
+          "pronunciation": "ইস্তাকবারা",
+          "meaning": "সে অহংকার করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَوَلَّى",
+          "pronunciation": "তাওয়াল্লা",
+          "meaning": "সে মুখ ফিরিয়ে নিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "فَسَقَ",
+          "pronunciation": "ফাসাক্বা",
+          "meaning": "সে ফাসেকি করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "قَبِلَ",
+          "pronunciation": "ক্বাবিলা",
+          "meaning": "সে গ্রহণ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "جَاهَدَ",
+          "pronunciation": "জাহাদা",
+          "meaning": "সে জিহাদ করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "عَمَل",
+          "pronunciation": "আমাল",
+          "meaning": "কাজ",
+          "type": "noun"
+        },
+        {
+          "arabic": "كِتَاب",
+          "pronunciation": "কিতাব",
+          "meaning": "আমলনামা",
+          "type": "noun"
+        },
+        {
+          "arabic": "شَفَاعَة",
+          "pronunciation": "শাফা'আত",
+          "meaning": "সুপারিশ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مِيزَان",
+          "pronunciation": "মিযান",
+          "meaning": "পাল্লা",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَمَاء",
+          "pronunciation": "সামা",
+          "meaning": "আকাশ",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَرْض",
+          "pronunciation": "আরদ",
+          "meaning": "পৃথিবী",
+          "type": "noun"
+        },
+        {
+          "arabic": "شَمْس",
+          "pronunciation": "শামস",
+          "meaning": "সূর্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَمَر",
+          "pronunciation": "ক্বামার",
+          "meaning": "চাঁদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَجْم",
+          "pronunciation": "নাজম",
+          "meaning": "তারা",
+          "type": "noun"
+        },
+        {
+          "arabic": "نُور",
+          "pronunciation": "নূর",
+          "meaning": "আলো",
+          "type": "noun"
+        },
+        {
+          "arabic": "ظُلْمَة",
+          "pronunciation": "যুলমাত",
+          "meaning": "অন্ধকার",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَاء",
+          "pronunciation": "মা-আন",
+          "meaning": "পানি",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَحْر",
+          "pronunciation": "বাহর",
+          "meaning": "সমুদ্র",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 14,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "خَافَ",
+          "pronunciation": "খফা",
+          "meaning": "সে ভয় পেয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَجَا",
+          "pronunciation": "রজা",
+          "meaning": "সে আশা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "بَكَى",
+          "pronunciation": "বাকা",
+          "meaning": "সে কেঁদেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَزَكَّى",
+          "pronunciation": "তাযাক্কা",
+          "meaning": "সে পরিশুদ্ধ হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "حَاسَبَ",
+          "pronunciation": "হাসাবা",
+          "meaning": "সে হিসাব নিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اعْتَبَرَ",
+          "pronunciation": "ই'তাবারা",
+          "meaning": "সে শিক্ষা নিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَعَلَّمَ",
+          "pronunciation": "তা'আল্লামা",
+          "meaning": "সে শিখেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "نَهْر",
+          "pronunciation": "নাহর",
+          "meaning": "নদী",
+          "type": "noun"
+        },
+        {
+          "arabic": "جَبَل",
+          "pronunciation": "জাবাল",
+          "meaning": "পাহাড়",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَادٍ",
+          "pronunciation": "ওয়াদ",
+          "meaning": "উপত্যকা",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَحْرَاء",
+          "pronunciation": "সহরা",
+          "meaning": "মরুভূমি",
+          "type": "noun"
+        },
+        {
+          "arabic": "بُسْتَان",
+          "pronunciation": "বুসতান",
+          "meaning": "বাগান",
+          "type": "noun"
+        },
+        {
+          "arabic": "شَجَر",
+          "pronunciation": "শাজার",
+          "meaning": "গাছ",
+          "type": "noun"
+        },
+        {
+          "arabic": "ثَمَر",
+          "pronunciation": "ছামার",
+          "meaning": "ফল",
+          "type": "noun"
+        },
+        {
+          "arabic": "زَرْع",
+          "pronunciation": "যার'",
+          "meaning": "ফসল",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَبّ",
+          "pronunciation": "হাব্ব",
+          "meaning": "শস্যদানা",
+          "type": "noun"
+        },
+        {
+          "arabic": "رِيح",
+          "pronunciation": "রীহ",
+          "meaning": "বায়ু",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَحَاب",
+          "pronunciation": "সাহাব",
+          "meaning": "মেঘ",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَقْت",
+          "pronunciation": "ওয়াক্বত",
+          "meaning": "সময়",
+          "type": "noun"
+        },
+        {
+          "arabic": "زَمَان",
+          "pronunciation": "যামান",
+          "meaning": "যুগ",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 15,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "صَدَقَ",
+          "pronunciation": "সদাক্বা",
+          "meaning": "সে সত্য বলেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "قَاتَلَ",
+          "pronunciation": "ক্বাতালা",
+          "meaning": "সে যুদ্ধ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "فَرَّ",
+          "pronunciation": "ফার্রা",
+          "meaning": "সে পালিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَجَعَ",
+          "pronunciation": "রজা'আ",
+          "meaning": "সে ফিরে এসেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "وَقَفَ",
+          "pronunciation": "ওয়াক্বাফা",
+          "meaning": "সে থেমেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَظَرَ",
+          "pronunciation": "নাযারা",
+          "meaning": "সে তাকিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَكَلَ",
+          "pronunciation": "আকালা",
+          "meaning": "সে খেয়েছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "عَصْر",
+          "pronunciation": "আসর",
+          "meaning": "যুগ/বিকাল",
+          "type": "noun"
+        },
+        {
+          "arabic": "لَيْل",
+          "pronunciation": "লাইল",
+          "meaning": "রাত",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَهَار",
+          "pronunciation": "নাহার",
+          "meaning": "দিন",
+          "type": "noun"
+        },
+        {
+          "arabic": "صُبْح",
+          "pronunciation": "সুবহ",
+          "meaning": "ভোর",
+          "type": "noun"
+        },
+        {
+          "arabic": "فَجْر",
+          "pronunciation": "ফজর",
+          "meaning": "প্রভাত",
+          "type": "noun"
+        },
+        {
+          "arabic": "ظُهْر",
+          "pronunciation": "যুহর",
+          "meaning": "দুপুর",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَغْرِب",
+          "pronunciation": "মাগরিব",
+          "meaning": "সন্ধ্যা",
+          "type": "noun"
+        },
+        {
+          "arabic": "عِشَاء",
+          "pronunciation": "ইশা",
+          "meaning": "রাতের নামাজ",
+          "type": "noun"
+        },
+        {
+          "arabic": "شَهْر",
+          "pronunciation": "শাহর",
+          "meaning": "মাস",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَمَضَان",
+          "pronunciation": "রামাদান",
+          "meaning": "রমজান মাস",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَنَة",
+          "pronunciation": "সানাত",
+          "meaning": "বছর",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَجَل",
+          "pronunciation": "আজাল",
+          "meaning": "নির্ধারিত সময়",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَال",
+          "pronunciation": "হাল",
+          "meaning": "অবস্থা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 16,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "شَرِبَ",
+          "pronunciation": "শারিবা",
+          "meaning": "সে পান করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "لَبِسَ",
+          "pronunciation": "লাবিসা",
+          "meaning": "সে পরেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَامَ",
+          "pronunciation": "নামা",
+          "meaning": "সে ঘুমিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "قَامَ",
+          "pronunciation": "ক্বামা",
+          "meaning": "সে দাঁড়িয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "جَلَسَ",
+          "pronunciation": "জালাসা",
+          "meaning": "সে বসেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "مَشَى",
+          "pronunciation": "মাশা",
+          "meaning": "সে হেঁটেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَكِبَ",
+          "pronunciation": "রাকিবা",
+          "meaning": "সে আরোহণ করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "أَمْر",
+          "pronunciation": "আমর",
+          "meaning": "বিষয়/আদেশ",
+          "type": "noun"
+        },
+        {
+          "arabic": "شَأْن",
+          "pronunciation": "শান",
+          "meaning": "ব্যাপার",
+          "type": "noun"
+        },
+        {
+          "arabic": "خَبَر",
+          "pronunciation": "খবর",
+          "meaning": "সংবাদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَقِيقَة",
+          "pronunciation": "হাক্বীক্বাত",
+          "meaning": "বাস্তবতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "غَيْب",
+          "pronunciation": "গাইব",
+          "meaning": "অদৃশ্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَدْل",
+          "pronunciation": "আদল",
+          "meaning": "ন্যায়বিচার",
+          "type": "noun"
+        },
+        {
+          "arabic": "ظُلْم",
+          "pronunciation": "যুলম",
+          "meaning": "অত্যাচার",
+          "type": "noun"
+        },
+        {
+          "arabic": "صِدْق",
+          "pronunciation": "সিদক্ব",
+          "meaning": "সত্যবাদিতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَذِب",
+          "pronunciation": "কাযিব",
+          "meaning": "মিথ্যা",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَمَانَة",
+          "pronunciation": "আমানাত",
+          "meaning": "আমানত",
+          "type": "noun"
+        },
+        {
+          "arabic": "خِيَانَة",
+          "pronunciation": "খিয়ানাত",
+          "meaning": "বিশ্বাসঘাতকতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَبْر",
+          "pronunciation": "সবর",
+          "meaning": "ধৈর্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "شُكْر",
+          "pronunciation": "শুকর",
+          "meaning": "কৃতজ্ঞতা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 17,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "حَمَلَ",
+          "pronunciation": "হামালা",
+          "meaning": "সে বহন করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "وَضَعَ",
+          "pronunciation": "ওয়াদা'আ",
+          "meaning": "সে রেখেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "فَتَحَ",
+          "pronunciation": "ফাতাহা",
+          "meaning": "সে খুলেছে/বিজয় করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَغْلَقَ",
+          "pronunciation": "আগলাক্বা",
+          "meaning": "সে বন্ধ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَفَعَ",
+          "pronunciation": "নাফা'আ",
+          "meaning": "সে উপকার করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "ضَرَّ",
+          "pronunciation": "দার্রা",
+          "meaning": "সে ক্ষতি করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَصَابَ",
+          "pronunciation": "আসাবা",
+          "meaning": "সে পৌঁছেছে/আঘাত করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "رَحْمَة",
+          "pronunciation": "রাহমাত",
+          "meaning": "দয়া",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَسْوَة",
+          "pronunciation": "ক্বসওয়াত",
+          "meaning": "কঠোরতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَوَاضُع",
+          "pronunciation": "তাওয়াদু'",
+          "meaning": "বিনম্রতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "كِبْر",
+          "pronunciation": "কিবর",
+          "meaning": "অহংকার",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَخَاء",
+          "pronunciation": "সাখা",
+          "meaning": "উদারতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "بُخْل",
+          "pronunciation": "বুখল",
+          "meaning": "কৃপণতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَيَاء",
+          "pronunciation": "হায়া",
+          "meaning": "লজ্জা",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَفَاء",
+          "pronunciation": "ওয়াফা",
+          "meaning": "বিশ্বস্ততা",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِحْسَان",
+          "pronunciation": "ইহসান",
+          "meaning": "উত্তম ব্যবহার",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِسَاءَة",
+          "pronunciation": "ইসাআত",
+          "meaning": "খারাপ আচরণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَعْرُوف",
+          "pronunciation": "মা'রুফ",
+          "meaning": "ভালো কাজ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُنْكَر",
+          "pronunciation": "মুনকার",
+          "meaning": "খারাপ কাজ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَسْجِد",
+          "pronunciation": "মাসজিদ",
+          "meaning": "মসজিদ",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 18,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "أَنْقَذَ",
+          "pronunciation": "আনক্বাযা",
+          "meaning": "সে উদ্ধার করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "وَصَفَ",
+          "pronunciation": "ওয়াসাফা",
+          "meaning": "সে বর্ণনা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَخْبَرَ",
+          "pronunciation": "আখবারা",
+          "meaning": "সে সংবাদ দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "دَبَّرَ",
+          "pronunciation": "দাব্বারা",
+          "meaning": "সে পরিচালনা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَحَاطَ",
+          "pronunciation": "আহাতা",
+          "meaning": "সে পরিবেষ্টিত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "خَضَعَ",
+          "pronunciation": "খাদা'আ",
+          "meaning": "সে বিনম্র হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَعَانَ",
+          "pronunciation": "আ'আনা",
+          "meaning": "সে সাহায্য করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "كَعْبَة",
+          "pronunciation": "কা'বাত",
+          "meaning": "কাবা",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَيْت",
+          "pronunciation": "বাইতুল",
+          "meaning": "ঘর",
+          "type": "noun"
+        },
+        {
+          "arabic": "قِبْلَة",
+          "pronunciation": "ক্বিবলাত",
+          "meaning": "কিবলা",
+          "type": "noun"
+        },
+        {
+          "arabic": "مِحْرَاب",
+          "pronunciation": "মিহরাব",
+          "meaning": "মেহরাব",
+          "type": "noun"
+        },
+        {
+          "arabic": "مِنْبَر",
+          "pronunciation": "মিম্বার",
+          "meaning": "মিম্বার",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَدِينَة",
+          "pronunciation": "মাদীনাত",
+          "meaning": "শহর",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَكَّة",
+          "pronunciation": "মাক্কাত",
+          "meaning": "মক্কা",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَرَم",
+          "pronunciation": "হারাম",
+          "meaning": "পবিত্র স্থান",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَقَام",
+          "pronunciation": "মাক্বাম",
+          "meaning": "মর্যাদার স্থান",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَفَا",
+          "pronunciation": "সাফা",
+          "meaning": "সাফা পাহাড়",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَرْوَة",
+          "pronunciation": "মারওয়াত",
+          "meaning": "মারওয়া পাহাড়",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُزْدَلِفَة",
+          "pronunciation": "মুযদালিফাত",
+          "meaning": "মুজদালিফা",
+          "type": "noun"
+        },
+        {
+          "arabic": "مِنًى",
+          "pronunciation": "মিনা",
+          "meaning": "মিনা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 19,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "وَلِيَ",
+          "pronunciation": "ওয়ালিয়া",
+          "meaning": "সে অভিভাবক হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَدَّى",
+          "pronunciation": "আদ্দা",
+          "meaning": "সে আদায় করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَوَى",
+          "pronunciation": "নাওয়া",
+          "meaning": "সে নিয়ত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "صَلَحَ",
+          "pronunciation": "সলাহা",
+          "meaning": "সে সংশোধন হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَصْلَحَ",
+          "pronunciation": "আসলাহা",
+          "meaning": "সে সংশোধন করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَفْسَدَ",
+          "pronunciation": "আফসাদা",
+          "meaning": "সে ফাসাদ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "كَذَبَ",
+          "pronunciation": "কাযাবা",
+          "meaning": "সে মিথ্যা বলেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "عَرَفَة",
+          "pronunciation": "আরাফাত",
+          "meaning": "আরাফাত",
+          "type": "noun"
+        },
+        {
+          "arabic": "زَمْزَم",
+          "pronunciation": "যামযাম",
+          "meaning": "যমযম কূপ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَقَابِر",
+          "pronunciation": "মাক্বাবির",
+          "meaning": "কবরস্থান",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَبْر",
+          "pronunciation": "ক্বব্র",
+          "meaning": "কবর",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَدْفَن",
+          "pronunciation": "মাদফান",
+          "meaning": "সমাধিস্থল",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَذَان",
+          "pronunciation": "আযান",
+          "meaning": "আযান",
+          "type": "noun"
+        },
+        {
+          "arabic": "سُلْطَان",
+          "pronunciation": "সুলতান",
+          "meaning": "ক্ষমতা/শাসক",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَلِك",
+          "pronunciation": "মালিক",
+          "meaning": "রাজা",
+          "type": "noun"
+        },
+        {
+          "arabic": "فِرْعَوْن",
+          "pronunciation": "ফির'আউন",
+          "meaning": "ফেরাউন (অত্যাচারী শাসক)",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَاكِم",
+          "pronunciation": "হাকিম",
+          "meaning": "শাসক",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَاضِي",
+          "pronunciation": "ক্বাদী",
+          "meaning": "বিচারক",
+          "type": "noun"
+        },
+        {
+          "arabic": "شَاهِد",
+          "pronunciation": "শাহিদ",
+          "meaning": "সাক্ষী",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَهْد",
+          "pronunciation": "আহদ",
+          "meaning": "চুক্তি",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 20,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "أَنْكَرَ",
+          "pronunciation": "আনকারা",
+          "meaning": "সে অস্বীকার করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اعْتَرَفَ",
+          "pronunciation": "ই'তারাফা",
+          "meaning": "সে স্বীকার করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَفَكَّرَ",
+          "pronunciation": "তাফাক্কারা",
+          "meaning": "সে চিন্তা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَدَبَّرَ",
+          "pronunciation": "তাদাব্বারা",
+          "meaning": "সে গভীরভাবে ভেবেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَذَكَّرَ",
+          "pronunciation": "তাযাক্কারা",
+          "meaning": "সে স্মরণ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَسِيَ",
+          "pronunciation": "নাসিয়া",
+          "meaning": "সে ভুলে গেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَيْقَنَ",
+          "pronunciation": "আইক্বানা",
+          "meaning": "সে দৃঢ়বিশ্বাস রেখেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "مِيثَاق",
+          "pronunciation": "মীছাক্ব",
+          "meaning": "শপথনামা",
+          "type": "noun"
+        },
+        {
+          "arabic": "قِصَاص",
+          "pronunciation": "ক্বিসাস",
+          "meaning": "সমতুল্য শাস্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَدّ",
+          "pronunciation": "হাদ্দ",
+          "meaning": "নির্ধারিত শাস্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "شُورَى",
+          "pronunciation": "শূরা",
+          "meaning": "পরামর্শ",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَمَانَة",
+          "pronunciation": "আমানাত",
+          "meaning": "দায়িত্ব",
+          "type": "noun"
+        },
+        {
+          "arabic": "وِلَايَة",
+          "pronunciation": "বিলায়াত",
+          "meaning": "কর্তৃত্ব",
+          "type": "noun"
+        },
+        {
+          "arabic": "حِزْب",
+          "pronunciation": "হিযব",
+          "meaning": "দল",
+          "type": "noun"
+        },
+        {
+          "arabic": "طَاغُوت",
+          "pronunciation": "তাগুত",
+          "meaning": "মিথ্যা উপাস্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "فِتْنَة",
+          "pronunciation": "ফিতনাত",
+          "meaning": "বিপদ/অশান্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "فَسَاد",
+          "pronunciation": "ফাসাদ",
+          "meaning": "দুর্নীতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَرْب",
+          "pronunciation": "হারব",
+          "meaning": "যুদ্ধ",
+          "type": "noun"
+        },
+        {
+          "arabic": "سِلْم",
+          "pronunciation": "সিলম",
+          "meaning": "শান্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "صُلْح",
+          "pronunciation": "সুলহ",
+          "meaning": "সন্ধি",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 21,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "شَكَّ",
+          "pronunciation": "শাক্কা",
+          "meaning": "সে সন্দেহ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَسْرَفَ",
+          "pronunciation": "আসরাফা",
+          "meaning": "সে অপচয় করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "قَنَطَ",
+          "pronunciation": "ক্বানাতা",
+          "meaning": "সে হতাশ হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "يَئِسَ",
+          "pronunciation": "ইয়াইসা",
+          "meaning": "সে নিরাশ হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "فَرِحَ",
+          "pronunciation": "ফারিহা",
+          "meaning": "সে খুশি হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "حَزِنَ",
+          "pronunciation": "হাযিনা",
+          "meaning": "সে দুঃখিত হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "غَضِبَ",
+          "pronunciation": "গদিবা",
+          "meaning": "সে রাগান্বিত হয়েছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "مَال",
+          "pronunciation": "মাল",
+          "meaning": "সম্পদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "رِزْق",
+          "pronunciation": "রিযক্ব",
+          "meaning": "জীবিকা",
+          "type": "noun"
+        },
+        {
+          "arabic": "فَقْر",
+          "pronunciation": "ফাক্বর",
+          "meaning": "দারিদ্র্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "غِنًى",
+          "pronunciation": "গিনা",
+          "meaning": "ধনসম্পদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "رِبَا",
+          "pronunciation": "রিবা",
+          "meaning": "সুদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَيْع",
+          "pronunciation": "বাই'",
+          "meaning": "ক্রয়-বিক্রয়",
+          "type": "noun"
+        },
+        {
+          "arabic": "تِجَارَة",
+          "pronunciation": "তিজারাত",
+          "meaning": "ব্যবসা",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَرْض",
+          "pronunciation": "ক্বারদ",
+          "meaning": "ঋণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَجْر",
+          "pronunciation": "আজর",
+          "meaning": "পারিশ্রমিক",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَفَقَة",
+          "pronunciation": "নাফাক্বাত",
+          "meaning": "ব্যয়",
+          "type": "noun"
+        },
+        {
+          "arabic": "غَنِيمَة",
+          "pronunciation": "গনীমাত",
+          "meaning": "যুদ্ধলব্ধ সম্পদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "فَيْء",
+          "pronunciation": "ফাই",
+          "meaning": "রাষ্ট্রীয় সম্পদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَقْف",
+          "pronunciation": "ওয়াক্বফ",
+          "meaning": "ওয়াকফ",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 22,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "عَفَا",
+          "pronunciation": "আফা",
+          "meaning": "সে মাফ করে দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَكْرَمَ",
+          "pronunciation": "আকরামা",
+          "meaning": "সে সম্মান করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَهَانَ",
+          "pronunciation": "আহানা",
+          "meaning": "সে অপমান করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَحِمَ",
+          "pronunciation": "রাহিমা",
+          "meaning": "সে দয়া করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "عَاقَبَ",
+          "pronunciation": "আ'আক্বাবা",
+          "meaning": "সে শাস্তি দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَنْعَمَ",
+          "pronunciation": "আন'আমা",
+          "meaning": "সে নিয়ামত দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "سَلَّمَ",
+          "pronunciation": "সাল্লামা",
+          "meaning": "সে শান্তি দিয়েছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "مِيرَاث",
+          "pronunciation": "মীরাস",
+          "meaning": "উত্তরাধিকার",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَصِيَّة",
+          "pronunciation": "ওয়াসিয়্যাত",
+          "meaning": "অসিয়ত",
+          "type": "noun"
+        },
+        {
+          "arabic": "دَيْن",
+          "pronunciation": "দাইন",
+          "meaning": "ঋণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَدَقَة",
+          "pronunciation": "সদাকাত",
+          "meaning": "দান-খয়রাত",
+          "type": "noun"
+        },
+        {
+          "arabic": "زَكَاة",
+          "pronunciation": "যাকাত",
+          "meaning": "বাধ্যতামূলক দান",
+          "type": "noun"
+        },
+        {
+          "arabic": "جِزْيَة",
+          "pronunciation": "জিযইয়াত",
+          "meaning": "অমুসলিম কর",
+          "type": "noun"
+        },
+        {
+          "arabic": "خُمُس",
+          "pronunciation": "খুমুস",
+          "meaning": "পাঁচ ভাগের এক ভাগ",
+          "type": "noun"
+        },
+        {
+          "arabic": "جَسَد",
+          "pronunciation": "জাসাদ",
+          "meaning": "শরীর",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَأْس",
+          "pronunciation": "রাস",
+          "meaning": "মাথা",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَجْه",
+          "pronunciation": "ওয়াজহ",
+          "meaning": "মুখমণ্ডল",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَيْن",
+          "pronunciation": "আইন",
+          "meaning": "চোখ",
+          "type": "noun"
+        },
+        {
+          "arabic": "أُذُن",
+          "pronunciation": "উযুন",
+          "meaning": "কান",
+          "type": "noun"
+        },
+        {
+          "arabic": "لِسَان",
+          "pronunciation": "লিসান",
+          "meaning": "জিভ/ভাষা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 23,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "أَمَّنَ",
+          "pronunciation": "আম্মানা",
+          "meaning": "সে নিরাপদ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "خَوَّفَ",
+          "pronunciation": "খাও্যাফা",
+          "meaning": "সে ভয় দেখিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "طَمَعَ",
+          "pronunciation": "তামা'আ",
+          "meaning": "সে লোভ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "زَهِدَ",
+          "pronunciation": "যাহিদা",
+          "meaning": "সে দুনিয়াবিরাগী হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَخْلَصَ",
+          "pronunciation": "আখলাসা",
+          "meaning": "সে একনিষ্ঠ হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَاقَبَ",
+          "pronunciation": "রাক্বাবা",
+          "meaning": "সে পর্যবেক্ষণ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَدْرَكَ",
+          "pronunciation": "আদরাকা",
+          "meaning": "সে পেয়েছে/বুঝেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "يَد",
+          "pronunciation": "ইয়াদ",
+          "meaning": "হাত",
+          "type": "noun"
+        },
+        {
+          "arabic": "رِجْل",
+          "pronunciation": "রিজল",
+          "meaning": "পা",
+          "type": "noun"
+        },
+        {
+          "arabic": "ظَهْر",
+          "pronunciation": "যাহর",
+          "meaning": "পিঠ",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَطْن",
+          "pronunciation": "বাতন",
+          "meaning": "পেট",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَدْر",
+          "pronunciation": "সদর",
+          "meaning": "বুক",
+          "type": "noun"
+        },
+        {
+          "arabic": "دَم",
+          "pronunciation": "দাম",
+          "meaning": "রক্ত",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَظْم",
+          "pronunciation": "আযম",
+          "meaning": "হাড়",
+          "type": "noun"
+        },
+        {
+          "arabic": "جِلْد",
+          "pronunciation": "জিলদ",
+          "meaning": "চামড়া",
+          "type": "noun"
+        },
+        {
+          "arabic": "شَعْر",
+          "pronunciation": "শা'র",
+          "meaning": "চুল",
+          "type": "noun"
+        },
+        {
+          "arabic": "عُمُر",
+          "pronunciation": "উমুর",
+          "meaning": "বয়স/জীবনকাল",
+          "type": "noun"
+        },
+        {
+          "arabic": "صِحَّة",
+          "pronunciation": "সিহ্হাত",
+          "meaning": "স্বাস্থ্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَرَض",
+          "pronunciation": "মারাদ",
+          "meaning": "রোগ",
+          "type": "noun"
+        },
+        {
+          "arabic": "شِفَاء",
+          "pronunciation": "শিফা",
+          "meaning": "সুস্থতা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 24,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "بَلَغَ",
+          "pronunciation": "বালাগা",
+          "meaning": "সে পৌঁছেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "عَبَرَ",
+          "pronunciation": "আবারা",
+          "meaning": "সে পার হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "سَلَكَ",
+          "pronunciation": "সালাকা",
+          "meaning": "সে পথ চলেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "طَلَبَ",
+          "pronunciation": "তলাবা",
+          "meaning": "সে চেয়েছে/খুঁজেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "وَجَدَ",
+          "pronunciation": "ওয়াজাদা",
+          "meaning": "সে পেয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَقَرَّ",
+          "pronunciation": "আক্বার্রা",
+          "meaning": "সে স্বীকার করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَعْلَنَ",
+          "pronunciation": "আ'লানা",
+          "meaning": "সে ঘোষণা করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "مَوْت",
+          "pronunciation": "মাওত",
+          "meaning": "মৃত্যু",
+          "type": "noun"
+        },
+        {
+          "arabic": "طَعَام",
+          "pronunciation": "তা'আম",
+          "meaning": "খাবার",
+          "type": "noun"
+        },
+        {
+          "arabic": "شَرَاب",
+          "pronunciation": "শারাব",
+          "meaning": "পানীয়",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَلَال",
+          "pronunciation": "হালাল",
+          "meaning": "হালাল",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَرَام",
+          "pronunciation": "হারাম",
+          "meaning": "হারাম",
+          "type": "noun"
+        },
+        {
+          "arabic": "لَحْم",
+          "pronunciation": "লাহম",
+          "meaning": "মাংস",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَمَك",
+          "pronunciation": "সামাক",
+          "meaning": "মাছ",
+          "type": "noun"
+        },
+        {
+          "arabic": "لَبَن",
+          "pronunciation": "লাবান",
+          "meaning": "দুধ",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَسَل",
+          "pronunciation": "আসাল",
+          "meaning": "মধু",
+          "type": "noun"
+        },
+        {
+          "arabic": "زَيْتُون",
+          "pronunciation": "যাইতুন",
+          "meaning": "জলপাই",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَمْر",
+          "pronunciation": "তামর",
+          "meaning": "খেজুর",
+          "type": "noun"
+        },
+        {
+          "arabic": "عِنَب",
+          "pronunciation": "ইনাব",
+          "meaning": "আঙুর",
+          "type": "noun"
+        },
+        {
+          "arabic": "رُمَّان",
+          "pronunciation": "রুম্মান",
+          "meaning": "ডালিম",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 25,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "أَسَرَّ",
+          "pronunciation": "আসার্রা",
+          "meaning": "সে গোপন করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "كَشَفَ",
+          "pronunciation": "কাশাফা",
+          "meaning": "সে প্রকাশ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "سَتَرَ",
+          "pronunciation": "সাতারা",
+          "meaning": "সে ঢেকে রেখেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَظْهَرَ",
+          "pronunciation": "আযহারা",
+          "meaning": "সে প্রকাশ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَخْفَى",
+          "pronunciation": "আখফা",
+          "meaning": "সে লুকিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "جَحَدَ",
+          "pronunciation": "জাহাদা",
+          "meaning": "সে অস্বীকার করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَقْسَمَ",
+          "pronunciation": "আক্বসামা",
+          "meaning": "সে শপথ করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "تِين",
+          "pronunciation": "তীন",
+          "meaning": "ডুমুর",
+          "type": "noun"
+        },
+        {
+          "arabic": "زَنْجَبِيل",
+          "pronunciation": "যানজাবীল",
+          "meaning": "আদা",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَافُور",
+          "pronunciation": "কাফূর",
+          "meaning": "কর্পূর",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَلْسَبِيل",
+          "pronunciation": "সালসাবীল",
+          "meaning": "জান্নাতের ঝর্না",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَوْثَر",
+          "pronunciation": "কাওছার",
+          "meaning": "কাওছার নদী",
+          "type": "noun"
+        },
+        {
+          "arabic": "خَمْر",
+          "pronunciation": "খামর",
+          "meaning": "মদ (নিষিদ্ধ)",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَيْسِر",
+          "pronunciation": "মাইসির",
+          "meaning": "জুয়া",
+          "type": "noun"
+        },
+        {
+          "arabic": "رِزْق",
+          "pronunciation": "রিযক্ব",
+          "meaning": "রিযিক",
+          "type": "noun"
+        },
+        {
+          "arabic": "نِكَاح",
+          "pronunciation": "নিকাহ",
+          "meaning": "বিবাহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "طَلَاق",
+          "pronunciation": "তালাক্ব",
+          "meaning": "তালাক",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَهْر",
+          "pronunciation": "মাহর",
+          "meaning": "মহর",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِذْن",
+          "pronunciation": "ইযন",
+          "meaning": "অনুমতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَارِث",
+          "pronunciation": "ওয়ারিস",
+          "meaning": "উত্তরাধিকারী",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 26,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "كَفَّرَ",
+          "pronunciation": "কাফ্ফারা",
+          "meaning": "সে কাফফারা দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "فَدَى",
+          "pronunciation": "ফাদা",
+          "meaning": "সে মুক্তিপণ দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اشْتَرَى",
+          "pronunciation": "ইশতারা",
+          "meaning": "সে কিনেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "بَاعَ",
+          "pronunciation": "বা'আ",
+          "meaning": "সে বিক্রি করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "وَرَّثَ",
+          "pronunciation": "ওয়ার্রাছা",
+          "meaning": "সে উত্তরাধিকার দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَحْيَا",
+          "pronunciation": "আহইয়া",
+          "meaning": "সে জীবিত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَمَاتَ",
+          "pronunciation": "আমাতা",
+          "meaning": "সে মৃত্যু দিয়েছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "رَضَاعَة",
+          "pronunciation": "রাদা'আত",
+          "meaning": "দুধপান",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَفَالَة",
+          "pronunciation": "কাফালাত",
+          "meaning": "অভিভাবকত্ব",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَفَقَة",
+          "pronunciation": "নাফাক্বাত",
+          "meaning": "ভরণ-পোষণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَضَانَة",
+          "pronunciation": "হাদানাত",
+          "meaning": "শিশু লালন-পালন",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَلَاء",
+          "pronunciation": "ওয়ালা",
+          "meaning": "বন্ধুত্ব/আনুগত্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَحِم",
+          "pronunciation": "রাহিম",
+          "meaning": "আত্মীয়তার বন্ধন",
+          "type": "noun"
+        },
+        {
+          "arabic": "صِلَة",
+          "pronunciation": "সিলাত",
+          "meaning": "সম্পর্ক রক্ষা",
+          "type": "noun"
+        },
+        {
+          "arabic": "جَار",
+          "pronunciation": "জার",
+          "meaning": "প্রতিবেশী",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَدِيق",
+          "pronunciation": "সদীক্ব",
+          "meaning": "বন্ধু",
+          "type": "noun"
+        },
+        {
+          "arabic": "خَصْم",
+          "pronunciation": "খাসম",
+          "meaning": "বিরোধী",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَدُوّ",
+          "pronunciation": "আদুউউ",
+          "meaning": "শত্রু",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَلِيّ",
+          "pronunciation": "ওয়ালী",
+          "meaning": "অভিভাবক",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَفِيل",
+          "pronunciation": "কাফীল",
+          "meaning": "জামিনদার",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 27,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "شَفَى",
+          "pronunciation": "শাফা",
+          "meaning": "সে সুস্থ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "مَرِضَ",
+          "pronunciation": "মারিদা",
+          "meaning": "সে অসুস্থ হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "عَافَى",
+          "pronunciation": "আফা",
+          "meaning": "সে সুস্বাস্থ্য দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "ابْتَلَى",
+          "pronunciation": "ইবতালা",
+          "meaning": "সে পরীক্ষা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "صَبَّرَ",
+          "pronunciation": "সাব্বারা",
+          "meaning": "সে ধৈর্য দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "ثَبَّتَ",
+          "pronunciation": "ছাব্বাতা",
+          "meaning": "সে অবিচল রেখেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَجَّى",
+          "pronunciation": "নাজ্জা",
+          "meaning": "সে মুক্ত করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "شَاهِد",
+          "pronunciation": "শাহিদ",
+          "meaning": "সাক্ষী",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَسِير",
+          "pronunciation": "আসীর",
+          "meaning": "বন্দী",
+          "type": "noun"
+        },
+        {
+          "arabic": "هُدًى",
+          "pronunciation": "হুদা",
+          "meaning": "হেদায়েত",
+          "type": "noun"
+        },
+        {
+          "arabic": "ضَلَال",
+          "pronunciation": "দালাল",
+          "meaning": "পথভ্রষ্টতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "نُور",
+          "pronunciation": "নূর",
+          "meaning": "আলো",
+          "type": "noun"
+        },
+        {
+          "arabic": "ظُلُمَات",
+          "pronunciation": "যুলুমাত",
+          "meaning": "অন্ধকারসমূহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَبِيل",
+          "pronunciation": "সাবীল",
+          "meaning": "পথ",
+          "type": "noun"
+        },
+        {
+          "arabic": "صِرَاط",
+          "pronunciation": "সিরাত",
+          "meaning": "সরল পথ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَنْهَج",
+          "pronunciation": "মানহাজ",
+          "meaning": "পদ্ধতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "شِرْعَة",
+          "pronunciation": "শির'আত",
+          "meaning": "আইন",
+          "type": "noun"
+        },
+        {
+          "arabic": "فَسَاد",
+          "pronunciation": "ফাসাদ",
+          "meaning": "বিপর্যয়",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِصْلَاح",
+          "pronunciation": "ইসলাহ",
+          "meaning": "সংস্কার",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَاطِل",
+          "pronunciation": "বাতিল",
+          "meaning": "মিথ্যা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 28,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "أَنْجَى",
+          "pronunciation": "আনজা",
+          "meaning": "সে রক্ষা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "خَلَّصَ",
+          "pronunciation": "খাল্লাসা",
+          "meaning": "সে উদ্ধার করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "وَقَى",
+          "pronunciation": "ওয়াক্বা",
+          "meaning": "সে রক্ষা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَهْلَكَ",
+          "pronunciation": "আহলাকা",
+          "meaning": "সে ধ্বংস করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "دَمَّرَ",
+          "pronunciation": "দাম্মারা",
+          "meaning": "সে বিনাশ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَسْكَنَ",
+          "pronunciation": "আসকানা",
+          "meaning": "সে বাসস্থান দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَوْرَثَ",
+          "pronunciation": "আওরাছা",
+          "meaning": "সে উত্তরাধিকারী করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "حَقّ",
+          "pronunciation": "হক্ব",
+          "meaning": "সত্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَعْصِيَة",
+          "pronunciation": "মা'সিয়াত",
+          "meaning": "পাপ",
+          "type": "noun"
+        },
+        {
+          "arabic": "طَاعَة",
+          "pronunciation": "তা'আত",
+          "meaning": "আনুগত্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "ذَنْب",
+          "pronunciation": "যানব",
+          "meaning": "গুনাহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "خَطِيئَة",
+          "pronunciation": "খাতীআত",
+          "meaning": "ভুল/পাপ",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِثْم",
+          "pronunciation": "ইছম",
+          "meaning": "পাপ",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَسَنَة",
+          "pronunciation": "হাসানাত",
+          "meaning": "সৎকাজ",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَيِّئَة",
+          "pronunciation": "সাইয়িআত",
+          "meaning": "মন্দকাজ",
+          "type": "noun"
+        },
+        {
+          "arabic": "فُحْش",
+          "pronunciation": "ফুহশ",
+          "meaning": "অশ্লীলতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَعِير",
+          "pronunciation": "বা'ঈর",
+          "meaning": "উট",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَقَر",
+          "pronunciation": "বাক্বার",
+          "meaning": "গরু",
+          "type": "noun"
+        },
+        {
+          "arabic": "غَنَم",
+          "pronunciation": "গানাম",
+          "meaning": "ভেড়া/ছাগল",
+          "type": "noun"
+        },
+        {
+          "arabic": "حِمَار",
+          "pronunciation": "হিমার",
+          "meaning": "গাধা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 29,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "مَكَّنَ",
+          "pronunciation": "মাক্কানা",
+          "meaning": "সে কর্তৃত্ব দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَيَّدَ",
+          "pronunciation": "আইয়াদা",
+          "meaning": "সে শক্তিশালী করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَوَّجَ",
+          "pronunciation": "তাওয়াজা",
+          "meaning": "সে মুকুট দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اخْتَارَ",
+          "pronunciation": "ইখতারা",
+          "meaning": "সে বেছে নিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "قَالَ",
+          "pronunciation": "ক্বলা",
+          "meaning": "সে বলেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "كَانَ",
+          "pronunciation": "কানা",
+          "meaning": "সে ছিল",
+          "type": "verb"
+        },
+        {
+          "arabic": "جَاءَ",
+          "pronunciation": "জা-আ",
+          "meaning": "সে এসেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "فَرَس",
+          "pronunciation": "ফারাস",
+          "meaning": "ঘোড়া",
+          "type": "noun"
+        },
+        {
+          "arabic": "خَيْل",
+          "pronunciation": "খাইল",
+          "meaning": "ঘোড়ার দল",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَلْب",
+          "pronunciation": "কালব",
+          "meaning": "কুকুর",
+          "type": "noun"
+        },
+        {
+          "arabic": "ذِئْب",
+          "pronunciation": "যিব",
+          "meaning": "নেকড়ে",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَسَد",
+          "pronunciation": "আসাদ",
+          "meaning": "সিংহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "فِيل",
+          "pronunciation": "ফীল",
+          "meaning": "হাতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "طَيْر",
+          "pronunciation": "তাইর",
+          "meaning": "পাখি",
+          "type": "noun"
+        },
+        {
+          "arabic": "غُرَاب",
+          "pronunciation": "গুরাব",
+          "meaning": "কাক",
+          "type": "noun"
+        },
+        {
+          "arabic": "هُدْهُد",
+          "pronunciation": "হুদহুদ",
+          "meaning": "হুদহুদ পাখি",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَمْل",
+          "pronunciation": "নামল",
+          "meaning": "পিঁপড়া",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَحْل",
+          "pronunciation": "নাহল",
+          "meaning": "মৌমাছি",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَعُوضَة",
+          "pronunciation": "বা'ঊদাত",
+          "meaning": "মশা",
+          "type": "noun"
+        },
+        {
+          "arabic": "ذُبَاب",
+          "pronunciation": "যুবাব",
+          "meaning": "মাছি",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 30,
+      "level": 1,
+      "verbs": [
+        {
+          "arabic": "أَمَرَ",
+          "pronunciation": "আমারা",
+          "meaning": "সে আদেশ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "آمَنَ",
+          "pronunciation": "আমানা",
+          "meaning": "সে ঈমান এনেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "خَلَقَ",
+          "pronunciation": "খলাক্বা",
+          "meaning": "সে সৃষ্টি করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "عَلِمَ",
+          "pronunciation": "আলিমা",
+          "meaning": "সে জেনেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَنْزَلَ",
+          "pronunciation": "আনযালা",
+          "meaning": "সে নাযিল করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "جَعَلَ",
+          "pronunciation": "জা'আলা",
+          "meaning": "সে বানিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَأَى",
+          "pronunciation": "রাআ",
+          "meaning": "সে দেখেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "حَيَّة",
+          "pronunciation": "হাইয়্যাত",
+          "meaning": "সাপ",
+          "type": "noun"
+        },
+        {
+          "arabic": "ضِفْدَع",
+          "pronunciation": "দিফদা'",
+          "meaning": "ব্যাঙ",
+          "type": "noun"
+        },
+        {
+          "arabic": "حُوت",
+          "pronunciation": "হূত",
+          "meaning": "মাছ/তিমি",
+          "type": "noun"
+        },
+        {
+          "arabic": "جِهَاد",
+          "pronunciation": "জিহাদ",
+          "meaning": "জিহাদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "قِتَال",
+          "pronunciation": "ক্বিতাল",
+          "meaning": "যুদ্ধ",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَصْر",
+          "pronunciation": "নাসর",
+          "meaning": "বিজয়",
+          "type": "noun"
+        },
+        {
+          "arabic": "فَتْح",
+          "pronunciation": "ফাতহ",
+          "meaning": "বিজয়/উদ্ঘাটন",
+          "type": "noun"
+        },
+        {
+          "arabic": "هَزِيمَة",
+          "pronunciation": "হাযীমাত",
+          "meaning": "পরাজয়",
+          "type": "noun"
+        },
+        {
+          "arabic": "سِلَاح",
+          "pronunciation": "সিলাহ",
+          "meaning": "অস্ত্র",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَيْف",
+          "pronunciation": "সাইফ",
+          "meaning": "তলোয়ার",
+          "type": "noun"
+        },
+        {
+          "arabic": "رُمْح",
+          "pronunciation": "রুমহ",
+          "meaning": "বর্শা",
+          "type": "noun"
+        },
+        {
+          "arabic": "دِرْع",
+          "pronunciation": "দির'",
+          "meaning": "বর্ম",
+          "type": "noun"
+        },
+        {
+          "arabic": "حِصَار",
+          "pronunciation": "হিসার",
+          "meaning": "অবরোধ",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 31,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "اسْتَعَانَ",
+          "pronunciation": "ইস্তা'আনা",
+          "meaning": "সে সাহায্য প্রার্থনা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اسْتَعَاذَ",
+          "pronunciation": "ইস্তা'আযা",
+          "meaning": "সে আশ্রয় চেয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اسْتَجَابَ",
+          "pronunciation": "ইস্তাজাবা",
+          "meaning": "সে সাড়া দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اسْتَحَقَّ",
+          "pronunciation": "ইস্তাহাক্বা",
+          "meaning": "সে প্রাপ্য হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اسْتَطَاعَ",
+          "pronunciation": "ইস্তাতা'আ",
+          "meaning": "সে সক্ষম হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اسْتَوَى",
+          "pronunciation": "ইস্তাওয়া",
+          "meaning": "সে সমান হয়েছে/ঊর্ধ্বে উঠেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اسْتَأْذَنَ",
+          "pronunciation": "ইস্তায়যানা",
+          "meaning": "সে অনুমতি চেয়েছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "رَزَّاق",
+          "pronunciation": "রায্যাক্ব",
+          "meaning": "মহাজীবিকাদাতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "فَتَّاح",
+          "pronunciation": "ফাত্তাহ",
+          "meaning": "মহাবিজয়ী",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَلَّام",
+          "pronunciation": "আল্লাম",
+          "meaning": "মহাজ্ঞানী",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَهَّاب",
+          "pronunciation": "ওয়াহ্হাব",
+          "meaning": "মহাদাতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَوَّاب",
+          "pronunciation": "তাও্যাব",
+          "meaning": "বারবার ক্ষমাকারী",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُحِيط",
+          "pronunciation": "মুহীত",
+          "meaning": "পরিবেষ্টনকারী",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَرِيب",
+          "pronunciation": "ক্বরীব",
+          "meaning": "নিকটবর্তী",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُجِيب",
+          "pronunciation": "মুজীব",
+          "meaning": "সাড়াদানকারী",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَاسِع",
+          "pronunciation": "ওয়াসি'",
+          "meaning": "প্রশস্ত",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَافِظ",
+          "pronunciation": "হাফিয",
+          "meaning": "সংরক্ষণকারী",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَقِيب",
+          "pronunciation": "রাক্বীব",
+          "meaning": "পর্যবেক্ষণকারী",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَسِيب",
+          "pronunciation": "হাসীব",
+          "meaning": "হিসাবকারী",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَافِي",
+          "pronunciation": "কাফী",
+          "meaning": "যথেষ্ট",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 32,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "اسْتَوْدَعَ",
+          "pronunciation": "ইস্তাওদা'আ",
+          "meaning": "সে গচ্ছিত রেখেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "انْتَظَرَ",
+          "pronunciation": "ইনতাযারা",
+          "meaning": "সে অপেক্ষা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "انْتَصَرَ",
+          "pronunciation": "ইনতাসারা",
+          "meaning": "সে প্রতিশোধ নিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "انْقَلَبَ",
+          "pronunciation": "ইনক্বালাবা",
+          "meaning": "সে উল্টে গেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "انْكَسَرَ",
+          "pronunciation": "ইনকাসারা",
+          "meaning": "সে ভেঙে গেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَوَاصَى",
+          "pronunciation": "তাওয়াসা",
+          "meaning": "সে পরস্পর উপদেশ দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَعَاوَنَ",
+          "pronunciation": "তা'আওয়ানা",
+          "meaning": "সে সহযোগিতা করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "وَلِيّ",
+          "pronunciation": "ওয়ালী",
+          "meaning": "বন্ধু/অভিভাবক",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَصِير",
+          "pronunciation": "নাসীর",
+          "meaning": "সাহায্যকারী",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَوْلَى",
+          "pronunciation": "মাওলা",
+          "meaning": "মনিব/বন্ধু",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَهَّار",
+          "pronunciation": "ক্বাহ্হার",
+          "meaning": "পরাজয়কারী",
+          "type": "noun"
+        },
+        {
+          "arabic": "جَبَّار",
+          "pronunciation": "জাব্বার",
+          "meaning": "মহাপরাক্রমশালী",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُتَكَبِّر",
+          "pronunciation": "মুতাকাব্বির",
+          "meaning": "মহাশ্রেষ্ঠ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُصَوِّر",
+          "pronunciation": "মুসাউ্যির",
+          "meaning": "আকৃতিদানকারী",
+          "type": "noun"
+        },
+        {
+          "arabic": "حِفْظ",
+          "pronunciation": "হিফয",
+          "meaning": "মুখস্থ/সংরক্ষণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "تِلَاوَة",
+          "pronunciation": "তিলাওয়াত",
+          "meaning": "পাঠ",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَرْتِيل",
+          "pronunciation": "তারতীল",
+          "meaning": "সুন্দর তিলাওয়াত",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَجْوِيد",
+          "pronunciation": "তাজবীদ",
+          "meaning": "সঠিক উচ্চারণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَدْرَسَة",
+          "pronunciation": "মাদরাসাত",
+          "meaning": "মাদরাসা",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَكْتَبَة",
+          "pronunciation": "মাকতাবাত",
+          "meaning": "পাঠাগার",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 33,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "تَنَازَعَ",
+          "pronunciation": "তানাযা'আ",
+          "meaning": "সে বিবাদ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَشَاوَرَ",
+          "pronunciation": "তাশাওয়ারা",
+          "meaning": "সে পরামর্শ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَفَرَّقَ",
+          "pronunciation": "তাফার্রাক্বা",
+          "meaning": "সে বিচ্ছিন্ন হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَوَاضَعَ",
+          "pronunciation": "তাওয়াদা'আ",
+          "meaning": "সে বিনম্র হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَبَاعَدَ",
+          "pronunciation": "তাবা'আদা",
+          "meaning": "সে দূরে সরে গেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَقَرَّبَ",
+          "pronunciation": "তাক্বার্রাবা",
+          "meaning": "সে নিকটবর্তী হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَثَّرَ",
+          "pronunciation": "আছ্ছারা",
+          "meaning": "সে প্রভাবিত করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "قَلَم",
+          "pronunciation": "ক্বালাম",
+          "meaning": "কলম",
+          "type": "noun"
+        },
+        {
+          "arabic": "لَوْح",
+          "pronunciation": "লাওহ",
+          "meaning": "ফলক",
+          "type": "noun"
+        },
+        {
+          "arabic": "دَفْتَر",
+          "pronunciation": "দাফতার",
+          "meaning": "খাতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَحِيفَة",
+          "pronunciation": "সাহীফাত",
+          "meaning": "পাতা/দলিল",
+          "type": "noun"
+        },
+        {
+          "arabic": "رِسَالَة",
+          "pronunciation": "রিসালাত",
+          "meaning": "বার্তা",
+          "type": "noun"
+        },
+        {
+          "arabic": "خِطَاب",
+          "pronunciation": "খিতাব",
+          "meaning": "ভাষণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَلِمَة",
+          "pronunciation": "কালিমাত",
+          "meaning": "শব্দ",
+          "type": "noun"
+        },
+        {
+          "arabic": "لُغَة",
+          "pronunciation": "লুগাত",
+          "meaning": "ভাষা",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَرَبِيَّة",
+          "pronunciation": "আরাবিয়্যাত",
+          "meaning": "আরবি ভাষা",
+          "type": "noun"
+        },
+        {
+          "arabic": "لَفْظ",
+          "pronunciation": "লাফয",
+          "meaning": "উচ্চারণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَعْنَى",
+          "pronunciation": "মা'না",
+          "meaning": "অর্থ",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَفْسِير",
+          "pronunciation": "তাফসীর",
+          "meaning": "ব্যাখ্যা",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَأْوِيل",
+          "pronunciation": "তাঅবীল",
+          "meaning": "অর্থান্বয়",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 34,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "أَجَّلَ",
+          "pronunciation": "আজ্জালা",
+          "meaning": "সে বিলম্ব করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَحَاطَ",
+          "pronunciation": "আহাতা",
+          "meaning": "সে পরিবেষ্টিত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَدَّبَ",
+          "pronunciation": "আদ্দাবা",
+          "meaning": "সে শিক্ষিত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَرَادَ",
+          "pronunciation": "আরাদা",
+          "meaning": "সে চেয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَزَالَ",
+          "pronunciation": "আযালা",
+          "meaning": "সে দূর করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَسَّسَ",
+          "pronunciation": "আস্সাসা",
+          "meaning": "সে ভিত্তি স্থাপন করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَشَارَ",
+          "pronunciation": "আশারা",
+          "meaning": "সে ইশারা করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "إِشَارَة",
+          "pronunciation": "ইশারাত",
+          "meaning": "ইঙ্গিত",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَوْن",
+          "pronunciation": "কাউন",
+          "meaning": "বিশ্বজগৎ",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَالَم",
+          "pronunciation": "আলাম",
+          "meaning": "জগৎ",
+          "type": "noun"
+        },
+        {
+          "arabic": "خَلِيقَة",
+          "pronunciation": "খালীক্বাত",
+          "meaning": "সৃষ্টি",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَخْلُوق",
+          "pronunciation": "মাখলূক্ব",
+          "meaning": "সৃষ্টজীব",
+          "type": "noun"
+        },
+        {
+          "arabic": "ذَرَّة",
+          "pronunciation": "যার্রাত",
+          "meaning": "অণু",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَوَاة",
+          "pronunciation": "নাওয়াত",
+          "meaning": "কেন্দ্রবিন্দু",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَرْيَاح",
+          "pronunciation": "আরইয়াহ",
+          "meaning": "বায়ুসমূহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَاعِقَة",
+          "pronunciation": "সা'ইক্বাত",
+          "meaning": "বজ্রপাত",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَعْد",
+          "pronunciation": "রা'দ",
+          "meaning": "বজ্রধ্বনি",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَرْق",
+          "pronunciation": "বারক্ব",
+          "meaning": "বিদ্যুৎ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَطَر",
+          "pronunciation": "মাতার",
+          "meaning": "বৃষ্টি",
+          "type": "noun"
+        },
+        {
+          "arabic": "ثَلْج",
+          "pronunciation": "ছালজ",
+          "meaning": "তুষার",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 35,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "أَصَرَّ",
+          "pronunciation": "আসার্রা",
+          "meaning": "সে জেদ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَضَاءَ",
+          "pronunciation": "আদা'আ",
+          "meaning": "সে আলোকিত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَعَدَّ",
+          "pronunciation": "আ'আদ্দা",
+          "meaning": "সে প্রস্তুত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَفَاقَ",
+          "pronunciation": "আফাক্বা",
+          "meaning": "সে হুঁশ ফিরে পেয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَقَرَّ",
+          "pronunciation": "আক্বার্রা",
+          "meaning": "সে স্বীকার করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَكَّدَ",
+          "pronunciation": "আক্কাদা",
+          "meaning": "সে নিশ্চিত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَمَلَ",
+          "pronunciation": "আমালা",
+          "meaning": "সে আশা করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "فَيَضَان",
+          "pronunciation": "ফাইয়াদান",
+          "meaning": "বন্যা",
+          "type": "noun"
+        },
+        {
+          "arabic": "زَلْزَلَة",
+          "pronunciation": "যালযালাত",
+          "meaning": "ভূমিকম্প",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَاصِفَة",
+          "pronunciation": "আসিফাত",
+          "meaning": "ঝড়",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَرَارَة",
+          "pronunciation": "হারারাত",
+          "meaning": "তাপ",
+          "type": "noun"
+        },
+        {
+          "arabic": "بُرُود",
+          "pronunciation": "বুরূদ",
+          "meaning": "শীত",
+          "type": "noun"
+        },
+        {
+          "arabic": "رُطُوبَة",
+          "pronunciation": "রুতূবাত",
+          "meaning": "আর্দ্রতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "جَفَاف",
+          "pronunciation": "জাফাফ",
+          "meaning": "খরা",
+          "type": "noun"
+        },
+        {
+          "arabic": "خِصْب",
+          "pronunciation": "খিসব",
+          "meaning": "উর্বরতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "جَبِين",
+          "pronunciation": "জাবীন",
+          "meaning": "কপাল",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَنْف",
+          "pronunciation": "আনফ",
+          "meaning": "নাক",
+          "type": "noun"
+        },
+        {
+          "arabic": "فَم",
+          "pronunciation": "ফাম",
+          "meaning": "মুখ",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَسْنَان",
+          "pronunciation": "আসনান",
+          "meaning": "দাঁত",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَاجِب",
+          "pronunciation": "হাজিব",
+          "meaning": "ভ্রু",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 36,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "أَنَابَ",
+          "pronunciation": "আনাবা",
+          "meaning": "সে প্রত্যাবর্তন করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَوْحَى",
+          "pronunciation": "আওহা",
+          "meaning": "সে অহী করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَيَّدَ",
+          "pronunciation": "আইয়াদা",
+          "meaning": "সে শক্তিশালী করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "بَدَّلَ",
+          "pronunciation": "বাদ্দালা",
+          "meaning": "সে পরিবর্তন করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "بَرَّأَ",
+          "pronunciation": "বার্রাআ",
+          "meaning": "সে মুক্ত ঘোষণা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "بَيَّنَ",
+          "pronunciation": "বায়্যানা",
+          "meaning": "সে স্পষ্ট করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَلَا",
+          "pronunciation": "তালা",
+          "meaning": "সে অনুসরণ করেছে/পাঠ করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "خَدّ",
+          "pronunciation": "খাদ্দ",
+          "meaning": "গাল",
+          "type": "noun"
+        },
+        {
+          "arabic": "ذَقَن",
+          "pronunciation": "যাক্বান",
+          "meaning": "থুতনি",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَقَبَة",
+          "pronunciation": "রাক্ববাত",
+          "meaning": "গলা",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَتِف",
+          "pronunciation": "কাতিফ",
+          "meaning": "কাঁধ",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَاعِد",
+          "pronunciation": "সা'ইদ",
+          "meaning": "বাহু",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِصْبَع",
+          "pronunciation": "ইসবা'",
+          "meaning": "আঙুল",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَفّ",
+          "pronunciation": "কাফফ",
+          "meaning": "হাতের তালু",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَدَم",
+          "pronunciation": "ক্বাদাম",
+          "meaning": "পদতল",
+          "type": "noun"
+        },
+        {
+          "arabic": "رُكْبَة",
+          "pronunciation": "রুকবাত",
+          "meaning": "হাঁটু",
+          "type": "noun"
+        },
+        {
+          "arabic": "فَخِذ",
+          "pronunciation": "ফাখিয",
+          "meaning": "উরু",
+          "type": "noun"
+        },
+        {
+          "arabic": "عُنُق",
+          "pronunciation": "উনুক্ব",
+          "meaning": "ঘাড়",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَوَاس",
+          "pronunciation": "হাওয়াস",
+          "meaning": "ইন্দ্রিয়সমূহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَبْض",
+          "pronunciation": "নাবদ",
+          "meaning": "নাড়ির স্পন্দন",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 37,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "جَحَدَ",
+          "pronunciation": "জাহাদা",
+          "meaning": "সে অস্বীকার করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "حَذَّرَ",
+          "pronunciation": "হায্যারা",
+          "meaning": "সে সতর্ক করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "حَرَصَ",
+          "pronunciation": "হারাসা",
+          "meaning": "সে আগ্রহী হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "حَكَمَ",
+          "pronunciation": "হাকামা",
+          "meaning": "সে বিচার করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "خَتَمَ",
+          "pronunciation": "খতামা",
+          "meaning": "সে সিলমোহর করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "خَدَعَ",
+          "pronunciation": "খাদা'আ",
+          "meaning": "সে প্রতারণা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "خَشَعَ",
+          "pronunciation": "খাশা'আ",
+          "meaning": "সে বিনম্র হয়েছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "تَنَفُّس",
+          "pronunciation": "তানাফ্ফুস",
+          "meaning": "শ্বাস-প্রশ্বাস",
+          "type": "noun"
+        },
+        {
+          "arabic": "هَضْم",
+          "pronunciation": "হাদম",
+          "meaning": "হজম",
+          "type": "noun"
+        },
+        {
+          "arabic": "لَحْد",
+          "pronunciation": "লাহদ",
+          "meaning": "কবরের ভেতর কুঠুরি",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَرْزَخ",
+          "pronunciation": "বারযাখ",
+          "meaning": "কবরের জীবন",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَفْخَة",
+          "pronunciation": "নাফখাত",
+          "meaning": "ফুঁ",
+          "type": "noun"
+        },
+        {
+          "arabic": "صُور",
+          "pronunciation": "সূর",
+          "meaning": "শিঙ্গা",
+          "type": "noun"
+        },
+        {
+          "arabic": "لَوْح",
+          "pronunciation": "লাওহ",
+          "meaning": "মহাফলক",
+          "type": "noun"
+        },
+        {
+          "arabic": "جَهَنَّم",
+          "pronunciation": "জাহান্নাম",
+          "meaning": "নরক",
+          "type": "noun"
+        },
+        {
+          "arabic": "دَرَك",
+          "pronunciation": "দারাক",
+          "meaning": "নিচুতল",
+          "type": "noun"
+        },
+        {
+          "arabic": "دَرَجَة",
+          "pronunciation": "দারাজাত",
+          "meaning": "মর্যাদার স্তর",
+          "type": "noun"
+        },
+        {
+          "arabic": "غُرْفَة",
+          "pronunciation": "গুরফাত",
+          "meaning": "জান্নাতের কক্ষ",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَوْض",
+          "pronunciation": "হাওদ",
+          "meaning": "হাউযে কাউছার",
+          "type": "noun"
+        },
+        {
+          "arabic": "صِرَاط",
+          "pronunciation": "সিরাত",
+          "meaning": "পুলসিরাত",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 38,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "خَضَعَ",
+          "pronunciation": "খাদা'আ",
+          "meaning": "সে নতি স্বীকার করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "دَلَّ",
+          "pronunciation": "দাল্লা",
+          "meaning": "সে দেখিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "ذَكَرَ",
+          "pronunciation": "যাকারা",
+          "meaning": "সে স্মরণ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَدَّ",
+          "pronunciation": "রাদ্দা",
+          "meaning": "সে ফিরিয়ে দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَغِبَ",
+          "pronunciation": "রাগিবা",
+          "meaning": "সে আগ্রহী হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَهِبَ",
+          "pronunciation": "রাহিবা",
+          "meaning": "সে ভয় পেয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "زَيَّنَ",
+          "pronunciation": "যায়্যানা",
+          "meaning": "সে সাজিয়েছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "رَوْضَة",
+          "pronunciation": "রাওদাত",
+          "meaning": "জান্নাতের বাগান",
+          "type": "noun"
+        },
+        {
+          "arabic": "حُور",
+          "pronunciation": "হূর",
+          "meaning": "জান্নাতের হুর",
+          "type": "noun"
+        },
+        {
+          "arabic": "وِلْدَان",
+          "pronunciation": "বিলদান",
+          "meaning": "জান্নাতের কিশোর সেবক",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَنْهَار",
+          "pronunciation": "আনহার",
+          "meaning": "নদীসমূহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَيْن",
+          "pronunciation": "আইন",
+          "meaning": "ঝর্না",
+          "type": "noun"
+        },
+        {
+          "arabic": "ظِل",
+          "pronunciation": "যিল্ল",
+          "meaning": "ছায়া",
+          "type": "noun"
+        },
+        {
+          "arabic": "لِقَاء",
+          "pronunciation": "লিক্বা",
+          "meaning": "সাক্ষাৎ",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَجْه",
+          "pronunciation": "ওয়াজহ",
+          "meaning": "আল্লাহর চেহারা",
+          "type": "noun"
+        },
+        {
+          "arabic": "رِضْوَان",
+          "pronunciation": "রিদওয়ান",
+          "meaning": "আল্লাহর সন্তুষ্টি",
+          "type": "noun"
+        },
+        {
+          "arabic": "قِيَامُ اللَّيْل",
+          "pronunciation": "ক্বিয়ামুল লাইল",
+          "meaning": "রাতের নামাজ",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَهَجُّد",
+          "pronunciation": "তাহাজ্জুদ",
+          "meaning": "তাহাজ্জুদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "وِتْر",
+          "pronunciation": "বিতর",
+          "meaning": "বিতর নামাজ",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَافِلَة",
+          "pronunciation": "নাফিলাত",
+          "meaning": "নফল ইবাদত",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 39,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "سَعَى",
+          "pronunciation": "সা'আ",
+          "meaning": "সে চেষ্টা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "سَكَنَ",
+          "pronunciation": "সাকানা",
+          "meaning": "সে বাস করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "شَرَحَ",
+          "pronunciation": "শারাহা",
+          "meaning": "সে ব্যাখ্যা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "صَدَّقَ",
+          "pronunciation": "সদ্দাক্বা",
+          "meaning": "সে বিশ্বাস করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "صَرَفَ",
+          "pronunciation": "সারাফা",
+          "meaning": "সে ফিরিয়ে দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "صَغَى",
+          "pronunciation": "সাগা",
+          "meaning": "সে মনোযোগ দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "طَهَّرَ",
+          "pronunciation": "তহ্হারা",
+          "meaning": "সে পবিত্র করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "فَرِيضَة",
+          "pronunciation": "ফারীদাত",
+          "meaning": "ফরজ",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَاجِب",
+          "pronunciation": "ওয়াজিব",
+          "meaning": "ওয়াজিব",
+          "type": "noun"
+        },
+        {
+          "arabic": "سُنَّة",
+          "pronunciation": "সুন্নাত",
+          "meaning": "সুন্নত",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُسْتَحَب",
+          "pronunciation": "মুস্তাহাব",
+          "meaning": "মুস্তাহাব",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَكْرُوه",
+          "pronunciation": "মাকরূহ",
+          "meaning": "মাকরূহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُبَاح",
+          "pronunciation": "মুবাহ",
+          "meaning": "মুবাহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَذْر",
+          "pronunciation": "নাযর",
+          "meaning": "মানত",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَفَّارَة",
+          "pronunciation": "কাফ্ফারাত",
+          "meaning": "কাফফারা",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِحْرَام",
+          "pronunciation": "ইহরাম",
+          "meaning": "ইহরাম",
+          "type": "noun"
+        },
+        {
+          "arabic": "طَوَاف",
+          "pronunciation": "তাওয়াফ",
+          "meaning": "তাওয়াফ",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَعْي",
+          "pronunciation": "সা'ঈ",
+          "meaning": "সাঈ",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَمْي",
+          "pronunciation": "রামই",
+          "meaning": "পাথর নিক্ষেপ",
+          "type": "noun"
+        },
+        {
+          "arabic": "ذَبْح",
+          "pronunciation": "যাবহ",
+          "meaning": "জবাই",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 40,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "عَاشَ",
+          "pronunciation": "আশা",
+          "meaning": "সে জীবনযাপন করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "عَجِبَ",
+          "pronunciation": "আজিবা",
+          "meaning": "সে অবাক হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "عَزَّ",
+          "pronunciation": "আয্যা",
+          "meaning": "সে শক্তিশালী হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "عَظَّمَ",
+          "pronunciation": "আযয়ামা",
+          "meaning": "সে মহান করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "فَرَّقَ",
+          "pronunciation": "ফার্রাক্বা",
+          "meaning": "সে আলাদা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "فَضَّلَ",
+          "pronunciation": "ফাদ্দালা",
+          "meaning": "সে প্রাধান্য দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "قَسَّمَ",
+          "pronunciation": "ক্বাস্সামা",
+          "meaning": "সে ভাগ করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "عَقِيقَة",
+          "pronunciation": "আক্বীক্বাত",
+          "meaning": "আক্বীকাহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَلِيمَة",
+          "pronunciation": "ওয়ালীমাত",
+          "meaning": "বিবাহ ভোজ",
+          "type": "noun"
+        },
+        {
+          "arabic": "جَنَازَة",
+          "pronunciation": "জানাযাত",
+          "meaning": "জানাযা",
+          "type": "noun"
+        },
+        {
+          "arabic": "دَوْلَة",
+          "pronunciation": "দাওলাত",
+          "meaning": "রাষ্ট্র",
+          "type": "noun"
+        },
+        {
+          "arabic": "حُكُومَة",
+          "pronunciation": "হুকূমাত",
+          "meaning": "সরকার",
+          "type": "noun"
+        },
+        {
+          "arabic": "وِزَارَة",
+          "pronunciation": "বিযারাত",
+          "meaning": "মন্ত্রণালয়",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَانُون",
+          "pronunciation": "ক্বানূন",
+          "meaning": "আইন",
+          "type": "noun"
+        },
+        {
+          "arabic": "نِظَام",
+          "pronunciation": "নিযাম",
+          "meaning": "ব্যবস্থা",
+          "type": "noun"
+        },
+        {
+          "arabic": "سِيَاسَة",
+          "pronunciation": "সিয়াসাত",
+          "meaning": "রাজনীতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَضَارَة",
+          "pronunciation": "হাদারাত",
+          "meaning": "সভ্যতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "ثَقَافَة",
+          "pronunciation": "ছাক্বাফাত",
+          "meaning": "সংস্কৃতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَارِيخ",
+          "pronunciation": "তারীখ",
+          "meaning": "ইতিহাস",
+          "type": "noun"
+        },
+        {
+          "arabic": "جُغْرَافِيَا",
+          "pronunciation": "জুগরাফিয়া",
+          "meaning": "ভূগোল",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 41,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "قَضَى",
+          "pronunciation": "ক্বাদা",
+          "meaning": "সে ফয়সালা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "كَرَّمَ",
+          "pronunciation": "কার্রামা",
+          "meaning": "সে সম্মানিত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "لَاحَقَ",
+          "pronunciation": "লাহাক্বা",
+          "meaning": "সে পিছু নিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "مَنَعَ",
+          "pronunciation": "মানা'আ",
+          "meaning": "সে বাধা দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَبَّهَ",
+          "pronunciation": "নাব্বাহা",
+          "meaning": "সে সতর্ক করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَشَرَ",
+          "pronunciation": "নাশারা",
+          "meaning": "সে প্রচার করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَظَّمَ",
+          "pronunciation": "নায্যামা",
+          "meaning": "সে সংগঠিত করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "مُجْتَمَع",
+          "pronunciation": "মুজতামা'",
+          "meaning": "সমাজ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُؤَسَّسَة",
+          "pronunciation": "মুআস্সাসাত",
+          "meaning": "প্রতিষ্ঠান",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَظَام",
+          "pronunciation": "নিযাম",
+          "meaning": "শাসনব্যবস্থা",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَجْلِس",
+          "pronunciation": "মাজলিস",
+          "meaning": "পরিষদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَيْعَة",
+          "pronunciation": "বাই'আত",
+          "meaning": "আনুগত্যের শপথ",
+          "type": "noun"
+        },
+        {
+          "arabic": "شُورَى",
+          "pronunciation": "শূরা",
+          "meaning": "পরামর্শ পরিষদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَضَاء",
+          "pronunciation": "ক্বাদা",
+          "meaning": "বিচার বিভাগ",
+          "type": "noun"
+        },
+        {
+          "arabic": "خِلَافَة",
+          "pronunciation": "খিলাফাত",
+          "meaning": "খিলাফত",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِمَارَة",
+          "pronunciation": "ইমারাত",
+          "meaning": "আমিরাত",
+          "type": "noun"
+        },
+        {
+          "arabic": "وِلَايَة",
+          "pronunciation": "বিলায়াত",
+          "meaning": "প্রদেশ",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَفَاق",
+          "pronunciation": "নিফাক্ব",
+          "meaning": "মুনাফেকি",
+          "type": "noun"
+        },
+        {
+          "arabic": "رِيَاء",
+          "pronunciation": "রিয়া",
+          "meaning": "লোক দেখানো ইবাদত",
+          "type": "noun"
+        },
+        {
+          "arabic": "عُجْب",
+          "pronunciation": "উজব",
+          "meaning": "আত্মপ্রশংসা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 42,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "هَدَّمَ",
+          "pronunciation": "হাদ্দামা",
+          "meaning": "সে ভেঙেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "وَسَّعَ",
+          "pronunciation": "ওয়াস্সা'আ",
+          "meaning": "সে প্রশস্ত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "يَسَّرَ",
+          "pronunciation": "ইয়াস্সারা",
+          "meaning": "সে সহজ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "حَارَبَ",
+          "pronunciation": "হারাবা",
+          "meaning": "সে যুদ্ধ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "خَذَلَ",
+          "pronunciation": "খাযালা",
+          "meaning": "সে সাহায্য ছেড়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "دَبَّرَ",
+          "pronunciation": "দাব্বারা",
+          "meaning": "সে পরিকল্পনা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَتَّبَ",
+          "pronunciation": "রাত্তাবা",
+          "meaning": "সে সাজিয়েছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "غِيبَة",
+          "pronunciation": "গীবাত",
+          "meaning": "পরনিন্দা",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَمِيمَة",
+          "pronunciation": "নামীমাত",
+          "meaning": "চোগলখুরি",
+          "type": "noun"
+        },
+        {
+          "arabic": "بُهْتَان",
+          "pronunciation": "বুহতান",
+          "meaning": "মিথ্যা অপবাদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "ظَنّ",
+          "pronunciation": "যান্ন",
+          "meaning": "ধারণা",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَجَسُّس",
+          "pronunciation": "তাজাস্সুস",
+          "meaning": "গোয়েন্দাগিরি",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِسْرَاف",
+          "pronunciation": "ইসরাফ",
+          "meaning": "অপচয়",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَبْذِير",
+          "pronunciation": "তাবযীর",
+          "meaning": "অপব্যয়",
+          "type": "noun"
+        },
+        {
+          "arabic": "طَمَع",
+          "pronunciation": "তামা'",
+          "meaning": "লোভ",
+          "type": "noun"
+        },
+        {
+          "arabic": "حِرْص",
+          "pronunciation": "হিরস",
+          "meaning": "লালসা",
+          "type": "noun"
+        },
+        {
+          "arabic": "غَضَب",
+          "pronunciation": "গাদাব",
+          "meaning": "রাগ",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَسَد",
+          "pronunciation": "হাসাদ",
+          "meaning": "হিংসা",
+          "type": "noun"
+        },
+        {
+          "arabic": "بُغْض",
+          "pronunciation": "বুগদ",
+          "meaning": "ঘৃণা",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَدَاوَة",
+          "pronunciation": "আদাওয়াত",
+          "meaning": "শত্রুতা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 43,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "زَيَّغَ",
+          "pronunciation": "যায়্যাগা",
+          "meaning": "সে বিচ্যুত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "سَبَّبَ",
+          "pronunciation": "সাব্বাবা",
+          "meaning": "সে কারণ হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "شَكَّلَ",
+          "pronunciation": "শাক্কালা",
+          "meaning": "সে গঠন করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "طَوَّعَ",
+          "pronunciation": "তাও্যা'আ",
+          "meaning": "সে বশ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "عَلَا",
+          "pronunciation": "আলা",
+          "meaning": "সে উঁচু হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "غَفَلَ",
+          "pronunciation": "গাফালা",
+          "meaning": "সে অমনোযোগী হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "فَرَضَ",
+          "pronunciation": "ফারাদা",
+          "meaning": "সে ফরজ করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "حِقْد",
+          "pronunciation": "হিক্বদ",
+          "meaning": "বিদ্বেষ",
+          "type": "noun"
+        },
+        {
+          "arabic": "غِلّ",
+          "pronunciation": "গিল্ল",
+          "meaning": "অন্তরের মলিনতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَسْوَاس",
+          "pronunciation": "ওয়াসওয়াস",
+          "meaning": "মনের সংশয়",
+          "type": "noun"
+        },
+        {
+          "arabic": "شُبْهَة",
+          "pronunciation": "শুবহাত",
+          "meaning": "সন্দেহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "زُهْد",
+          "pronunciation": "যুহদ",
+          "meaning": "দুনিয়াবিরাগিতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَنَاعَة",
+          "pronunciation": "ক্বানা'আত",
+          "meaning": "তুষ্টি",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَرَع",
+          "pronunciation": "ওয়ারা'",
+          "meaning": "সতর্কতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَرَم",
+          "pronunciation": "কারাম",
+          "meaning": "উদারতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "شَجَاعَة",
+          "pronunciation": "শাজা'আত",
+          "meaning": "সাহসিকতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "حِلْم",
+          "pronunciation": "হিলম",
+          "meaning": "সহনশীলতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَفْو",
+          "pronunciation": "আফও",
+          "meaning": "ক্ষমা",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِيثَار",
+          "pronunciation": "ঈছার",
+          "meaning": "পরার্থপরতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَفَاء",
+          "pronunciation": "ওয়াফা",
+          "meaning": "বিশ্বস্ততা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 44,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "قَرَّبَ",
+          "pronunciation": "ক্বার্রাবা",
+          "meaning": "সে কাছে এনেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "كَسَبَ",
+          "pronunciation": "কাসাবা",
+          "meaning": "সে অর্জন করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "مَدَّ",
+          "pronunciation": "মাদ্দা",
+          "meaning": "সে প্রসারিত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَادَى",
+          "pronunciation": "নাদা",
+          "meaning": "সে ডেকেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَفَّذَ",
+          "pronunciation": "নাফ্ফাযা",
+          "meaning": "সে কার্যকর করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "هَيَّأَ",
+          "pronunciation": "হাইয়্যাআ",
+          "meaning": "সে প্রস্তুত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "وَصَّى",
+          "pronunciation": "ওয়াস্সা",
+          "meaning": "সে অসিয়ত করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "رَأْفَة",
+          "pronunciation": "রাআফাত",
+          "meaning": "স্নেহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "شَفَقَة",
+          "pronunciation": "শাফাক্বাত",
+          "meaning": "দয়া",
+          "type": "noun"
+        },
+        {
+          "arabic": "أُخُوَّة",
+          "pronunciation": "উখুউ্যাত",
+          "meaning": "ভ্রাতৃত্ব",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَوَدَّة",
+          "pronunciation": "মাওয়াদ্দাত",
+          "meaning": "প্রেম",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَحْمَة",
+          "pronunciation": "রাহমাত",
+          "meaning": "দয়া",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَكِينَة",
+          "pronunciation": "সাকীনাত",
+          "meaning": "মানসিক শান্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "طُمَأْنِينَة",
+          "pronunciation": "তুমাঅনীনাত",
+          "meaning": "প্রশান্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَنَس",
+          "pronunciation": "আনাস",
+          "meaning": "আনন্দ",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَهْجَة",
+          "pronunciation": "বাহজাত",
+          "meaning": "খুশি",
+          "type": "noun"
+        },
+        {
+          "arabic": "فَرَح",
+          "pronunciation": "ফারাহ",
+          "meaning": "আনন্দ",
+          "type": "noun"
+        },
+        {
+          "arabic": "سُرُور",
+          "pronunciation": "সুরূর",
+          "meaning": "হর্ষ",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَصْحَاب الْكَهْف",
+          "pronunciation": "আসহাবুল কাহফ",
+          "meaning": "গুহার সাথীরা",
+          "type": "noun"
+        },
+        {
+          "arabic": "طَالُوت",
+          "pronunciation": "তালূত",
+          "meaning": "তালূত",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 45,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "حَسَدَ",
+          "pronunciation": "হাসাদা",
+          "meaning": "সে হিংসা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "بَغَى",
+          "pronunciation": "বাগা",
+          "meaning": "সে সীমালঙ্ঘন করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اعْتَزَلَ",
+          "pronunciation": "ই'তাযালা",
+          "meaning": "সে আলাদা হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اعْتَصَمَ",
+          "pronunciation": "ই'তাসামা",
+          "meaning": "সে আঁকড়ে ধরেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اعْتَكَفَ",
+          "pronunciation": "ই'তাকাফা",
+          "meaning": "সে ইতিকাফ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اعْتَمَدَ",
+          "pronunciation": "ই'তামাদা",
+          "meaning": "সে নির্ভর করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "ابْتَعَدَ",
+          "pronunciation": "ইবতা'আদা",
+          "meaning": "সে দূরে সরেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "جَالُوت",
+          "pronunciation": "জালূত",
+          "meaning": "জালূত",
+          "type": "noun"
+        },
+        {
+          "arabic": "آدَم",
+          "pronunciation": "আদাম",
+          "meaning": "আদম",
+          "type": "noun"
+        },
+        {
+          "arabic": "نُوح",
+          "pronunciation": "নূহ",
+          "meaning": "নূহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِبْرَاهِيم",
+          "pronunciation": "ইবরাহীম",
+          "meaning": "ইবরাহীম",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِسْمَاعِيل",
+          "pronunciation": "ইসমাঈল",
+          "meaning": "ইসমাঈল",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِسْحَاق",
+          "pronunciation": "ইসহাক্ব",
+          "meaning": "ইসহাক",
+          "type": "noun"
+        },
+        {
+          "arabic": "يَعْقُوب",
+          "pronunciation": "ইয়া'ক্বূব",
+          "meaning": "ইয়াকুব",
+          "type": "noun"
+        },
+        {
+          "arabic": "يُوسُف",
+          "pronunciation": "ইউসুফ",
+          "meaning": "ইউসুফ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُوسَى",
+          "pronunciation": "মূসা",
+          "meaning": "মূসা",
+          "type": "noun"
+        },
+        {
+          "arabic": "هَارُون",
+          "pronunciation": "হারূন",
+          "meaning": "হারূন",
+          "type": "noun"
+        },
+        {
+          "arabic": "عِيسَى",
+          "pronunciation": "ঈসা",
+          "meaning": "ঈসা",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُحَمَّد",
+          "pronunciation": "মুহাম্মদ",
+          "meaning": "মুহাম্মদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "دَاوُد",
+          "pronunciation": "দাঊদ",
+          "meaning": "দাউদ",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 46,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "ابْتَغَى",
+          "pronunciation": "ইবতাগা",
+          "meaning": "সে খুঁজেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "ابْتَهَلَ",
+          "pronunciation": "ইবতাহালা",
+          "meaning": "সে বিনম্রভাবে দু'আ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "احْتَاجَ",
+          "pronunciation": "ইহতাজা",
+          "meaning": "সে প্রয়োজন অনুভব করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "احْتَجَّ",
+          "pronunciation": "ইহতাজ্জা",
+          "meaning": "সে প্রমাণ উপস্থাপন করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "احْتَسَبَ",
+          "pronunciation": "ইহতাসাবা",
+          "meaning": "সে সওয়াবের আশায় করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "احْتَرَمَ",
+          "pronunciation": "ইহতারামা",
+          "meaning": "সে সম্মান করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَسْهَمَ",
+          "pronunciation": "আসহামা",
+          "meaning": "সে অংশগ্রহণ করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "سُلَيْمَان",
+          "pronunciation": "সুলাইমান",
+          "meaning": "সুলাইমান",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِلْيَاس",
+          "pronunciation": "ইলইয়াস",
+          "meaning": "ইলিয়াস",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِدْرِيس",
+          "pronunciation": "ইদরীস",
+          "meaning": "ইদরীস",
+          "type": "noun"
+        },
+        {
+          "arabic": "لُوط",
+          "pronunciation": "লূত",
+          "meaning": "লূত",
+          "type": "noun"
+        },
+        {
+          "arabic": "يُونُس",
+          "pronunciation": "ইউনুস",
+          "meaning": "ইউনুস",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَنْزِل",
+          "pronunciation": "মানযিল",
+          "meaning": "বাড়ি/মনজিল",
+          "type": "noun"
+        },
+        {
+          "arabic": "دَار",
+          "pronunciation": "দার",
+          "meaning": "আবাসস্থল",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَرْيَة",
+          "pronunciation": "ক্বারইয়াত",
+          "meaning": "গ্রাম",
+          "type": "noun"
+        },
+        {
+          "arabic": "مِصْر",
+          "pronunciation": "মিসর",
+          "meaning": "মিসর",
+          "type": "noun"
+        },
+        {
+          "arabic": "شَام",
+          "pronunciation": "শাম",
+          "meaning": "সিরিয়া",
+          "type": "noun"
+        },
+        {
+          "arabic": "عِرَاق",
+          "pronunciation": "ইরাক্ব",
+          "meaning": "ইরাক",
+          "type": "noun"
+        },
+        {
+          "arabic": "يَمَن",
+          "pronunciation": "ইয়ামান",
+          "meaning": "ইয়েমেন",
+          "type": "noun"
+        },
+        {
+          "arabic": "حِجَاز",
+          "pronunciation": "হিজায",
+          "meaning": "হিজায",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 47,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "تَأَمَّلَ",
+          "pronunciation": "তাআম্মালা",
+          "meaning": "সে গভীরভাবে ভেবেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَجَنَّبَ",
+          "pronunciation": "তাজান্নাবা",
+          "meaning": "সে পরিহার করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَحَمَّلَ",
+          "pronunciation": "তাহাম্মালা",
+          "meaning": "সে বহন করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَخَلَّصَ",
+          "pronunciation": "তাখাল্লাসা",
+          "meaning": "সে মুক্ত হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَرَدَّدَ",
+          "pronunciation": "তারাদ্দাদা",
+          "meaning": "সে দ্বিধা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَسَلَّطَ",
+          "pronunciation": "তাসাল্লাতা",
+          "meaning": "সে কর্তৃত্ব করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَضَرَّعَ",
+          "pronunciation": "তাদার্রা'আ",
+          "meaning": "সে কাতর হয়ে প্রার্থনা করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "فَلَسْطِين",
+          "pronunciation": "ফালাস্তীন",
+          "meaning": "ফিলিস্তিন",
+          "type": "noun"
+        },
+        {
+          "arabic": "أُرْدُن",
+          "pronunciation": "উরদুন",
+          "meaning": "জর্দান",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَفَر",
+          "pronunciation": "সাফার",
+          "meaning": "সফর",
+          "type": "noun"
+        },
+        {
+          "arabic": "رِحْلَة",
+          "pronunciation": "রিহলাত",
+          "meaning": "ভ্রমণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "طَرِيق",
+          "pronunciation": "তরীক্ব",
+          "meaning": "পথ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَسَافَة",
+          "pronunciation": "মাসাফাত",
+          "meaning": "দূরত্ব",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَدّ",
+          "pronunciation": "হাদ্দ",
+          "meaning": "সীমানা",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَطَن",
+          "pronunciation": "ওয়াতান",
+          "meaning": "মাতৃভূমি",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَلَد",
+          "pronunciation": "বালাদ",
+          "meaning": "দেশ",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِقْلِيم",
+          "pronunciation": "ইক্বলীম",
+          "meaning": "অঞ্চল",
+          "type": "noun"
+        },
+        {
+          "arabic": "شَرْق",
+          "pronunciation": "শারক্ব",
+          "meaning": "পূর্ব",
+          "type": "noun"
+        },
+        {
+          "arabic": "غَرْب",
+          "pronunciation": "গারব",
+          "meaning": "পশ্চিম",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَمَل",
+          "pronunciation": "আমাল",
+          "meaning": "কাজ",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 48,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "تَعَبَّدَ",
+          "pronunciation": "তা'আব্বাদা",
+          "meaning": "সে ইবাদতে লিপ্ত হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَغَافَلَ",
+          "pronunciation": "তাগাফালা",
+          "meaning": "সে উদাসীন হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَغَيَّرَ",
+          "pronunciation": "তাগায়্যারা",
+          "meaning": "সে পরিবর্তিত হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَفَاخَرَ",
+          "pronunciation": "তাফাখারা",
+          "meaning": "সে গর্ব করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَقَوَّى",
+          "pronunciation": "তাক্বাউ্যা",
+          "meaning": "সে শক্তি সঞ্চয় করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَوَبَ",
+          "pronunciation": "তাওয়াবা",
+          "meaning": "সে বারবার তওবা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "جَهِلَ",
+          "pronunciation": "জাহিলা",
+          "meaning": "সে অজ্ঞ থেকেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "مِهْنَة",
+          "pronunciation": "মিহনাত",
+          "meaning": "পেশা",
+          "type": "noun"
+        },
+        {
+          "arabic": "خِدْمَة",
+          "pronunciation": "খিদমাত",
+          "meaning": "সেবা",
+          "type": "noun"
+        },
+        {
+          "arabic": "جُهْد",
+          "pronunciation": "জুহদ",
+          "meaning": "পরিশ্রম",
+          "type": "noun"
+        },
+        {
+          "arabic": "خُطْوَة",
+          "pronunciation": "খুতওয়াত",
+          "meaning": "পদক্ষেপ",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَتِيجَة",
+          "pronunciation": "নাতীজাত",
+          "meaning": "ফলাফল",
+          "type": "noun"
+        },
+        {
+          "arabic": "هَدَف",
+          "pronunciation": "হাদাফ",
+          "meaning": "লক্ষ্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "غَايَة",
+          "pronunciation": "গায়াত",
+          "meaning": "উদ্দেশ্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَسِيلَة",
+          "pronunciation": "ওয়াসীলাত",
+          "meaning": "মাধ্যম",
+          "type": "noun"
+        },
+        {
+          "arabic": "أُسْلُوب",
+          "pronunciation": "উসলূব",
+          "meaning": "পদ্ধতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "فُرْصَة",
+          "pronunciation": "ফুরসাত",
+          "meaning": "সুযোগ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُشْكِلَة",
+          "pronunciation": "মুশকিলাত",
+          "meaning": "সমস্যা",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَلّ",
+          "pronunciation": "হাল্ল",
+          "meaning": "সমাধান",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَرَار",
+          "pronunciation": "ক্বারার",
+          "meaning": "সিদ্ধান্ত",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 49,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "حَاكَمَ",
+          "pronunciation": "হাকামা",
+          "meaning": "সে বিচার দেওয়া চেয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "حَامَ",
+          "pronunciation": "হামা",
+          "meaning": "সে ঘুরে বেড়িয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "خَانَ",
+          "pronunciation": "খানা",
+          "meaning": "সে বিশ্বাসঘাতকতা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "خَسَّرَ",
+          "pronunciation": "খাস্সারা",
+          "meaning": "সে ক্ষতিগ্রস্ত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "دَافَعَ",
+          "pronunciation": "দাফা'আ",
+          "meaning": "সে প্রতিরক্ষা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَفَضَ",
+          "pronunciation": "রাফাদা",
+          "meaning": "সে প্রত্যাখ্যান করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "زَحَفَ",
+          "pronunciation": "যাহাফা",
+          "meaning": "সে এগিয়ে গেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "نِيَّة",
+          "pronunciation": "নিয়্যাত",
+          "meaning": "উদ্দেশ্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِرَادَة",
+          "pronunciation": "ইরাদাত",
+          "meaning": "ইচ্ছাশক্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَزِيمَة",
+          "pronunciation": "আযীমাত",
+          "meaning": "দৃঢ়সংকল্প",
+          "type": "noun"
+        },
+        {
+          "arabic": "هِمَّة",
+          "pronunciation": "হিম্মাত",
+          "meaning": "মনোবল",
+          "type": "noun"
+        },
+        {
+          "arabic": "طَاقَة",
+          "pronunciation": "তাক্বাত",
+          "meaning": "শক্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "قُدْرَة",
+          "pronunciation": "ক্বুদরাত",
+          "meaning": "সামর্থ্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "بِنَاء",
+          "pronunciation": "বিনাউ",
+          "meaning": "ইমারত",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَصْر",
+          "pronunciation": "ক্বসর",
+          "meaning": "প্রাসাদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "حِصْن",
+          "pronunciation": "হিসন",
+          "meaning": "দুর্গ",
+          "type": "noun"
+        },
+        {
+          "arabic": "جِسْر",
+          "pronunciation": "জিসর",
+          "meaning": "সেতু",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَاب",
+          "pronunciation": "বাব",
+          "meaning": "দরজা",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَافِذَة",
+          "pronunciation": "নাফিযাত",
+          "meaning": "জানালা",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَقْف",
+          "pronunciation": "সাক্বফ",
+          "meaning": "ছাদ",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 50,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "سَامَحَ",
+          "pronunciation": "সামাহা",
+          "meaning": "সে ক্ষমা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "صَامَتَ",
+          "pronunciation": "সামাতা",
+          "meaning": "সে চুপ করে থেকেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "طَغَى",
+          "pronunciation": "তাগা",
+          "meaning": "সে সীমালঙ্ঘন করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "عَارَضَ",
+          "pronunciation": "আরাদা",
+          "meaning": "সে বিরোধিতা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "فَاضَلَ",
+          "pronunciation": "ফাদালা",
+          "meaning": "সে শ্রেষ্ঠত্ব দেখিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "قَاوَمَ",
+          "pronunciation": "ক্বাওয়ামা",
+          "meaning": "সে প্রতিরোধ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "كَافَأَ",
+          "pronunciation": "কাফাআ",
+          "meaning": "সে পুরস্কৃত করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "جِدَار",
+          "pronunciation": "জিদার",
+          "meaning": "দেওয়াল",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَعْمَدَة",
+          "pronunciation": "আ'মিদাত",
+          "meaning": "স্তম্ভসমূহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "سُلَّم",
+          "pronunciation": "সুল্লাম",
+          "meaning": "সিঁড়ি",
+          "type": "noun"
+        },
+        {
+          "arabic": "بِئْر",
+          "pronunciation": "বি'র",
+          "meaning": "কূপ",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَهْر",
+          "pronunciation": "নাহর",
+          "meaning": "খাল",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَدّ",
+          "pronunciation": "সাদ্দ",
+          "meaning": "বাঁধ",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَائِط",
+          "pronunciation": "হাইত",
+          "meaning": "দেওয়াল",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَرْضِيَّة",
+          "pronunciation": "আরদিয়্যাত",
+          "meaning": "মেঝে",
+          "type": "noun"
+        },
+        {
+          "arabic": "خَيْمَة",
+          "pronunciation": "খাইমাত",
+          "meaning": "তাঁবু",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَفِينَة",
+          "pronunciation": "সাফীনাত",
+          "meaning": "জাহাজ",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَارِب",
+          "pronunciation": "ক্বারিব",
+          "meaning": "নৌকা",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَرَبَة",
+          "pronunciation": "আরাবাত",
+          "meaning": "গাড়ি",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَرْكَبَة",
+          "pronunciation": "মারকাবাত",
+          "meaning": "যানবাহন",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 51,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "لَجَأَ",
+          "pronunciation": "লাজাআ",
+          "meaning": "সে আশ্রয় নিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "مَدَحَ",
+          "pronunciation": "মাদাহা",
+          "meaning": "সে প্রশংসা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَاقَشَ",
+          "pronunciation": "নাক্বাশা",
+          "meaning": "সে আলোচনা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "هَدَأَ",
+          "pronunciation": "হাদাআ",
+          "meaning": "সে শান্ত হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "وَاظَبَ",
+          "pronunciation": "ওয়াযাবা",
+          "meaning": "সে নিয়মিত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "زَهَرَ",
+          "pronunciation": "যাহারা",
+          "meaning": "সে ফুটেছে/উজ্জ্বল হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَلَّفَ",
+          "pronunciation": "আল্লাফা",
+          "meaning": "সে একত্রিত করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "مَثَل",
+          "pronunciation": "মাছাল",
+          "meaning": "উদাহরণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَشْبِيه",
+          "pronunciation": "তাশবীহ",
+          "meaning": "উপমা",
+          "type": "noun"
+        },
+        {
+          "arabic": "قِيَاس",
+          "pronunciation": "ক্বিয়াস",
+          "meaning": "তুলনা",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَنْطِق",
+          "pronunciation": "মানতিক্ব",
+          "meaning": "যুক্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "جَدَل",
+          "pronunciation": "জাদাল",
+          "meaning": "বিতর্ক",
+          "type": "noun"
+        },
+        {
+          "arabic": "خِلَاف",
+          "pronunciation": "খিলাফ",
+          "meaning": "মতবিরোধ",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِجْمَاع",
+          "pronunciation": "ইজমা'",
+          "meaning": "ঐকমত্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "اجْتِهَاد",
+          "pronunciation": "ইজতিহাদ",
+          "meaning": "মত প্রদান",
+          "type": "noun"
+        },
+        {
+          "arabic": "فَتْوَى",
+          "pronunciation": "ফাতওয়া",
+          "meaning": "ধর্মীয় মত",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَأْي",
+          "pronunciation": "রা'ই",
+          "meaning": "মতামত",
+          "type": "noun"
+        },
+        {
+          "arabic": "نُقْطَة",
+          "pronunciation": "নুক্বতাত",
+          "meaning": "বিষয়বিন্দু",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَسْأَلَة",
+          "pronunciation": "মাসআলাত",
+          "meaning": "প্রশ্ন/বিষয়",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَضِيَّة",
+          "pronunciation": "ক্বাদিয়্যাত",
+          "meaning": "মামলা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 52,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "بَلَّغَ",
+          "pronunciation": "বাল্লাগা",
+          "meaning": "সে পৌঁছে দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَحَدَّثَ",
+          "pronunciation": "তাহাদ্দাছা",
+          "meaning": "সে কথা বলেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "جَمَّلَ",
+          "pronunciation": "জাম্মালা",
+          "meaning": "সে সুন্দর করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "حَصَّنَ",
+          "pronunciation": "হাস্সানা",
+          "meaning": "সে সুরক্ষিত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "خَوَّلَ",
+          "pronunciation": "খাও্যালা",
+          "meaning": "সে কর্তৃত্ব দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "دَقَّقَ",
+          "pronunciation": "দাক্বক্বাক্বা",
+          "meaning": "সে সূক্ষ্মভাবে দেখেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَتَّلَ",
+          "pronunciation": "রাত্তালা",
+          "meaning": "সে সুন্দরভাবে পাঠ করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "حَالَة",
+          "pronunciation": "হালাত",
+          "meaning": "পরিস্থিতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَوْقِف",
+          "pronunciation": "মাওক্বিফ",
+          "meaning": "অবস্থান",
+          "type": "noun"
+        },
+        {
+          "arabic": "ظَاهِرَة",
+          "pronunciation": "যাহিরাত",
+          "meaning": "ঘটনা",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَادِثَة",
+          "pronunciation": "হাদিছাত",
+          "meaning": "ঘটনা",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَاقِعَة",
+          "pronunciation": "ওয়াক্বি'আত",
+          "meaning": "সত্যঘটনা",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُعْجِزَة",
+          "pronunciation": "মু'জিযাত",
+          "meaning": "মুজিযা",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَرَامَة",
+          "pronunciation": "কারামাত",
+          "meaning": "অলির কারামাত",
+          "type": "noun"
+        },
+        {
+          "arabic": "عُرْس",
+          "pronunciation": "উরস",
+          "meaning": "বিবাহানুষ্ঠান",
+          "type": "noun"
+        },
+        {
+          "arabic": "طَعَام",
+          "pronunciation": "তা'আম",
+          "meaning": "খাবার অনুষ্ঠান",
+          "type": "noun"
+        },
+        {
+          "arabic": "ضِيَافَة",
+          "pronunciation": "দিয়াফাত",
+          "meaning": "আতিথেয়তা",
+          "type": "noun"
+        },
+        {
+          "arabic": "هَدِيَّة",
+          "pronunciation": "হাদিয়্যাত",
+          "meaning": "উপহার",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَلَام",
+          "pronunciation": "সালাম",
+          "meaning": "সালাম",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُصَافَحَة",
+          "pronunciation": "মুসাফাহাত",
+          "meaning": "মুসাফাহা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 53,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "سَهَّلَ",
+          "pronunciation": "সাহহালা",
+          "meaning": "সে সহজ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "شَرَّفَ",
+          "pronunciation": "শার্রাফা",
+          "meaning": "সে মর্যাদা দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "طَمَّنَ",
+          "pronunciation": "তাম্মানা",
+          "meaning": "সে প্রশান্ত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "عَمَّرَ",
+          "pronunciation": "আম্মারা",
+          "meaning": "সে আবাদ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "فَرَّجَ",
+          "pronunciation": "ফার্রাজা",
+          "meaning": "সে বিপদ দূর করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "قَوَّى",
+          "pronunciation": "ক্বাও্যা",
+          "meaning": "সে শক্তিশালী করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "كَفَّ",
+          "pronunciation": "কাফ্ফা",
+          "meaning": "সে বিরত থেকেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "زِيَارَة",
+          "pronunciation": "যিয়ারাত",
+          "meaning": "সফর/দর্শন",
+          "type": "noun"
+        },
+        {
+          "arabic": "صِلَة",
+          "pronunciation": "সিলাত",
+          "meaning": "সম্পর্ক রক্ষা",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُسَاعَدَة",
+          "pronunciation": "মুসা'আদাত",
+          "meaning": "সাহায্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَعَاوُن",
+          "pronunciation": "তা'আওউন",
+          "meaning": "সহযোগিতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُشَارَكَة",
+          "pronunciation": "মুশারাকাত",
+          "meaning": "অংশগ্রহণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَضَامُن",
+          "pronunciation": "তাদামুন",
+          "meaning": "সংহতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "وِحْدَة",
+          "pronunciation": "বিহদাত",
+          "meaning": "ঐক্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَفَرُّق",
+          "pronunciation": "তাফার্রুক্ব",
+          "meaning": "বিভেদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَحَبَّة",
+          "pronunciation": "মাহাব্বাত",
+          "meaning": "ভালোবাসা",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَدَاقَة",
+          "pronunciation": "সদাক্বাত",
+          "meaning": "বন্ধুত্ব",
+          "type": "noun"
+        },
+        {
+          "arabic": "أُخُوَّة",
+          "pronunciation": "উখুউ্যাত",
+          "meaning": "ভ্রাতৃত্ব",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَدَاوَة",
+          "pronunciation": "আদাওয়াত",
+          "meaning": "শত্রুতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَسَد",
+          "pronunciation": "হাসাদ",
+          "meaning": "হিংসা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 54,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "لَطَّفَ",
+          "pronunciation": "লাত্তাফা",
+          "meaning": "সে কোমল করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "مَيَّزَ",
+          "pronunciation": "মায়্যাযা",
+          "meaning": "সে পার্থক্য করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "نَبَذَ",
+          "pronunciation": "নাবাযা",
+          "meaning": "সে ছুঁড়ে ফেলেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "هَيْمَنَ",
+          "pronunciation": "হাইমানা",
+          "meaning": "সে আধিপত্য করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "وَحَّدَ",
+          "pronunciation": "ওয়াহ্হাদা",
+          "meaning": "সে একত্ব প্রতিষ্ঠা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَحْرَقَ",
+          "pronunciation": "আহরাক্বা",
+          "meaning": "সে জ্বালিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَسْبَغَ",
+          "pronunciation": "আসবাগা",
+          "meaning": "সে পরিপূর্ণ করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "غِيرَة",
+          "pronunciation": "গীরাত",
+          "meaning": "আত্মসম্মানবোধ",
+          "type": "noun"
+        },
+        {
+          "arabic": "طِبّ",
+          "pronunciation": "তিব্ব",
+          "meaning": "চিকিৎসা",
+          "type": "noun"
+        },
+        {
+          "arabic": "دَوَاء",
+          "pronunciation": "দাওয়া",
+          "meaning": "ওষুধ",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَلَاج",
+          "pronunciation": "আলাজ",
+          "meaning": "চিকিৎসা",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَبَاء",
+          "pronunciation": "ওয়াবা",
+          "meaning": "মহামারি",
+          "type": "noun"
+        },
+        {
+          "arabic": "طَاعُون",
+          "pronunciation": "তা'উন",
+          "meaning": "প্লেগ",
+          "type": "noun"
+        },
+        {
+          "arabic": "جُرْح",
+          "pronunciation": "জুরহ",
+          "meaning": "আঘাত",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَلَم",
+          "pronunciation": "আলাম",
+          "meaning": "ব্যথা",
+          "type": "noun"
+        },
+        {
+          "arabic": "سُقْم",
+          "pronunciation": "সুক্বম",
+          "meaning": "রোগ",
+          "type": "noun"
+        },
+        {
+          "arabic": "صِحَّة",
+          "pronunciation": "সিহ্হাত",
+          "meaning": "স্বাস্থ্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَافِيَة",
+          "pronunciation": "আফিয়াত",
+          "meaning": "সুস্থতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "شِفَاء",
+          "pronunciation": "শিফা",
+          "meaning": "আরোগ্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "رُقْيَة",
+          "pronunciation": "রুক্বইয়াত",
+          "meaning": "ঝাড়ফুঁক",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 55,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "أَشْرَقَ",
+          "pronunciation": "আশরাক্বা",
+          "meaning": "সে উজ্জ্বল হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَطَالَ",
+          "pronunciation": "আতালা",
+          "meaning": "সে দীর্ঘ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَعْجَزَ",
+          "pronunciation": "আ'জাযা",
+          "meaning": "সে অক্ষম করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَغْنَى",
+          "pronunciation": "আগনা",
+          "meaning": "সে অমুখাপেক্ষী করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَكْمَلَ",
+          "pronunciation": "আকমালা",
+          "meaning": "সে পরিপূর্ণ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَمَدَّ",
+          "pronunciation": "আমাদ্দা",
+          "meaning": "সে সাহায্য বাড়িয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَنَارَ",
+          "pronunciation": "আনারা",
+          "meaning": "সে আলো দিয়েছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "صَبْر",
+          "pronunciation": "সবর",
+          "meaning": "ধৈর্য (কষ্টে)",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَاحَة",
+          "pronunciation": "রাহাত",
+          "meaning": "আরাম",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَوْم",
+          "pronunciation": "নাওম",
+          "meaning": "ঘুম",
+          "type": "noun"
+        },
+        {
+          "arabic": "يَقَظَة",
+          "pronunciation": "ইয়াক্বযাত",
+          "meaning": "জাগ্রত অবস্থা",
+          "type": "noun"
+        },
+        {
+          "arabic": "جُوع",
+          "pronunciation": "জূ'",
+          "meaning": "ক্ষুধা",
+          "type": "noun"
+        },
+        {
+          "arabic": "عَطَش",
+          "pronunciation": "আতাশ",
+          "meaning": "তৃষ্ণা",
+          "type": "noun"
+        },
+        {
+          "arabic": "شِبَع",
+          "pronunciation": "শিবা'",
+          "meaning": "তৃপ্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَيّ",
+          "pronunciation": "রাইয়",
+          "meaning": "পানিতৃপ্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "زِرَاعَة",
+          "pronunciation": "যিরা'আত",
+          "meaning": "কৃষি",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَرْث",
+          "pronunciation": "হারছ",
+          "meaning": "চাষাবাদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَذْر",
+          "pronunciation": "বাযর",
+          "meaning": "বীজ",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَبَات",
+          "pronunciation": "নাবাত",
+          "meaning": "উদ্ভিদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "جُذُور",
+          "pronunciation": "জুযূর",
+          "meaning": "শিকড়",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 56,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "أَوْدَعَ",
+          "pronunciation": "আওদা'আ",
+          "meaning": "সে গচ্ছিত রেখেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَوْصَى",
+          "pronunciation": "আওসা",
+          "meaning": "সে অসিয়ত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "أَيَّسَ",
+          "pronunciation": "আইয়াসা",
+          "meaning": "সে হতাশ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "بَثَّ",
+          "pronunciation": "বাছ্ছা",
+          "meaning": "সে ছড়িয়ে দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "بَرَّكَ",
+          "pronunciation": "বার্রাকা",
+          "meaning": "সে বরকত দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "تَلَقَّى",
+          "pronunciation": "তালাক্বক্বা",
+          "meaning": "সে গ্রহণ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "جَادَلَ",
+          "pronunciation": "জাদালা",
+          "meaning": "সে বিতর্ক করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "أَغْصَان",
+          "pronunciation": "আগসান",
+          "meaning": "ডালপালা",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَوْرَاق",
+          "pronunciation": "আওরাক্ব",
+          "meaning": "পাতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "زَهْر",
+          "pronunciation": "যাহর",
+          "meaning": "ফুল",
+          "type": "noun"
+        },
+        {
+          "arabic": "ثَمَر",
+          "pronunciation": "ছামার",
+          "meaning": "ফল",
+          "type": "noun"
+        },
+        {
+          "arabic": "بُسْتَان",
+          "pronunciation": "বুসতান",
+          "meaning": "বাগান",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَدِيقَة",
+          "pronunciation": "হাদীক্বাত",
+          "meaning": "উদ্যান",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَزْرَعَة",
+          "pronunciation": "মাযরা'আত",
+          "meaning": "খামার",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَعْي",
+          "pronunciation": "রা'ঈ",
+          "meaning": "পশু চরানো",
+          "type": "noun"
+        },
+        {
+          "arabic": "صَيْد",
+          "pronunciation": "সাইদ",
+          "meaning": "শিকার",
+          "type": "noun"
+        },
+        {
+          "arabic": "سِقَايَة",
+          "pronunciation": "সিক্বায়াত",
+          "meaning": "পানি পান করানো",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَرْبِيَة",
+          "pronunciation": "তারবিয়াত",
+          "meaning": "লালন-পালন",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَخْل",
+          "pronunciation": "নাখল",
+          "meaning": "খেজুর গাছ",
+          "type": "noun"
+        },
+        {
+          "arabic": "عِنَب",
+          "pronunciation": "ইনাব",
+          "meaning": "আঙুর বাগান",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 57,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "خَلَّدَ",
+          "pronunciation": "খাল্লাদা",
+          "meaning": "সে চিরস্থায়ী করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "دَأَبَ",
+          "pronunciation": "দাআবা",
+          "meaning": "সে অবিরাম করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "رَبَطَ",
+          "pronunciation": "রাবাতা",
+          "meaning": "সে বেঁধেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "سَاقَ",
+          "pronunciation": "সাক্বা",
+          "meaning": "সে পরিচালিত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "شَرَّدَ",
+          "pronunciation": "শার্রাদা",
+          "meaning": "সে বিতাড়িত করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "صَرَّحَ",
+          "pronunciation": "সার্রাহা",
+          "meaning": "সে স্পষ্ট বলেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "ضَاعَفَ",
+          "pronunciation": "দা'আফা",
+          "meaning": "সে দ্বিগুণ করেছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "زَيْتُون",
+          "pronunciation": "যাইতুন",
+          "meaning": "জলপাই",
+          "type": "noun"
+        },
+        {
+          "arabic": "قَمْح",
+          "pronunciation": "ক্বমহ",
+          "meaning": "গম",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَبْدَأ",
+          "pronunciation": "মাবদাউ",
+          "meaning": "নীতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "قِيمَة",
+          "pronunciation": "ক্বীমাত",
+          "meaning": "মূল্যবোধ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُثُل",
+          "pronunciation": "মুছুল",
+          "meaning": "আদর্শ",
+          "type": "noun"
+        },
+        {
+          "arabic": "نَمُوذَج",
+          "pronunciation": "নামূযাজ",
+          "meaning": "মডেল",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَنْهَج",
+          "pronunciation": "মানহাজ",
+          "meaning": "পদ্ধতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "أُسُس",
+          "pronunciation": "উসুস",
+          "meaning": "ভিত্তিসমূহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "ثَوَابِت",
+          "pronunciation": "ছাওয়াবিত",
+          "meaning": "অপরিবর্তনীয় বিষয়",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُتَغَيِّرَات",
+          "pronunciation": "মুতাগাইয়িরাত",
+          "meaning": "পরিবর্তনশীল বিষয়",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَوَازُن",
+          "pronunciation": "তাওয়াযুন",
+          "meaning": "ভারসাম্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "اعْتِدَال",
+          "pronunciation": "ই'তিদাল",
+          "meaning": "মধ্যপন্থা",
+          "type": "noun"
+        },
+        {
+          "arabic": "وَسَطِيَّة",
+          "pronunciation": "ওয়াসাতিয়্যাত",
+          "meaning": "মধ্যমপন্থা",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 58,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "طَلَّقَ",
+          "pronunciation": "তাল্লাক্বা",
+          "meaning": "সে তালাক দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "عَاهَدَ",
+          "pronunciation": "আ'আহাদা",
+          "meaning": "সে চুক্তি করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "فَتَّشَ",
+          "pronunciation": "ফাত্তাশা",
+          "meaning": "সে তল্লাশি করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "قَدَّمَ",
+          "pronunciation": "ক্বাদ্দামা",
+          "meaning": "সে অগ্রাধিকার দিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "كَمَّلَ",
+          "pronunciation": "কাম্মালা",
+          "meaning": "সে সম্পূর্ণ করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "لَوَّحَ",
+          "pronunciation": "লাও্যাহা",
+          "meaning": "সে ইশারা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "مَثَّلَ",
+          "pronunciation": "মাছ্ছালা",
+          "meaning": "সে উদাহরণ দিয়েছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "تَطَرُّف",
+          "pronunciation": "তাতার্রুফ",
+          "meaning": "চরমপন্থা",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِصْلَاح",
+          "pronunciation": "ইসলাহ",
+          "meaning": "সংস্কার",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَجْدِيد",
+          "pronunciation": "তাজদীদ",
+          "meaning": "নবায়ন",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَصَالَة",
+          "pronunciation": "আসালাত",
+          "meaning": "মৌলিকত্ব",
+          "type": "noun"
+        },
+        {
+          "arabic": "مُعَاصَرَة",
+          "pronunciation": "মু'আসারাত",
+          "meaning": "সমসাময়িকতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَرَاث",
+          "pronunciation": "তুরাস",
+          "meaning": "ঐতিহ্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "إِرْث",
+          "pronunciation": "ইরছ",
+          "meaning": "উত্তরাধিকার",
+          "type": "noun"
+        },
+        {
+          "arabic": "هُوِيَّة",
+          "pronunciation": "হুউয়িয়্যাত",
+          "meaning": "পরিচয়",
+          "type": "noun"
+        },
+        {
+          "arabic": "انْتِمَاء",
+          "pronunciation": "ইনতিমা",
+          "meaning": "আনুগত্য",
+          "type": "noun"
+        },
+        {
+          "arabic": "بِيئَة",
+          "pronunciation": "বী'আত",
+          "meaning": "পরিবেশ",
+          "type": "noun"
+        },
+        {
+          "arabic": "طَبِيعَة",
+          "pronunciation": "তবী'আত",
+          "meaning": "প্রকৃতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَوَارِد",
+          "pronunciation": "মাওয়ারিদ",
+          "meaning": "সম্পদসমূহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "أَرَض",
+          "pronunciation": "আরদ",
+          "meaning": "জমি",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 59,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "نَجَّحَ",
+          "pronunciation": "নাজ্জাহা",
+          "meaning": "সে সফল করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "هَدَّدَ",
+          "pronunciation": "হাদ্দাদা",
+          "meaning": "সে ভয় দেখিয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "وَقَّرَ",
+          "pronunciation": "ওয়াক্বক্বারা",
+          "meaning": "সে সম্মান করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "يَقَظَ",
+          "pronunciation": "ইয়াক্বাযা",
+          "meaning": "সে সজাগ হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اسْتَعَانَ",
+          "pronunciation": "ইস্তা'আনা",
+          "meaning": "সে সাহায্য প্রার্থনা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اسْتَعَاذَ",
+          "pronunciation": "ইস্তা'আযা",
+          "meaning": "সে আশ্রয় চেয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اسْتَجَابَ",
+          "pronunciation": "ইস্তাজাবা",
+          "meaning": "সে সাড়া দিয়েছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "فَضَاء",
+          "pronunciation": "ফাদা",
+          "meaning": "মহাকাশ",
+          "type": "noun"
+        },
+        {
+          "arabic": "كَوْكَب",
+          "pronunciation": "কাওকাব",
+          "meaning": "গ্রহ",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَجَرَّة",
+          "pronunciation": "মাজার্রাত",
+          "meaning": "গ্যালাক্সি",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَدَار",
+          "pronunciation": "মাদার",
+          "meaning": "কক্ষপথ",
+          "type": "noun"
+        },
+        {
+          "arabic": "جَاذِبِيَّة",
+          "pronunciation": "জাযিবিয়্যাত",
+          "meaning": "মাধ্যাকর্ষণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "نُور",
+          "pronunciation": "নূর",
+          "meaning": "আলোকশক্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَرَارَة",
+          "pronunciation": "হারারাত",
+          "meaning": "তাপশক্তি",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَوْج",
+          "pronunciation": "মাউজ",
+          "meaning": "তরঙ্গ",
+          "type": "noun"
+        },
+        {
+          "arabic": "تَيَّار",
+          "pronunciation": "তাইয়ার",
+          "meaning": "স্রোত",
+          "type": "noun"
+        },
+        {
+          "arabic": "عُمْق",
+          "pronunciation": "উমক্ব",
+          "meaning": "গভীরতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "ارْتِفَاع",
+          "pronunciation": "ইরতিফা'",
+          "meaning": "উচ্চতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَسَافَة",
+          "pronunciation": "মাসাফাত",
+          "meaning": "দূরত্ব",
+          "type": "noun"
+        },
+        {
+          "arabic": "سُرْعَة",
+          "pronunciation": "সুর'আত",
+          "meaning": "গতি",
+          "type": "noun"
+        }
+      ]
+    },
+    {
+      "classNo": 60,
+      "level": 2,
+      "verbs": [
+        {
+          "arabic": "اسْتَحَقَّ",
+          "pronunciation": "ইস্তাহাক্বা",
+          "meaning": "সে প্রাপ্য হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اسْتَطَاعَ",
+          "pronunciation": "ইস্তাতা'আ",
+          "meaning": "সে সক্ষম হয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اسْتَوَى",
+          "pronunciation": "ইস্তাওয়া",
+          "meaning": "সে সমান হয়েছে/ঊর্ধ্বে উঠেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اسْتَأْذَنَ",
+          "pronunciation": "ইস্তায়যানা",
+          "meaning": "সে অনুমতি চেয়েছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "اسْتَوْدَعَ",
+          "pronunciation": "ইস্তাওদা'আ",
+          "meaning": "সে গচ্ছিত রেখেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "انْتَظَرَ",
+          "pronunciation": "ইনতাযারা",
+          "meaning": "সে অপেক্ষা করেছে",
+          "type": "verb"
+        },
+        {
+          "arabic": "انْتَصَرَ",
+          "pronunciation": "ইনতাসারা",
+          "meaning": "সে প্রতিশোধ নিয়েছে",
+          "type": "verb"
+        }
+      ],
+      "nouns": [
+        {
+          "arabic": "زَمَن",
+          "pronunciation": "যামান",
+          "meaning": "কাল",
+          "type": "noun"
+        },
+        {
+          "arabic": "مَكَان",
+          "pronunciation": "মাকান",
+          "meaning": "স্থান",
+          "type": "noun"
+        },
+        {
+          "arabic": "حَجْم",
+          "pronunciation": "হাজম",
+          "meaning": "আকার",
+          "type": "noun"
+        },
+        {
+          "arabic": "نِعْمَة",
+          "pronunciation": "নি'মাত",
+          "meaning": "নিয়ামত",
+          "type": "noun"
+        },
+        {
+          "arabic": "بَلَاء",
+          "pronunciation": "বালা",
+          "meaning": "পরীক্ষা",
+          "type": "noun"
+        },
+        {
+          "arabic": "مِحْنَة",
+          "pronunciation": "মিহনাত",
+          "meaning": "বিপদ",
+          "type": "noun"
+        },
+        {
+          "arabic": "رَخَاء",
+          "pronunciation": "রাখা",
+          "meaning": "সুখ-সমৃদ্ধি",
+          "type": "noun"
+        },
+        {
+          "arabic": "شِدَّة",
+          "pronunciation": "শিদ্দাত",
+          "meaning": "কঠিন পরিস্থিতি",
+          "type": "noun"
+        },
+        {
+          "arabic": "يُسْر",
+          "pronunciation": "ইউসর",
+          "meaning": "সহজতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "عُسْر",
+          "pronunciation": "উসর",
+          "meaning": "কঠিনতা",
+          "type": "noun"
+        },
+        {
+          "arabic": "فَرَج",
+          "pronunciation": "ফারাজ",
+          "meaning": "উত্তরণ",
+          "type": "noun"
+        },
+        {
+          "arabic": "ضَيْق",
+          "pronunciation": "দাইক্ব",
+          "meaning": "সংকট",
+          "type": "noun"
+        },
+        {
+          "arabic": "سَعَة",
+          "pronunciation": "সা'আত",
+          "meaning": "প্রশস্ততা",
+          "type": "noun"
+        }
+      ]
+    }
+  ]
+}

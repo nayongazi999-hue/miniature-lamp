@@ -16,17 +16,18 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 24
 
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Initialize Capacitor
+      - name: Install Mobile Build Tools
         run: |
-          npx cap init "RGB Quran Shobdo" "com.rgbquran.admin" --web-dir=.
+          npm install @capacitor/core @capacitor/cli @capacitor/android
+
+      - name: Initialize Capacitor Project
+        run: |
+          npx cap init "RGB Quran Shobdo" "com.rgbquran.admin" --web-dir=. --confirm
           npx cap add android
 
-      - name: Sync Capacitor
+      - name: Sync Web Files to Android
         run: npx cap sync
 
       - name: Set up JDK 17

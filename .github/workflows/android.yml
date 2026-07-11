@@ -1,0 +1,64 @@
+name: Build Android APK
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Mobile Build Tools
+        run: |
+          npm install @capacitor/core @capacitor/cli @capacitor/android
+          npm install -g @capacitor/assets
+
+      - name: Prepare Web Directory
+        run: |
+          mkdir -p www
+          rsync -av --exclude='.github' --exclude='android' --exclude='www' --exclude='package.json' --exclude='package-lock.json' ./ www/
+
+      - name: Initialize Capacitor Project
+        run: |
+          npx cap init "NNG Quran Shobdo" "com.nngquran.shobdo" --web-dir=www
+          npx cap add android
+
+      - name: Generate Custom Icons & Update Project
+        run: |
+          if [ -f "icon.png" ]; then
+            # প্রথমে সব সাইজের আইকন তৈরি করা হচ্ছে
+            npx capacitor-assets generate --android
+            # জেনারেট হওয়া আইকনগুলো অ্যান্ড্রয়েড নেটিভ ফোল্ডারে কপি বা আপডেট করা হচ্ছে
+            npx cap copy android
+          fi
+
+      - name: Sync Web Files to Android
+        run: npx cap sync
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Build Android App (APK)
+        run: |
+          cd android
+          ./gradlew assembleDebug
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mobile-App-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          

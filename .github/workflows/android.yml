@@ -1,0 +1,76 @@
+name: Build and Sign Play Store Release AAB
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Sync & Copy Files to Android
+        run: npx cap sync android
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Build Debug APK (for direct install & testing)
+        run: |
+          cd android
+          ./gradlew assembleDebug
+
+      - name: Upload Debug APK Artifact (installable on phone)
+        uses: actions/upload-artifact@v4
+        with:
+          name: Debug-APK-For-Testing
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Build Play Store Release Bundle (AAB)
+        run: |
+          cd android
+          ./gradlew bundleRelease
+
+      - name: Restore Persistent Keystore & Sign AAB
+        run: |
+          echo "GitHub Secrets থেকে আসল কিস্টোরটি পুনরুদ্ধার করা হচ্ছে"
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/app/nng-release.keystore
+          
+          # চেক করা হচ্ছে ফাইলটি ঠিকঠাক পুনরুদ্ধার হয়েছে কি না
+          KEYSTORE_SIZE=$(wc -c < android/app/nng-release.keystore)
+          echo "Decoded keystore size: $KEYSTORE_SIZE bytes"
+          
+          if [ "$KEYSTORE_SIZE" -le 100 ]; then
+            echo "Error: Keystore ফাইলটি অসম্পূর্ণ/করাপ্টেড মনে হচ্ছে (মাত্র $KEYSTORE_SIZE bytes)। KEYSTORE_BASE64 secret টি সম্ভবত কপি-পেস্টের সময় কাটা পড়েছে - keystore-base64.txt ফাইলটি Chrome এ খুলে পুরোটা আবার সিলেক্ট করে কপি করুন এবং secret টি নতুন করে বসান।"
+            exit 1
+          fi
+
+          # সাইন করার কমান্ড রান করা হচ্ছে
+          jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA256 \
+            -keystore android/app/nng-release.keystore \
+            -storepass "${{ secrets.KEYSTORE_PASSWORD }}" \
+            -keypass "${{ secrets.KEY_PASSWORD }}" \
+            android/app/build/outputs/bundle/release/app-release.aab \
+            "${{ secrets.KEY_ALIAS }}"
+
+      - name: Upload Signed AAB Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mobile-App-Release-AAB
+          path: android/app/build/outputs/bundle/release/app-release.aab
+          
